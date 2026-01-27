@@ -1,0 +1,1247 @@
+<!doctype html>
+<html lang="{{ .Site.Params.site_language | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ .Site.Params.site_description }}">
+  <title>{{ .Site.Title }}</title>
+
+  {{ hugo.Generator }}
+
+  <style>
+    /*
+      Architecture decisions (kept minimal):
+      - Single Hugo template file to satisfy the 3-file repository constraint.
+      - All editable content lives in config.toml (teeth, topics, fast facts, contact).
+      - Minimal JS only for selection + deep links; no heavy animations.
+    */
+
+    :root {
+      --bg: #ECFDF5;
+      --surface: #FFFFFF;
+      --text: #0F172A;
+      --text-secondary: #334155;
+      --muted: #334155;
+      --border: #A7F3D0;
+      --brand: #14B8A6;
+      --brand2: #14B8A6;
+      --primary-button: #2563EB;
+      --secondary-button: #14B8A6;
+      --whatsapp: #22C55E;
+      --footer-bg: #D1FAE5;
+      --footer-text: #064E3B;
+      --footer-links: #2563EB;
+      --footer-divider: #6EE7B7;
+      --warning: #ffe66d;
+      --danger: #ff6b6b;
+      --info: #4ecdc4;
+      --success: #4ecdc4;
+      --accent: #4ecdc4;
+      --teal: #4ecdc4;
+      --orange: #ff922b;
+
+      --maxw: {{ .Site.Params.theme.max_width_ch | default 72 }}ch;
+
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+
+      --s1: 8px;
+      --s2: 12px;
+      --s3: 16px;
+      --s4: 24px;
+      --s5: 36px;
+      --s6: 52px;
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      left: var(--s4);
+      top: var(--s4);
+      width: auto;
+      height: auto;
+      padding: var(--s2) var(--s3);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(236,253,245,0.95);
+      backdrop-filter: saturate(120%) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: calc(var(--maxw) + 44ch);
+      margin: 0 auto;
+      padding: var(--s3) var(--s4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s3);
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand strong {
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .brand small {
+      color: var(--text-secondary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--text);
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    nav a[aria-current="true"] {
+      border-color: var(--border);
+      background: var(--surface);
+    }
+
+    main {
+      max-width: calc(var(--maxw) + 44ch);
+      margin: 0 auto;
+      padding: var(--s6) var(--s4);
+    }
+
+    section { scroll-margin-top: 96px; }
+
+    h1, h2, h3 {
+      margin: 0 0 var(--s2) 0;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+
+    h1 { font-size: clamp(26px, 4vw, 36px); }
+    h2 { font-size: 22px; margin-top: var(--s5); }
+    h3 { font-size: 16px; margin-top: var(--s3); }
+
+    p { margin: 0 0 var(--s3) 0; max-width: var(--maxw); }
+
+    .muted { color: var(--text-secondary); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card-pad { padding: var(--s4); }
+
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      font-weight: 900;
+    }
+
+    .hero {
+      padding: var(--s5) var(--s4);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(20,184,166,0.1), rgba(20,184,166,0.05), rgba(20,184,166,0.02));
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: var(--s3);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 900;
+      font-size: 15px;
+      cursor: pointer;
+      max-width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--primary-button);
+      border-color: var(--primary-button);
+      color: white;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.2);
+    }
+    .btn.primary {
+      transform: scale(1.05);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: var(--brand);
+    }
+
+    .divider { height: 1px; background: var(--border); margin: var(--s5) 0; }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s5);
+    }
+
+    @media (min-width: 980px) {
+      .container {
+        grid-template-columns: minmax(280px, 36ch) minmax(0, var(--maxw));
+        align-items: start;
+      }
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    @media (min-width: 980px) {
+      .sidebar-inner {
+        position: sticky;
+        top: 92px;
+      }
+    }
+
+    .seg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: var(--s3);
+    }
+
+    .seg button {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      font-weight: 900;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .seg button[aria-pressed="true"] {
+      border-color: var(--brand);
+      background: rgba(20,184,166,0.1);
+      box-shadow: 0 0 0 3px rgba(20,184,166,0.2);
+      color: var(--brand);
+      transform: scale(1.02);
+    }
+
+    .tooth-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .tooth-item button {
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 15px;
+      min-width: 0;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .tooth-item button .meta {
+      display: block;
+      margin-top: 6px;
+      color: var(--text-secondary);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .tooth-item button[aria-pressed="true"] {
+      border-color: var(--brand);
+      background: rgba(20,184,166,0.1);
+      box-shadow: 0 0 0 3px rgba(20,184,166,0.15);
+      color: var(--brand);
+      transform: scale(1.02);
+    }
+
+    .tooth-item button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .tooth { display: none; }
+    .tooth[data-active="true"] { display: block; }
+
+    code {
+      font-family: var(--mono);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-secondary);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: var(--s3) 0 var(--s4) 0;
+    }
+
+    .jump a {
+      display: inline-flex;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .jump a[data-active="true"] {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(20,184,166,0.1);
+    }
+
+    .content-block {
+      padding: var(--s4);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: var(--s3);
+    }
+
+    @media (min-width: 720px) {
+      .facts { grid-template-columns: 1fr 1fr; }
+    }
+
+    .fact {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 12px;
+      min-width: 0;
+      transition: all 0.2s ease;
+    }
+
+    .fact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: var(--brand);
+    }
+
+    .label {
+      display: block;
+      color: var(--brand);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      margin: 0 0 var(--s3) 1.2em;
+      padding: 0;
+      max-width: var(--maxw);
+      overflow-wrap: anywhere;
+    }
+
+    li { margin: 0 0 8px 0; }
+
+    details.topic {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius);
+      margin-bottom: var(--s3);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details.topic:hover {
+      border-color: var(--brand);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    details.topic summary {
+      padding: var(--s3) var(--s4);
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 16px;
+      color: var(--text);
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--s2);
+    }
+
+    details.topic[open] summary {
+      border-bottom-color: var(--border);
+      background: rgba(20,184,166,0.05);
+    }
+
+    details.topic summary::after {
+      content: '▶';
+      font-size: 12px;
+      transition: transform 0.2s ease;
+      color: var(--brand);
+    }
+
+    details.topic[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    details.topic + details.topic { margin-top: 12px; }
+
+    details.topic summary::-webkit-details-marker { display: none; }
+
+    .topic-body { padding: 14px 14px; }
+
+    footer {
+      margin-top: var(--s6);
+      padding-top: var(--s5);
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 80px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--s2) var(--s3);
+      margin-bottom: var(--s4);
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .sticky-nav h4 {
+      margin: 0 0 var(--s2) 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .quick-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quick-nav-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      background: rgba(20,184,166,0.1);
+      color: var(--brand);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .quick-nav-links a:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(20,184,166,0.15);
+      border-color: var(--brand);
+    }
+
+    .tip-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .evidence-icon:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease;
+    }
+
+    .notice {
+      border-left: 4px solid var(--warning);
+      padding: 14px 16px;
+      background: rgba(255,230,109,0.1);
+      border-radius: 12px;
+      color: var(--text);
+    }
+
+    @media (max-width: 719px) {
+      main { padding: var(--s4) var(--s3); }
+      .hero { padding: var(--s4) var(--s3); }
+      .card-pad { padding: var(--s3); }
+      .facts { grid-template-columns: 1fr; }
+      .seg { grid-template-columns: 1fr; }
+      .seg button { padding: 12px; font-size: 14px; }
+      .tooth-item button { padding: 14px 12px; font-size: 15px; }
+      .btn { padding: 12px 14px; font-size: 15px; }
+      details.topic summary { padding: 16px 14px; font-size: 15px; }
+      .topic-body { padding: 16px 14px; }
+      .fact { padding: 14px 12px; }
+      h1 { font-size: 24px; }
+      h2 { font-size: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .btn:hover, .fact:hover, details.topic:hover { transform: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": {{ .Site.Title | jsonify }},
+      "description": {{ .Site.Params.site_description | jsonify }},
+      "url": {{ .Site.BaseURL | jsonify }},
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Dental professionals and trainees"
+      },
+      "about": {
+        "@type": "MedicalSpecialty",
+        "name": "Endodontics"
+      }
+    }
+  </script>
+</head>
+<body>
+  {{ $page := . }}
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <strong>{{ $page.Site.Params.site_name }}</strong>
+        <small class="muted">{{ $page.Site.Params.brand_short }}</small>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          {{ range $page.Site.Params.page_sections }}
+            <li><a class="navlink" href="#{{ .id }}">{{ .label }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ range $page.Site.Params.page_sections }}
+      {{ $sid := .id }}
+
+      {{ if eq $sid "hero" }}
+        <section id="hero" aria-labelledby="hero-title">
+          <div class="hero">
+            <h1 id="hero-title" style="font-size: clamp(26px, 4vw, 36px); margin: 0; font-weight: 900; line-height: 1.2;">
+              Clinical Dental Protocols, Curated by a Practicing Dentist — Fast, Evidence-Based, & Ready to Apply in Your Practice.
+            </h1>
+            <p style="font-size: clamp(16px, 2vw, 18px); color: var(--text-secondary); margin-top: var(--s3); max-width: 600px; margin-left: auto; margin-right: auto;">
+              Step-by-step guides for every tooth — reviewed, safe, and easy to follow. Save time, avoid mistakes, and master endodontics confidently.
+            </p>
+            
+            <!-- Trust Badges -->
+            <div class="pill-row" style="justify-content: center; margin-top: var(--s4);">
+              <span style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(20,184,166,0.1); color: var(--brand); border-radius: 20px; font-size: 13px; font-weight: 700;">
+                ✅ Evidence-Based
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(20,184,166,0.1); color: var(--brand); border-radius: 20px; font-size: 13px; font-weight: 700;">
+                ✅ Reviewed by Experts
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(20,184,166,0.1); color: var(--brand); border-radius: 20px; font-size: 13px; font-weight: 700;">
+                ✅ Practicing Dentist
+              </span>
+            </div>
+            
+            <div style="margin-top: var(--s5); display: flex; gap: var(--s3); justify-content: center; flex-wrap: wrap;">
+              <a class="btn primary" href="#protocol" style="font-size: 16px; padding: 14px 24px;">Explore Protocols Now 🦷</a>
+              <a class="btn" href="#footer" style="font-size: 16px; padding: 14px 24px; background: var(--surface); border-color: var(--border);">See How Your Clinic Can Benefit</a>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "stats" }}
+        <section id="stats" aria-labelledby="stats-title" style="background: var(--surface); padding: var(--s5) var(--s4); border-radius: var(--radius); margin: var(--s4) 0; border: 1px solid var(--border);">
+          <div style="text-align: center; margin-bottom: var(--s4);">
+            <h3 id="stats-title" style="margin: 0; color: var(--text); font-size: 20px;">Trusted by Dental Professionals</h3>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s4); text-align: center;">
+            <div>
+              <div style="font-size: 32px; font-weight: 900; color: var(--brand); margin-bottom: var(--s2);">1000+</div>
+              <div style="font-size: 14px; color: var(--text-secondary); font-weight: 600;">Protocols Built</div>
+            </div>
+            <div>
+              <div style="font-size: 32px; font-weight: 900; color: var(--brand); margin-bottom: var(--s2);">50+</div>
+              <div style="font-size: 14px; color: var(--text-secondary); font-weight: 600;">Daily Users</div>
+            </div>
+            <div>
+              <div style="font-size: 32px; font-weight: 900; color: var(--brand); margin-bottom: var(--s2);">5+</div>
+              <div style="font-size: 14px; color: var(--text-secondary); font-weight: 600;">Expert Reviewers</div>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "featured" }}
+        <section id="featured" aria-labelledby="featured-title" style="margin: var(--s5) 0;">
+          <h2 id="featured-title" style="text-align: center; margin-bottom: var(--s4);">Most Accessed Protocols</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s4);">
+            <!-- Upper First Molar -->
+            <div class="card card-pad featured-card" style="cursor: pointer; transition: all 0.2s ease;" onclick="window.location.href='#protocol'">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div class="evidence-icon" style="width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🦷</div>
+                <div>
+                  <h3 style="margin: 0; font-size: 18px; color: var(--text);">Upper First Molar</h3>
+                  <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">U6 • Most Complex</p>
+                </div>
+              </div>
+              <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                MB2 detection, 4-canal system, complex anatomy - the most challenging posterior tooth
+              </div>
+              <div style="margin-top: var(--s2); font-size: 13px; color: var(--brand); font-weight: 600;">
+                → View Full Protocol
+              </div>
+            </div>
+
+            <!-- Lower First Molar -->
+            <div class="card card-pad featured-card" style="cursor: pointer; transition: all 0.2s ease;" onclick="window.location.href='#protocol'">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div class="evidence-icon" style="width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🦷</div>
+                <div>
+                  <h3 style="margin: 0; font-size: 18px; color: var(--text);">Lower First Molar</h3>
+                  <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">L6 • High Risk</p>
+                </div>
+              </div>
+              <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                2 mesial canals, distal variations, C-shaped possibilities - critical to master
+              </div>
+              <div style="margin-top: var(--s2); font-size: 13px; color: var(--brand); font-weight: 600;">
+                → View Full Protocol
+              </div>
+            </div>
+
+            <!-- Upper Central Incisor -->
+            <div class="card card-pad featured-card" style="cursor: pointer; transition: all 0.2s ease;" onclick="window.location.href='#protocol'">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div class="evidence-icon" style="width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🦷</div>
+                <div>
+                  <h3 style="margin: 0; font-size: 18px; color: var(--text);">Upper Central Incisor</h3>
+                  <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">U1 • Beginner Friendly</p>
+                </div>
+              </div>
+              <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                Single canal, predictable anatomy - perfect starting point for learning
+              </div>
+              <div style="margin-top: var(--s2); font-size: 13px; color: var(--brand); font-weight: 600;">
+                → View Full Protocol
+              </div>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "tips" }}
+        <section id="tips" aria-labelledby="tips-title" style="margin: var(--s5) 0;">
+          <h2 id="tips-title" style="text-align: center; margin-bottom: var(--s4);">Clinical Pearls & Pro Tips</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--s4);">
+            <!-- Tip 1 -->
+            <div class="card card-pad tip-card" style="border-left: 4px solid var(--brand); background: rgba(20,184,166,0.05);">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div style="width: 40px; height: 40px; background: var(--brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">💡</div>
+                <h3 style="margin: 0; font-size: 18px; color: var(--text);">Avoid Ledging</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-secondary); line-height: 1.5;">
+                Always create a reproducible glide path before rotary shaping. If it feels tight, stop and refine with smaller hand files first.
+              </p>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="card card-pad tip-card" style="border-left: 4px solid var(--warning); background: rgba(245,158,11,0.05);">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div style="width: 40px; height: 40px; background: var(--warning); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">⚠️</div>
+                <h3 style="margin: 0; font-size: 18px; color: var(--text);">Irrigation Safety</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-secondary); line-height: 1.5;">
+                Never bind the irrigation needle. Keep it 2-3mm short of working length and use side-vented needles for safety.
+              </p>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="card card-pad tip-card" style="border-left: 4px solid var(--success); background: rgba(34,197,94,0.05);">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div style="width: 40px; height: 40px; background: var(--success); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">✅</div>
+                <h3 style="margin: 0; font-size: 18px; color: var(--text);">MB2 Detection</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-secondary); line-height: 1.5;">
+                In upper molars, always search for MB2. Look 1-2mm palatal to MB1 and explore with a DG16 explorer.
+              </p>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="card card-pad tip-card" style="border-left: 4px solid var(--info); background: rgba(59,130,246,0.05);">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div style="width: 40px; height: 40px; background: var(--info); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">🎯</div>
+                <h3 style="margin: 0; font-size: 18px; color: var(--text);">Working Length</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-secondary); line-height: 1.5;">
+                Re-check working length after coronal flaring. Changes in canal anatomy can affect initial measurements.
+              </p>
+            </div>
+
+            <!-- Tip 5 -->
+            <div class="card card-pad tip-card" style="border-left: 4px solid var(--accent); background: rgba(139,92,246,0.05);">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div style="width: 40px; height: 40px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">🔒</div>
+                <h3 style="margin: 0; font-size: 18px; color: var(--text);">Coronal Seal</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-secondary); line-height: 1.5;">
+                The best endodontic treatment fails without proper coronal seal. Place temporary restoration immediately.
+              </p>
+            </div>
+
+            <!-- Tip 6 -->
+            <div class="card card-pad tip-card" style="border-left: 4px solid var(--danger); background: rgba(220,38,38,0.05);">
+              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
+                <div style="width: 40px; height: 40px; background: var(--danger); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">🚫</div>
+                <h3 style="margin: 0; font-size: 18px; color: var(--text);">File Separation</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-secondary); line-height: 1.5;">
+                Never force a file. If you feel resistance, stop, irrigate, and recapitulate. Prevention is better than retrieval.
+              </p>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "evidence" }}
+        <section id="evidence" aria-labelledby="evidence-title" style="margin: var(--s5) 0;">
+          <h2 id="evidence-title" style="text-align: center; margin-bottom: var(--s4);">Evidence-Based & Peer-Reviewed</h2>
+          <div class="card card-pad" style="background: linear-gradient(135deg, rgba(20,184,166,0.05), rgba(37,99,235,0.05)); border: 1px solid var(--border);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--s4); margin-bottom: var(--s4);">
+              <!-- ESE Guidelines -->
+              <div style="text-align: center; padding: var(--s3);">
+                <div class="evidence-icon" style="width: 60px; height: 60px; background: var(--brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--s2); font-size: 24px; font-weight: bold;">📋</div>
+                <h3 style="margin: 0 0 var(--s2) 0; font-size: 18px; color: var(--text);">ESE Guidelines</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                  European Society of Endodontology quality standards for treatment excellence
+                </p>
+              </div>
+
+              <!-- AAE Standards -->
+              <div style="text-align: center; padding: var(--s3);">
+                <div class="evidence-icon" style="width: 60px; height: 60px; background: var(--primary-button); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--s2); font-size: 24px; font-weight: bold;">🦷</div>
+                <h3 style="margin: 0 0 var(--s2) 0; font-size: 18px; color: var(--text);">AAE Standards</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                  American Association of Endodontists clinical guidelines and best practices
+                </p>
+              </div>
+
+              <!-- Cohen's Textbook -->
+              <div style="text-align: center; padding: var(--s3);">
+                <div class="evidence-icon" style="width: 60px; height: 60px; background: var(--warning); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--s2); font-size: 24px; font-weight: bold;">📚</div>
+                <h3 style="margin: 0 0 var(--s2) 0; font-size: 18px; color: var(--text);">Cohen's Pathways</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                  Gold-standard textbook reference for endodontic principles and protocols
+                </p>
+              </div>
+
+              <!-- Clinical Research -->
+              <div style="text-align: center; padding: var(--s3);">
+                <div class="evidence-icon" style="width: 60px; height: 60px; background: var(--success); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--s2); font-size: 24px; font-weight: bold;">🔬</div>
+                <h3 style="margin: 0 0 var(--s2) 0; font-size: 18px; color: var(--text);">Clinical Research</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
+                  Peer-reviewed studies and systematic reviews supporting our protocols
+                </p>
+              </div>
+            </div>
+
+            <div style="text-align: center; padding-top: var(--s4); border-top: 1px solid var(--border);">
+              <p style="margin: 0 0 var(--s2) 0; font-size: 16px; color: var(--text); font-weight: 600;">
+                All protocols are regularly updated to reflect the latest evidence
+              </p>
+              <a href="#protocol" class="btn primary" style="font-size: 14px; padding: 10px 20px;">View Full References</a>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+
+      {{ if eq $sid "protocol" }}
+        <section id="protocol" aria-labelledby="protocol-title">
+          <h2 id="protocol-title">Endodontics — Tooth Protocols</h2>
+          <p class="muted">{{ $page.Site.Params.protocols.intro | default "Select a tooth, then open only the topic you need." }}</p>
+
+          <!-- Sticky Quick Navigation -->
+          <div class="sticky-nav">
+            <h4>Quick Navigation</h4>
+            <div class="quick-nav-links">
+              <a href="#mx-central-incisor" data-tooth="mx-central-incisor">Upper Central</a>
+              <a href="#mx-first-molar" data-tooth="mx-first-molar">Upper First Molar</a>
+              <a href="#md-central-incisor" data-tooth="md-central-incisor">Lower Central</a>
+              <a href="#md-first-molar" data-tooth="md-first-molar">Lower First Molar</a>
+              <a href="#access" data-topic="access">Access</a>
+              <a href="#working-length" data-topic="working-length">Working Length</a>
+              <a href="#obturation" data-topic="obturation">Obturation</a>
+              <a href="#tips" data-topic="tips">Tips</a>
+            </div>
+          </div>
+
+          <div class="container">
+            <aside class="sidebar" aria-label="Tooth selector">
+              <div class="sidebar-inner card card-pad" style="background: var(--surface); border: 2px solid var(--brand);">
+                <h2 style="color: var(--brand);">🦷 Choose tooth</h2>
+                <p class="small muted" style="margin-top: 0; color: var(--text-secondary);">1) Arch  2) Tooth</p>
+
+                <div class="seg" role="group" aria-label="Arch selector">
+                  <button type="button" data-arch="maxillary" aria-pressed="false">Maxillary</button>
+                  <button type="button" data-arch="mandibular" aria-pressed="false">Mandibular</button>
+                </div>
+
+                <ul class="tooth-list" aria-label="Tooth list">
+                  {{ range $page.Site.Params.teeth }}
+                    {{ if eq .specialty_id "endodontics" }}
+                      {{ $tstatus := .status | default "coming_soon" }}
+                      <li class="tooth-item" data-arch="{{ .arch }}" data-tooth-id="{{ .id }}">
+                        <button type="button" aria-pressed="false" data-select-tooth="{{ .id }}" {{ if ne $tstatus "active" }}disabled{{ end }} aria-disabled="{{ if ne $tstatus "active" }}true{{ else }}false{{ end }}">
+                          {{ .name }}
+                          <span class="meta">{{ .abbr }} · {{ if eq $tstatus "active" }}Ready{{ else }}Coming soon{{ end }}</span>
+                        </button>
+                      </li>
+                    {{ end }}
+                  {{ end }}
+                </ul>
+
+                <div class="divider"></div>
+
+                <div class="notice small">
+                  <strong>Tip:</strong> Tap a topic (Access, WL, Prep, Obturation…) to open details.
+                </div>
+              </div>
+            </aside>
+
+            <div>
+              {{ range $page.Site.Params.teeth }}
+                {{ if eq .specialty_id "endodontics" }}
+                  {{ $tooth := . }}
+                  <article class="tooth" data-tooth-id="{{ .id }}" data-active="false" aria-labelledby="{{ .id }}-title">
+                    <div class="card card-pad">
+                      <div style="display:grid;gap:10px;">
+                        <h2 id="{{ .id }}-title" style="margin-top: 0">{{ .name }}</h2>
+                      </div>
+
+                      <div class="content-block" style="margin-top: var(--s3);">
+                        <div class="kicker">Fast data</div>
+                        <div class="facts" aria-label="Fast facts">
+                          <div class="fact">
+                            <span class="label">Access cavity</span>
+                            <div>{{ .fast.access_cavity }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Canals</span>
+                            <div>{{ .fast.canals }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Difficulty</span>
+                            <div>{{ .fast.typical_difficulty }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Student focus</span>
+                            <ul style="margin-bottom:0;">
+                              {{ range .fast.student_focus }}<li>{{ . }}</li>{{ end }}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {{ if .fast.key_risks }}
+                          <div style="margin-top:12px;">
+                            <span class="label">Key risks</span>
+                            <ul style="margin-bottom:0;">
+                              {{ range .fast.key_risks }}<li>{{ . }}</li>{{ end }}
+                            </ul>
+                          </div>
+                        {{ end }}
+                      </div>
+
+                      <div style="margin-top: var(--s4);" aria-label="Topics">
+                        {{ range .topics }}
+                          <details class="topic" id="{{ $tooth.id }}-{{ .id }}" data-tooth-topic="{{ $tooth.id }}" data-section-id="{{ $tooth.id }}-{{ .id }}" aria-labelledby="{{ $tooth.id }}-{{ .id }}-h">
+                            <summary id="{{ $tooth.id }}-{{ .id }}-h">{{ .title }}</summary>
+                            <div class="topic-body">
+
+                              {{ if eq .type "steps" }}
+                                <ol>
+                                  {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
+                                </ol>
+                              {{ end }}
+
+                              {{ if eq .type "bullets" }}
+                                <ul>
+                                  {{ range .content.bullets }}<li>{{ . }}</li>{{ end }}
+                                </ul>
+                              {{ end }}
+
+                              {{ if eq .type "if_then" }}
+                                <ul>
+                                  {{ range .rules }}
+                                    <li><strong>IF</strong> {{ .if }} <strong>THEN</strong> {{ .then }}</li>
+                                  {{ end }}
+                                </ul>
+                              {{ end }}
+
+                              {{ if eq .type "references" }}
+                                <ul>
+                                  {{ range .refs }}
+                                    <li>
+                                      {{ .citation }}
+                                      {{ if .year }}<span class="muted">({{ .year }})</span>{{ end }}
+                                      {{ if .url }} — <a href="{{ .url }}" rel="noopener" target="_blank">Source</a>{{ end }}
+                                    </li>
+                                  {{ end }}
+                                </ul>
+                              {{ end }}
+                            </div>
+                          </details>
+                        {{ end }}
+                      </div>
+                    </div>
+                  </article>
+                {{ end }}
+              {{ end }}
+
+              <noscript>
+                <div class="card card-pad" style="margin-top: var(--s4)">
+                  <strong>Note:</strong> JavaScript is disabled. You can still read content, but tooth switching will be limited.
+                </div>
+              </noscript>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+
+      {{ if eq $sid "contact" }}
+        <section id="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact</h2>
+          <div class="card card-pad">
+            <p class="muted">Professional dental protocols built for clinical excellence.</p>
+          </div>
+        </section>
+      {{ end }}
+    {{ end }}
+
+    <footer style="background: var(--footer-bg); border-top: 1px solid var(--footer-divider); padding: var(--s6) var(--s4); margin-top: var(--s8);">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <!-- Trust Section -->
+        <div style="margin-bottom: var(--s5);">
+          <p style="color: var(--footer-text); font-size: 0.9rem; margin-bottom: var(--s2);">{{ $page.Site.Params.footer.tagline }}</p>
+          <p style="color: var(--brand); font-size: 0.85rem; font-weight: 500; margin: 0;">{{ $page.Site.Params.footer.attributes }}</p>
+        </div>
+
+        <!-- Platform Section -->
+        <div style="margin-bottom: var(--s5); padding: var(--s3); background: var(--surface); border-radius: 8px;">
+          <p style="color: var(--text); font-size: 0.9rem; margin-bottom: var(--s1);">{{ $page.Site.Params.footer.platform.title }}</p>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">{{ $page.Site.Params.footer.platform.description }}</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div style="margin-bottom: var(--s5);">
+          <p style="color: var(--footer-text); font-size: 0.9rem; margin-bottom: var(--s2);">{{ $page.Site.Params.footer.cta.question }}</p>
+          <button onclick="window.open('#', '_blank')" style="background: var(--primary-button); color: white; border: none; padding: var(--s2) var(--s3); border-radius: 6px; font-size: 0.9rem; cursor: pointer;">{{ $page.Site.Params.footer.cta.action }}</button>
+        </div>
+
+        <!-- Author Section -->
+        <div style="margin-bottom: var(--s5);">
+          <p style="color: var(--footer-text); font-weight: 600; font-size: 1rem; margin-bottom: var(--s1);">{{ $page.Site.Params.footer.author.name }}</p>
+          <p style="color: var(--footer-text); font-size: 0.85rem; margin-bottom: var(--s1);">{{ $page.Site.Params.footer.author.title }}</p>
+          <p style="color: var(--footer-text); font-size: 0.8rem; margin: 0;">{{ $page.Site.Params.footer.author.services }}</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div style="margin-bottom: var(--s4);">
+          <button onclick="window.open('https://wa.me/{{ $page.Site.Params.footer.contact.whatsapp }}', '_blank')" style="background: var(--whatsapp); color: white; border: none; padding: var(--s2) var(--s3); border-radius: 6px; font-size: 0.9rem; cursor: pointer;">{{ $page.Site.Params.footer.contact.label }}</button>
+        </div>
+
+        <!-- Technical Section -->
+        <p style="color: var(--footer-text); font-size: 0.8rem; margin: 0;">{{ $page.Site.Params.footer.technical.features }}</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Minimal JS: tooth selection + deep links + light scroll highlighting.
+    (function () {
+      const qs = (sel, root = document) => root.querySelector(sel);
+      const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+      const navLinks = qsa('.navlink');
+
+      const archButtons = qsa('[data-arch]');
+      const toothItems = qsa('.tooth-item');
+      const toothButtons = qsa('[data-select-tooth]');
+      const teeth = qsa('.tooth');
+
+      function setActiveNav() {
+        const sections = navLinks
+          .map(a => ({ a, id: (a.getAttribute('href') || '').replace('#', '') }))
+          .filter(x => x.id);
+
+        const current = sections
+          .map(x => ({...x, el: document.getElementById(x.id)}))
+          .filter(x => x.el)
+          .sort((a, b) => a.el.getBoundingClientRect().top - b.el.getBoundingClientRect().top)
+          .find(x => x.el.getBoundingClientRect().top >= -120) || sections[0];
+
+        navLinks.forEach(a => a.setAttribute('aria-current', 'false'));
+        if (current && current.a) current.a.setAttribute('aria-current', 'true');
+      }
+
+      function parseHash() {
+        // Supported:
+        // - #protocol|tooth=<id>
+        // - #<toothId>-<topicId>
+        const h = (location.hash || '').replace('#', '');
+        const parts = h.split('|');
+        const toothPart = parts.find(p => p.startsWith('tooth='));
+        if (toothPart) return { toothId: decodeURIComponent(toothPart.replace('tooth=', '')), topicId: null };
+
+        if (h) {
+          const ids = teeth.map(t => t.getAttribute('data-tooth-id')).filter(Boolean);
+          const match = ids.find(id => h === id || h.startsWith(id + '-'));
+          if (match) {
+            const topicId = (h.startsWith(match + '-') ? h.replace(match + '-', '') : null);
+            return { toothId: match, topicId };
+          }
+        }
+
+        return { toothId: null, topicId: null };
+      }
+
+      function setArch(arch) {
+        archButtons.forEach(b => {
+          const isMatch = b.getAttribute('data-arch') === arch;
+          b.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+        });
+
+        toothItems.forEach(li => {
+          const show = li.getAttribute('data-arch') === arch;
+          li.style.display = show ? '' : 'none';
+        });
+
+        teeth.forEach(t => {
+          const show = t.getAttribute('data-arch') === arch;
+          if (!show) t.setAttribute('data-active', 'false');
+        });
+      }
+
+      let jumpObserver = null;
+
+      function setupJumpSpy(toothId) {
+        if (jumpObserver) jumpObserver.disconnect();
+        const jump = qs('[data-jump-for="' + CSS.escape(toothId) + '"]');
+        if (!jump) return;
+
+        const links = qsa('a[data-jump]', jump);
+        const topics = qsa('[data-tooth-topic="' + CSS.escape(toothId) + '"]');
+
+        function markActive(sectionId) {
+          links.forEach(a => {
+            const isActive = a.getAttribute('data-jump') === sectionId;
+            a.setAttribute('data-active', isActive ? 'true' : 'false');
+          });
+        }
+
+        jumpObserver = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter(e => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (visible && visible.target) {
+            markActive(visible.target.getAttribute('data-section-id'));
+          }
+        }, { root: null, threshold: [0.15, 0.25, 0.4], rootMargin: '-10% 0px -70% 0px' });
+
+        topics.forEach(t => jumpObserver.observe(t));
+      }
+
+      function openTopic(toothId, topicId) {
+        if (!topicId) return;
+        const el = document.getElementById(toothId + '-' + topicId);
+        if (!el) return;
+        if (el.tagName && el.tagName.toLowerCase() === 'details') {
+          el.open = true;
+        }
+        el.scrollIntoView({ block: 'start' });
+      }
+
+      function setTooth(toothId, pushHash, topicIdToOpen) {
+        if (!toothId) return;
+
+        let found = false;
+        toothButtons.forEach(b => {
+          const match = b.getAttribute('data-select-tooth') === toothId;
+          b.setAttribute('aria-pressed', match ? 'true' : 'false');
+        });
+
+        teeth.forEach(t => {
+          const match = t.getAttribute('data-tooth-id') === toothId;
+          t.setAttribute('data-active', match ? 'true' : 'false');
+          if (match) found = true;
+        });
+
+        if (found && pushHash) {
+          history.replaceState(null, '', '#protocol|tooth=' + encodeURIComponent(toothId));
+        }
+
+        setupJumpSpy(toothId);
+        if (topicIdToOpen) openTopic(toothId, topicIdToOpen);
+      }
+
+      archButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const arch = btn.getAttribute('data-arch');
+          if (!arch) return;
+          setArch(arch);
+          const firstVisible = toothItems.find(li => li.style.display !== 'none' && (qs('button', li) && !qs('button', li).disabled));
+          const toothId = firstVisible ? firstVisible.getAttribute('data-tooth-id') : null;
+          if (toothId) setTooth(toothId, true);
+        });
+      });
+
+      toothButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const toothId = btn.getAttribute('data-select-tooth');
+          if (!toothId) return;
+          setTooth(toothId, true);
+          const active = qs('.tooth[data-tooth-id="' + CSS.escape(toothId) + '"]');
+          if (active) active.scrollIntoView({ block: 'start' });
+        });
+      });
+
+      document.addEventListener('scroll', setActiveNav, { passive: true });
+
+      // Init
+      const { toothId, topicId } = parseHash();
+      const activeButtons = toothItems.filter(li => {
+        const b = qs('button', li);
+        return b && !b.disabled;
+      });
+
+      const defaultArch = (activeButtons[0] ? activeButtons[0].getAttribute('data-arch') : 'maxillary') || 'maxillary';
+      setArch(defaultArch);
+
+      const firstVisible = toothItems.find(li => li.style.display !== 'none' && (qs('button', li) && !qs('button', li).disabled));
+      const fallbackTooth = firstVisible ? firstVisible.getAttribute('data-tooth-id') : null;
+
+      setTooth(toothId || fallbackTooth, true, topicId);
+      setActiveNav();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2694 @@
+  baseURL = "/"
+  languageCode = "en"
+  title = "Clinical Dental Protocols"
+  enableRobotsTXT = true
+
+  [params]
+  site_name = "Clinical Dental Protocols"
+  site_tagline = "Clinically accurate, step-by-step dental protocols — built by a dentist, for dentists."
+  site_description = "Evidence-based, step-by-step dental protocols designed for fast clinical reference. Endodontics first, with future expansion across specialties."
+  site_language = "en"
+
+  brand_short = "CDP"
+
+  [params.colors]
+  # Main palette
+  bg = "#ECFDF5"
+  surface = "#FFFFFF"
+  text = "#0F172A"
+  text_secondary = "#334155"
+  border = "#A7F3D0"
+  brand = "#14B8A6"
+
+  # Button colors
+  primary_button = "#2563EB"
+  secondary_button = "#14B8A6"
+  whatsapp = "#22C55E"
+
+  # Footer colors
+  footer_bg = "#D1FAE5"
+  footer_text = "#064E3B"
+  footer_links = "#2563EB"
+  footer_divider = "#6EE7B7"
+
+  # Semantic colors (keeping for compatibility)
+  warning = "#f59e0b"
+  danger = "#dc2626"
+  info = "#3b82f6"
+  success = "#22c55e"
+  accent = "#8b5cf6"
+  teal = "#14b8a6"
+  orange = "#fb923c"
+
+  [params.footer]
+  tagline = "Educational content built and reviewed by a practicing dentist."
+  attributes = "Evidence-based • Clinically focused • Continuously updated"
+
+  [params.footer.platform]
+  title = "This platform was built using a specialized system for dental educational websites"
+  description = "— designed for clarity, speed, and clinical accuracy."
+
+  [params.footer.cta]
+  question = "Need a similar professional website for your clinic or educational content?"
+  action = "→ View how this system works"
+
+  [params.footer.author]
+  name = "Dr. Michael Nabil"
+  title = "Dentist & Specialized Dental Website Developer"
+  services = "Clinics • Portfolios • Educational Platforms"
+
+  [params.footer.contact]
+  label = "Contact via WhatsApp"
+
+[params.footer.technical]
+features = "Static • Fast • Privacy-friendly"
+
+# Page structure (order controls render order)
+[[params.page_sections]]
+id = "hero"
+label = "Hero"
+
+[[params.page_sections]]
+id = "stats"
+label = "Stats"
+
+[[params.page_sections]]
+id = "featured"
+label = "Featured"
+
+[[params.page_sections]]
+id = "tips"
+label = "Tips"
+
+[[params.page_sections]]
+id = "evidence"
+label = "Evidence"
+
+[[params.page_sections]]
+id = "protocol"
+label = "Protocols"
+
+[[params.page_sections]]
+id = "contact"
+label = "Contact"
+  status = "active"
+  description = "Root canal diagnosis and treatment protocols optimized for speed, safety, and predictable outcomes."
+
+  [[params.specialties]]
+  id = "restorative"
+  name = "Restorative"
+  status = "coming_soon"
+  description = "Coming soon."
+
+  [[params.specialties]]
+  id = "prosthodontics"
+  name = "Prosthodontics"
+  status = "coming_soon"
+  description = "Coming soon."
+
+  # Procedures (each MUST contain the required subsections)
+  [[params.procedures]]
+  id = "endo-rct-vital-molar"
+  specialty_id = "endodontics"
+  title = "Primary Root Canal Treatment — Vital Posterior Tooth"
+  short = "RCT (vital molar)"
+  summary = "A clinically focused protocol for predictable primary RCT in a vital posterior tooth using contemporary endodontic principles."
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  reviewed_by = ""
+  reviewed_by_note = ""
+
+    [[params.procedures.sections]]
+    id = "clinical-overview"
+    title = "Clinical Overview"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "structured"
+
+      [params.procedures.sections.content]
+      indications = [
+        "Symptomatic or asymptomatic irreversible pulpitis",
+        "Vital pulp exposure with poor restorative prognosis for vital therapy",
+        "Elective endodontics prior to indirect restoration when indicated"
+      ]
+      contraindications = [
+        "Non-restorable tooth (subgingival caries/fracture beyond ferrule)",
+        "Unfavorable periodontal prognosis (advanced mobility with poor support)",
+        "Inability to achieve adequate isolation and asepsis"
+      ]
+      case_selection = [
+        "Start with straight, less calcified canals when early in training",
+        "Complex curvature, retreatment, resorption, and MB2 negotiation require advanced skill/time",
+        "If time or equipment is limited, refer early rather than late"
+      ]
+
+    [[params.procedures.sections]]
+    id = "diagnosis-assessment"
+    title = "Diagnosis & Assessment"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "diagnosis"
+
+      [params.procedures.sections.content]
+      clinical_tests = [
+        "Cold test (compare control tooth)",
+        "Percussion and palpation",
+        "Bite test if cracked tooth suspected",
+        "Periodontal probing (full circumference)",
+        "Evaluate occlusion and parafunction"
+      ]
+      radiographic_requirements = [
+        "Pre-op periapical radiograph with paralleling technique",
+        "At least one angled view if anatomy is unclear",
+        "Consider limited FOV CBCT when indicated (missed anatomy, resorption, fracture suspicion)"
+      ]
+      differential_diagnosis = [
+        "Reversible vs irreversible pulpitis",
+        "Cracked tooth syndrome",
+        "Occlusal trauma",
+        "Sinus-related referred pain",
+        "Periodontal abscess vs endodontic origin"
+      ]
+
+    [[params.procedures.sections]]
+    id = "step-by-step"
+    title = "Step-by-Step Clinical Protocol"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "steps"
+
+      [params.procedures.sections.content]
+      steps = [
+        "Confirm diagnosis and document baseline tests (cold, percussion, probing).",
+        "Anesthesia: profound block/infiltration; verify pulpal anesthesia before access.",
+        "Rubber dam isolation; disinfect field (e.g., chlorhexidine or iodine-based protocol per clinic policy).",
+        "Pre-endodontic build-up when needed to secure isolation and prevent coronal leakage.",
+        "Access: create straight-line entry; unroof chamber completely; locate canal orifices.",
+        "Initial patency and glide path: small hand files with lubricant; confirm reproducible glide path.",
+        "Working length: electronic apex locator + confirm with radiograph as needed.",
+        "Shaping: use a conservative taper strategy; recapitulate and maintain apical patency per your philosophy.",
+        "Irrigation: active NaOCl throughout; refresh frequently; avoid binding needle; consider activation (sonic/ultrasonic) if available.",
+        "Smear layer management: EDTA final rinse (time-controlled), followed by NaOCl final rinse (per system protocol).",
+        "Dry canals with paper points to working length.",
+        "Obturation: fit master cone(s) to WL with tug-back; verify cone fit radiographically when indicated.",
+        "Sealer placement; obturate with chosen technique; avoid overfilling.",
+        "Coronal seal immediately (bonded core / temporary with proven seal).",
+        "Post-op instructions and definitive restoration plan (cuspal coverage for posterior teeth when indicated)."
+      ]
+      execution_notes = [
+        "If you cannot maintain isolation, stop and reassess.",
+        "Do not ‘force’ a file—create a glide path before rotary shaping.",
+        "Irrigation safety is non-negotiable: slow delivery, side-vented needle, never bind."
+      ]
+
+    [[params.procedures.sections]]
+    id = "instruments-materials"
+    title = "Instruments & Materials"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "materials"
+
+      [params.procedures.sections.content]
+      required_tools = [
+        "Rubber dam kit + clamp selection",
+        "Endo access burs + safe-end bur",
+        "Hand K-files (sizes 06/08/10/15)",
+        "Apex locator",
+        "Irrigation syringes + side-vented needles",
+        "NaOCl + EDTA (per clinic protocol)",
+        "Paper points",
+        "Obturation cones + sealer",
+        "Temporary restorative material / bonded core materials"
+      ]
+      alternatives = [
+        "If no ultrasonic activation: manual dynamic agitation with master cone",
+        "If no CBCT: obtain angled PAs + careful clinical exploration"
+      ]
+      budget_vs_premium = [
+        "Budget: reliable hand files + basic rotary system + meticulous irrigation",
+        "Premium: heat-treated NiTi + activation device + microscope/loupes"
+      ]
+
+    [[params.procedures.sections]]
+    id = "mistakes"
+    title = "Common Mistakes & How to Avoid Them"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.procedures.sections.content]
+      bullets = [
+        "Under-isolation: always rubber dam; rebuild missing walls before shaping.",
+        "Incomplete unroofing: leads to missed canals and iatrogenic errors.",
+        "Skipping glide path: increases separation risk—secure glide path first.",
+        "Inadequate irrigation time/volume: shape does not disinfect—irrigation does.",
+        "Weak coronal seal: treat restoration planning as part of endodontic success."
+      ]
+
+    [[params.procedures.sections]]
+    id = "complications"
+    title = "Complications & Management"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.procedures.sections.rules]]
+      if = "Sudden loss of working length / blocked canal"
+      then = "Stop rotary shaping; recapitulate with small hand file + irrigate; re-establish glide path before continuing."
+
+      [[params.procedures.sections.rules]]
+      if = "NaOCl accident suspected (sudden pain, swelling, bleeding)"
+      then = "Stop irrigation immediately; reassure; analgesia; cold compress initially; monitor; refer urgently if progressive swelling or airway concerns."
+
+      [[params.procedures.sections.rules]]
+      if = "Instrument separation"
+      then = "Do not blindly chase; assess location, canal anatomy, and prognosis; consider microscope and referral. Document thoroughly."
+
+    [[params.procedures.sections]]
+    id = "tips"
+    title = "Clinical Tips & Pearls"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.procedures.sections.content]
+      bullets = [
+        "Treat access as the first ‘shaping’ step: straight-line entry reduces errors downstream.",
+        "Measure irrigation success by time and replenishment, not just by syringe size.",
+        "If a canal feels ‘sticky’, pause and refine the glide path before continuing."
+      ]
+
+    [[params.procedures.sections]]
+    id = "post-op"
+    title = "Post-Operative Care"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "postop"
+
+      [params.procedures.sections.content]
+      instructions = [
+        "Mild tenderness on biting is common for 24–72 hours.",
+        "Analgesics per local guidelines; avoid unnecessary antibiotics.",
+        "Avoid chewing hard foods on the treated tooth until definitive restoration."
+      ]
+      follow_up_logic = [
+        "If swelling, fever, or increasing pain occurs: urgent clinical review.",
+        "If temporary is lost: replace promptly to maintain coronal seal.",
+        "Schedule definitive cuspal coverage when indicated (posterior teeth)."
+      ]
+
+    [[params.procedures.sections]]
+    id = "references"
+    title = "References & Evidence"
+    last_updated = "2026-01-15"
+    version = "v1.0"
+    type = "references"
+
+      [[params.procedures.sections.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.procedures.sections.refs]]
+      citation = "Cohen’s Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [params.protocols]
+  intro = "Select a tooth, review the fast anatomy/access summary, then open only the topic you need."
+
+  [[params.teeth]]
+  id = "mx-central-incisor"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper Central Incisor"
+  abbr = "U1"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+
+    [params.teeth.fast]
+    access_cavity = "Triangular/ovoid; keep conservative and centered."
+    canals = "Usually 1 canal"
+    typical_difficulty = "Low"
+    key_risks = [
+      "Labial perforation if access is too facial",
+      "Ledging if apical curvature is ignored"
+    ]
+    student_focus = [
+      "Straight-line access",
+      "Working length accuracy",
+      "Irrigation safety"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through palatal surface; aim for straight-line access.",
+        "Unroof chamber fully; refine to an ovoid outline without over-flaring.",
+        "Confirm canal location and patency before shaping."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal; watch for apical curvature.",
+        "Confirm with angled PA if anatomy is unclear.",
+        "Avoid transportation by respecting the original canal path."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Create a reproducible glide path.",
+        "Use apex locator to establish WL.",
+        "Confirm with a WL radiograph if needed.",
+        "Re-check WL after coronal flaring and before obturation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Do not shape before glide path is secure.",
+        "Use a conservative taper strategy.",
+        "Recapitulate frequently and irrigate between instruments."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry to WL with paper points.",
+        "Fit master cone to WL (tug-back) and verify as needed.",
+        "Sealer placement and obturation with chosen technique.",
+        "Immediate coronal seal."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take a radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Assess canal disinfection and prognosis; bypass may be safer than removal; document and consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot maintain WL or canal patency after separation"
+      then = "Stop and refer early rather than risking perforation/transportation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics are for systemic involvement/spreading infection per guidelines.",
+        "Document allergies and medical history."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prioritize access and irrigation; shaping is secondary to disinfection.",
+        "If it feels tight, refine the glide path before continuing.",
+        "Good coronal seal prevents reinfection."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen’s Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "mx-lateral-incisor"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper Lateral Incisor"
+  abbr = "U2"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; slightly more distal than central incisor."
+    canals = "Usually 1 canal; watch for apical curvature or root dilaceration."
+    typical_difficulty = "Easy to moderate"
+    key_risks = [
+      "Apical curvature leading to ledging",
+      "Root dilaceration",
+      "Perforation risk if access is too lingual"
+    ]
+    student_focus = [
+      "Proper radiographic angle assessment",
+      "Conservative access preparation",
+      "Glide path management in curved canals"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through palatal surface; aim for straight-line access.",
+        "Unroof chamber fully; refine to an ovoid outline without over-flaring.",
+        "Confirm canal location and patency before shaping."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal; watch for apical curvature.",
+        "Confirm with angled PA if anatomy is unclear.",
+        "Avoid transportation by respecting the original canal path."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Create a reproducible glide path.",
+        "Use apex locator to establish WL.",
+        "Confirm with a WL radiograph if needed.",
+        "Re-check WL after coronal flaring and before obturation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Do not shape before glide path is secure.",
+        "Use a conservative taper strategy.",
+        "Recapitulate frequently and irrigate between instruments."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry to WL with paper points.",
+        "Fit master cone to WL (tug-back) and verify as needed.",
+        "Sealer placement and obturation with chosen technique.",
+        "Immediate coronal seal."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take a radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Assess canal disinfection and prognosis; bypass may be safer than removal; document and consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot maintain WL or canal patency after separation"
+      then = "Stop and refer early rather than risking perforation/transportation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics are for systemic involvement/spreading infection per guidelines.",
+        "Document allergies and medical history."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prioritize access and irrigation; shaping is secondary to disinfection.",
+        "If it feels tight, refine the glide path before continuing.",
+        "Good coronal seal prevents reinfection."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "mx-canine"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper Canine"
+  abbr = "U3"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; longest root in maxillary arch."
+    canals = "Usually 1 canal; watch for severe apical curvature or bifurcation."
+    typical_difficulty = "Moderate to difficult"
+    key_risks = [
+      "Severe apical curvature",
+      "Root bifurcation in rare cases",
+      "Ledging due to length and curvature",
+      "Perforation risk at apex"
+    ]
+    student_focus = [
+      "Pre-operative radiograph analysis",
+      "Gentle negotiation of curved canals",
+      "Patience in working length determination",
+      "Proper file selection for long canals"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through palatal surface; aim for straight-line access.",
+        "Unroof chamber fully; refine to an ovoid outline without over-flaring.",
+        "Confirm canal location and patency before shaping."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal; longest root in maxilla.",
+        "Watch for severe apical curvature (>25°).",
+        "Rare cases may have 2 canals or bifurcations.",
+        "Confirm with multiple angled radiographs if suspicious."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Create a reproducible glide path to the apex.",
+        "Use apex locator; verify with radiograph due to length.",
+        "Take multiple angled radiographs if curvature suspected.",
+        "Re-check WL after coronal flaring and before obturation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Use pre-curved files for severe curvatures.",
+        "Consider crown-down technique for better control.",
+        "Frequent recapitulation essential in long canals.",
+        "Avoid aggressive filing; respect original curvature."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry thoroughly with paper points (longer drying time).",
+        "Fit master cone with pre-curved tip if needed.",
+        "Verify cone fit with multiple radiograph angles.",
+        "Warm vertical compaction often works best for curved canals."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; bypass may be possible but difficult due to length."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred over removal; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot maintain WL or canal patency after separation"
+      then = "Stop and refer early rather than risking perforation/transportation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always take pre-operative radiographs from multiple angles.",
+        "Use smaller files initially to negotiate curvatures.",
+        "Consider using NiTi files with controlled memory.",
+        "Patience is key - canines require more time than anterior teeth."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "mx-first-premolar"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper First Premolar"
+  abbr = "U4"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; buccal and palatal canals usually present."
+    canals = "Usually 2 canals (buccal and palatal); may have 3 canals."
+    typical_difficulty = "Moderate"
+    key_risks = [
+      "Missing second canal (most common error)",
+      "Perforation risk in furcation area",
+      "Root fusion making canal separation difficult",
+      "Ledging due to sudden curvature"
+    ]
+    student_focus = [
+      "MB2 equivalent detection (second canal)",
+      "Proper access outline to locate both canals",
+      "Furcation anatomy awareness",
+      "Gentle exploration of canal system"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on occlusal surface; extend buccolingually.",
+        "Unroof chamber; look for multiple canal orifices.",
+        "Refine outline to locate all canals before proceeding."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 2 canals: buccal and palatal.",
+        "May have 3 canals (two buccal, one palatal).",
+        "Root fusion common - canals may merge apically.",
+        "Always search for second canal with DG16 explorer."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for fused roots.",
+        "Re-check WL after coronal flaring in each canal."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be aware of sudden curvature in middle third.",
+        "Conservative taper due to potential root fusion.",
+        "Frequent irrigation to remove debris from multiple canals."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph (especially for fused roots).",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always assume 2 canals until proven otherwise.",
+        "Use DG16 explorer to search for additional canals.",
+        "Take radiograph from multiple angles if anatomy unclear.",
+        "Be gentle in furcation area to avoid perforation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "mx-second-premolar"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper Second Premolar"
+  abbr = "U5"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; usually 1 canal but may have 2."
+    canals = "Usually 1 canal; 20-30% have 2 canals."
+    typical_difficulty = "Easy to moderate"
+    key_risks = [
+      "Missing second canal when present",
+      "Root curvature leading to ledging",
+      "Perforation risk if over-prepared",
+      "Apical transportation"
+    ]
+    student_focus = [
+      "Thorough canal orifice exploration",
+      "Proper radiographic interpretation",
+      "Conservative preparation techniques",
+      "Recognition of anatomical variations"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on occlusal surface.",
+        "Unroof chamber; search carefully for additional canals.",
+        "Refine outline to locate all canals before proceeding."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal (70-80% of cases).",
+        "May have 2 canals (buccal and palatal).",
+        "Root often curved distally in apical third.",
+        "Always explore with DG16 for additional canals."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for root curvature.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be aware of distal root curvature.",
+        "Use conservative taper to avoid transportation.",
+        "Frequent irrigation and recapitulation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph.",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always explore for second canal even if unlikely.",
+        "Take radiograph from multiple angles if anatomy unclear.",
+        "Be conservative in preparation - single canal cases are common.",
+        "Watch for distal curvature during preparation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "mx-first-molar"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper First Molar"
+  abbr = "U6"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Triangular access; MB1, MB2, DB, and palatal canals."
+    canals = "Usually 3-4 canals: MB1, MB2, DB, and palatal."
+    typical_difficulty = "Difficult"
+    key_risks = [
+      "Missing MB2 canal (most common error)",
+      "Perforation risk in furcation area",
+      "Ledging due to complex anatomy",
+      "Missed canals leading to failure"
+    ]
+    student_focus = [
+      "MB2 detection and location",
+      "Proper access outline for all canals",
+      "Furcation anatomy awareness",
+      "Systematic canal exploration"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on mesial pit; extend to triangular outline.",
+        "Unroof chamber; locate MB1, MB2, DB, and palatal canals.",
+        "Refine outline to ensure straight-line access to all canals."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 4 canals: MB1, MB2, DB, and palatal.",
+        "MB2 present in 60-90% of cases.",
+        "Palatal canal usually largest and straightest.",
+        "MB canals often curved and difficult to negotiate."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all 4 canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for canal curvature.",
+        "Re-check WL after coronal flaring in each canal."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all 4 canals simultaneously.",
+        "Be extra careful with MB2 negotiation.",
+        "Use smaller files initially for MB canals.",
+        "Frequent irrigation to remove debris from complex system."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all 4 canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph (especially MB2).",
+        "Obturate all canals; ensure complete fill of entire system."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always assume 4 canals until proven otherwise.",
+        "Use DG16 explorer to search for MB2.",
+        "Take radiograph from mesial angle to see MB2.",
+        "Be patient - molars require significant time and skill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "mx-second-molar"
+  specialty_id = "endodontics"
+  arch = "maxillary"
+  name = "Upper Second Molar"
+  abbr = "U7"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Triangular access; 3-4 canals similar to U6."
+    canals = "Usually 3 canals; may have 4 (MB2 less common)."
+    typical_difficulty = "Difficult"
+    key_risks = [
+      "Missing MB2 when present",
+      "Root fusion making canal separation difficult",
+      "Perforation risk in furcation area",
+      "Complex root morphology"
+    ]
+    student_focus = [
+      "Recognition of root fusion patterns",
+      "MB2 detection (less common than U6)",
+      "Proper access for fused roots",
+      "Systematic canal exploration"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on mesial pit; extend to triangular outline.",
+        "Unroof chamber; locate MB, DB, and palatal canals.",
+        "Search carefully for MB2; modify access if needed."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 3 canals: MB, DB, and palatal.",
+        "MB2 present in 30-50% of cases (less than U6).",
+        "Root fusion common (MB-DB or all three).",
+        "Canals may merge apically in fused roots."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for root fusion.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be conservative due to potential root fusion.",
+        "Watch for sudden merging of canals.",
+        "Frequent irrigation to remove debris."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph (check for fusion).",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always check for MB2 but don't over-prepare.",
+        "Take radiograph from multiple angles to assess fusion.",
+        "Be conservative - root fusion is common.",
+        "Consider CBCT for complex cases if available."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-central-incisor"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Central Incisor"
+  abbr = "L1"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Small ovoid access; lingual approach."
+    canals = "Usually 1 canal; may have 2 canals or lateral canals."
+    typical_difficulty = "Easy to moderate"
+    key_risks = [
+      "Second canal (type II, III, or IV anatomy)",
+      "Lateral canals leading to incomplete debridement",
+      "Perforation risk due to thin lingual walls",
+      "Ledging in curved roots"
+    ]
+    student_focus = [
+      "Recognition of complex canal systems",
+      "Proper radiographic interpretation",
+      "Conservative access preparation",
+      "Thorough exploration of canal system"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through lingual surface; small ovoid outline.",
+        "Unroof chamber; explore carefully for additional canals.",
+        "Refine outline minimally to preserve tooth structure."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal but complex anatomy common.",
+        "Type II: Two canals leaving pulp chamber, merging apically.",
+        "Type III: Two canals leaving, merging, then separating again.",
+        "Type IV: Two separate canals from chamber to apex."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; take multiple angles.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be conservative due to thin dentin walls.",
+        "Watch for sudden changes in canal anatomy.",
+        "Frequent irrigation to remove debris."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph (multiple angles).",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always assume complex anatomy in lower incisors.",
+        "Take radiograph from multiple angles.",
+        "Use DG16 explorer to search for additional canals.",
+        "Be conservative - thin lingual walls are fragile."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-lateral-incisor"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Lateral Incisor"
+  abbr = "L2"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Small ovoid access; lingual approach similar to L1."
+    canals = "Usually 1 canal; higher incidence of 2 canals than L1."
+    typical_difficulty = "Easy to moderate"
+    key_risks = [
+      "Second canal more common than central incisors",
+      "Lateral canals and fins",
+      "Perforation risk due to thin lingual walls",
+      "Root curvature leading to ledging"
+    ]
+    student_focus = [
+      "Higher suspicion for second canal",
+      "Proper radiographic interpretation",
+      "Conservative access preparation",
+      "Thorough exploration of canal system"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through lingual surface; small ovoid outline.",
+        "Unroof chamber; explore carefully for additional canals.",
+        "Refine outline minimally to preserve tooth structure."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal but 2 canals more common than L1.",
+        "Type II, III, or IV anatomy possible.",
+        "Lateral canals and fins common.",
+        "May have distal root curvature."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; take multiple angles.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be conservative due to thin dentin walls.",
+        "Watch for distal root curvature.",
+        "Frequent irrigation to remove debris."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph (multiple angles).",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Higher suspicion for second canal than central incisors.",
+        "Take radiograph from multiple angles.",
+        "Use DG16 explorer to search for additional canals.",
+        "Be conservative - thin lingual walls are fragile."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-canine"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Canine"
+  abbr = "L3"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; lingual approach; longest root in mandibular arch."
+    canals = "Usually 1 canal; may have 2 canals in some cases."
+    typical_difficulty = "Moderate to difficult"
+    key_risks = [
+      "Second canal (buccal and lingual)",
+      "Severe root curvature",
+      "Ledging due to length and curvature",
+      "Apical transportation"
+    ]
+    student_focus = [
+      "Recognition of potential second canal",
+      "Management of severe root curvature",
+      "Proper working length determination",
+      "Gentle negotiation techniques"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through lingual surface; ovoid outline.",
+        "Unroof chamber; explore for additional canals.",
+        "Refine outline for straight-line access."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal; longest root in mandible.",
+        "May have 2 canals (buccal and lingual).",
+        "Severe distal root curvature common.",
+        "Root may be wider labiolingually."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path to the apex.",
+        "Use apex locator; verify with radiograph.",
+        "Take multiple angled radiographs for curvature.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Use pre-curved files for severe curvatures.",
+        "Consider crown-down technique for better control.",
+        "Frequent recapitulation essential.",
+        "Be gentle - transportation risk high."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry thoroughly with paper points.",
+        "Fit master cone with pre-curved tip if needed.",
+        "Verify cone fit with multiple radiograph angles.",
+        "Warm vertical compaction often works best."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; bypass may be possible but difficult."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot maintain WL or canal patency after separation"
+      then = "Stop and refer early rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always take pre-operative radiographs from multiple angles.",
+        "Use smaller files initially to negotiate curvatures.",
+        "Consider using NiTi files with controlled memory.",
+        "Patience is essential - canines require significant time."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-first-premolar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower First Premolar"
+  abbr = "L4"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; usually 1 canal but may have 2."
+    canals = "Usually 1 canal; 20-25% have 2 canals."
+    typical_difficulty = "Easy to moderate"
+    key_risks = [
+      "Missing second canal when present",
+      "Root curvature leading to ledging",
+      "Perforation risk if over-prepared",
+      "C-shaped canal configuration in rare cases"
+    ]
+    student_focus = [
+      "Thorough canal orifice exploration",
+      "Proper radiographic interpretation",
+      "Conservative preparation techniques",
+      "Recognition of anatomical variations"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on occlusal surface.",
+        "Unroof chamber; search carefully for additional canals.",
+        "Refine outline to locate all canals before proceeding."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal (75-80% of cases).",
+        "May have 2 canals (buccal and lingual).",
+        "Root often curved mesially in apical third.",
+        "Rare C-shaped configuration possible."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for root curvature.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be aware of mesial root curvature.",
+        "Use conservative taper to avoid transportation.",
+        "Frequent irrigation and recapitulation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph.",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always explore for second canal even if less common.",
+        "Take radiograph from multiple angles if anatomy unclear.",
+        "Be conservative in preparation - single canal cases are common.",
+        "Watch for mesial curvature during preparation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-second-premolar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Second Premolar"
+  abbr = "L5"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Ovoid access; usually 1 canal but may have 2."
+    canals = "Usually 1 canal; 10-15% have 2 canals."
+    typical_difficulty = "Easy"
+    key_risks = [
+      "Missing second canal when present",
+      "Root curvature leading to ledging",
+      "Perforation risk if over-prepared",
+      "Apical transportation"
+    ]
+    student_focus = [
+      "Thorough canal orifice exploration",
+      "Proper radiographic interpretation",
+      "Conservative preparation techniques",
+      "Recognition of anatomical variations"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on occlusal surface.",
+        "Unroof chamber; search carefully for additional canals.",
+        "Refine outline to locate all canals before proceeding."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 1 canal (85-90% of cases).",
+        "May have 2 canals (buccal and lingual).",
+        "Root often straight or slightly curved.",
+        "Single canal usually wider than L4."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for root curvature.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Usually straightforward due to straight roots.",
+        "Use conservative taper to avoid transportation.",
+        "Frequent irrigation and recapitulation."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph.",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always explore for second canal even if rare.",
+        "Take radiograph from multiple angles if anatomy unclear.",
+        "Be conservative - single canal cases are very common.",
+        "Usually straightforward due to straight anatomy."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-first-molar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower First Molar"
+  abbr = "L6"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Rectangular access; mesial: 2 canals, distal: 1-2 canals."
+    canals = "Usually 3 canals; may have 4 canals (2 mesial, 2 distal)."
+    typical_difficulty = "Difficult"
+    key_risks = [
+      "Missing second mesial canal (most common error)",
+      "Missing second distal canal when present",
+      "Perforation risk in furcation area",
+      "C-shaped canal configuration in rare cases"
+    ]
+    student_focus = [
+      "Second mesial canal detection",
+      "Distal canal exploration",
+      "Furcation anatomy awareness",
+      "Systematic canal exploration"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on occlusal surface; rectangular outline.",
+        "Unroof chamber; locate mesial and distal canals.",
+        "Explore for additional canals in both mesial and distal."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 3 canals: 2 mesial (ML, MB), 1 distal (D).",
+        "May have 4 canals: 2 mesial, 2 distal (DB, DL).",
+        "Mesial canals often curved and difficult.",
+        "Distal canals usually straighter but may be two separate."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for canal curvature.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be extra careful with mesial canal negotiation.",
+        "Use smaller files initially for mesial canals.",
+        "Frequent irrigation to remove debris."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph.",
+        "Obturate all canals; ensure complete fill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always assume 2 mesial canals until proven otherwise.",
+        "Explore distal for second canal if anatomy suggests.",
+        "Use DG16 explorer to search for additional canals.",
+        "Be patient - molars require significant time and skill."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
+  [[params.teeth]]
+  id = "md-second-molar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Second Molar"
+  abbr = "L7"
+  status = "active"
+  last_updated = "2026-01-27"
+  version = "v0.1"
+
+    [params.teeth.fast]
+    access_cavity = "Rectangular access; similar to L6 but often fewer canals."
+    canals = "Usually 3 canals; may have C-shaped configuration."
+    typical_difficulty = "Difficult"
+    key_risks = [
+      "C-shaped canal configuration",
+      "Root fusion making canal separation difficult",
+      "Perforation risk in furcation area",
+      "Complex root morphology"
+    ]
+    student_focus = [
+      "Recognition of C-shaped anatomy",
+      "Root fusion pattern awareness",
+      "Proper access for fused roots",
+      "Systematic canal exploration"
+    ]
+
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry centered on occlusal surface; rectangular outline.",
+        "Unroof chamber; locate mesial and distal canals.",
+        "Search for C-shaped configuration if suspected."
+      ]
+
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Usually 3 canals: 2 mesial, 1 distal.",
+        "May have C-shaped configuration (10-30% in some populations).",
+        "Root fusion common (mesial-distal or all three).",
+        "Canals may merge apically in fused roots."
+      ]
+
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use apex locator for each canal separately.",
+        "Confirm with radiograph; check for root fusion.",
+        "Re-check WL after coronal flaring."
+      ]
+
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Prepare all located canals simultaneously.",
+        "Be conservative due to potential root fusion.",
+        "Watch for sudden merging of canals.",
+        "Special techniques needed for C-shaped canals."
+      ]
+
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "steps"
+
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals thoroughly with paper points.",
+        "Fit master cones for each canal separately.",
+        "Verify cone fit with radiograph (check for fusion).",
+        "Special obturation techniques for C-shaped canals."
+      ]
+
+    [[params.teeth.topics]]
+    id = "broken-file"
+    title = "Broken file / instrument separation"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "if_then"
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the coronal third"
+      then = "Stop; take radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the middle third"
+      then = "Assess retrievability; consider bypass if other canals patent."
+
+      [[params.teeth.topics.rules]]
+      if = "Instrument separates in the apical third"
+      then = "Document thoroughly; bypass often preferred; consider referral."
+
+      [[params.teeth.topics.rules]]
+      if = "You cannot locate or maintain patency in any canal"
+      then = "Stop and refer rather than risking perforation."
+
+    [[params.teeth.topics]]
+    id = "medications"
+    title = "Medications (fast)"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+        "Antibiotics only for systemic involvement/spreading infection.",
+        "Document allergies and medical history thoroughly."
+      ]
+
+    [[params.teeth.topics]]
+    id = "tips"
+    title = "Tips & tricks"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "bullets"
+
+      [params.teeth.topics.content]
+      bullets = [
+        "Always check for C-shaped configuration.",
+        "Take radiograph from multiple angles to assess fusion.",
+        "Be conservative - root fusion is common.",
+        "Consider CBCT for complex C-shaped cases if available."
+      ]
+
+    [[params.teeth.topics]]
+    id = "references"
+    title = "References"
+    last_updated = "2026-01-27"
+    version = "v1.0"
+    type = "references"
+
+      [[params.teeth.topics.refs]]
+      citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+      url = "https://www.e-s-e.eu/"
+      year = 2020
+
+      [[params.teeth.topics.refs]]
+      citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+      url = ""
+      year = 2021
+
