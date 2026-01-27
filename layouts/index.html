@@ -475,6 +475,7 @@
   </script>
 </head>
 <body>
+  {{ $page := . }}
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header>
@@ -495,7 +496,6 @@
   </header>
 
   <main id="main">
-    {{ $page := . }}
     {{/* Render sections in config-defined order */}}
     {{ range $page.Site.Params.page_sections }}
       {{ $sid := .id }}
