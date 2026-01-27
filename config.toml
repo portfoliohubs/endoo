@@ -13,15 +13,20 @@ brand_short = "CDP"
 
 [params.theme]
 max_width_ch = 72
-bg = "#ffffff"
-surface = "#f7f8fa"
-text = "#0f172a"
-muted_text = "#475569"
+bg = "#f8fafc"
+surface = "#ffffff"
+text = "#1e293b"
+muted_text = "#64748b"
 border = "#e2e8f0"
-brand = "#1e5aa8"
-brand_2 = "#0f766e"
-warning = "#b45309"
-danger = "#b91c1c"
+brand = "#0066cc"
+brand_2 = "#00a86b"
+warning = "#f59e0b"
+danger = "#dc2626"
+info = "#3b82f6"
+success = "#22c55e"
+accent = "#8b5cf6"
+teal = "#14b8a6"
+orange = "#fb923c"
 
 [params.community]
 report_issue_label = "Report an Issue"
