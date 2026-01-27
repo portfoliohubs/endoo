@@ -17,20 +17,20 @@
     */
 
     :root {
-      --bg: {{ .Site.Params.theme.bg }};
-      --surface: {{ .Site.Params.theme.surface }};
-      --text: {{ .Site.Params.theme.text }};
-      --muted: {{ .Site.Params.theme.muted_text }};
-      --border: {{ .Site.Params.theme.border }};
-      --brand: {{ .Site.Params.theme.brand }};
-      --brand2: {{ .Site.Params.theme.brand_2 }};
-      --warning: {{ .Site.Params.theme.warning }};
-      --danger: {{ .Site.Params.theme.danger }};
-      --info: {{ .Site.Params.theme.info }};
-      --success: {{ .Site.Params.theme.success }};
-      --accent: {{ .Site.Params.theme.accent }};
-      --teal: {{ .Site.Params.theme.teal }};
-      --orange: {{ .Site.Params.theme.orange }};
+      --bg: linear-gradient(135deg, #f0f9ff, #e0f2fe, #f0fdfa);
+      --surface: linear-gradient(135deg, #ffffff, #f8fafc, #fafafa);
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #cbd5e1;
+      --brand: #0066cc;
+      --brand2: #00a86b;
+      --warning: #f59e0b;
+      --danger: #dc2626;
+      --info: #3b82f6;
+      --success: #22c55e;
+      --accent: #8b5cf6;
+      --teal: #14b8a6;
+      --orange: #fb923c;
 
       --maxw: {{ .Site.Params.theme.max_width_ch | default 72 }}ch;
 
@@ -91,7 +91,7 @@
       position: sticky;
       top: 0;
       z-index: 900;
-      background: rgba(255,255,255,0.92);
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
       backdrop-filter: saturate(120%) blur(8px);
       border-bottom: 1px solid var(--border);
     }
@@ -174,7 +174,7 @@
     .muted { color: var(--muted); }
 
     .card {
-      background: var(--surface);
+      background: linear-gradient(135deg, #ffffff, #f8fafc, #fafafa);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -193,7 +193,7 @@
     .hero {
       padding: var(--s5) var(--s4);
       border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(0,102,204,0.03), rgba(0,168,107,0.02));
+      background: linear-gradient(135deg, rgba(0,102,204,0.05), rgba(0,168,107,0.03), rgba(139,92,246,0.02));
       border: 1px solid var(--border);
       text-align: center;
     }
@@ -212,7 +212,7 @@
       padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      background: #fff;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
       color: var(--text);
       font-weight: 800;
       font-size: 14px;
@@ -272,7 +272,7 @@
       padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      background: #fff;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
       font-weight: 900;
       cursor: pointer;
     }
@@ -298,7 +298,7 @@
       padding: 12px 12px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      background: #fff;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
       cursor: pointer;
       font-weight: 900;
       font-size: 14px;
@@ -375,7 +375,7 @@
 
     .content-block {
       padding: var(--s4);
-      background: #fff;
+      background: linear-gradient(135deg, #ffffff, #f8fafc, #fafafa);
       border: 1px solid var(--border);
       border-radius: var(--radius);
     }
@@ -394,7 +394,7 @@
     .fact {
       padding: 12px 12px;
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, #fff, rgba(0,102,204,0.02));
+      background: linear-gradient(135deg, #ffffff, #f0f9ff, #f8fafc);
       border-radius: 12px;
       min-width: 0;
       transition: all 0.2s ease;
@@ -428,7 +428,7 @@
     details.topic {
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: linear-gradient(135deg, #fff, rgba(0,168,107,0.02));
+      background: linear-gradient(135deg, #ffffff, #f0fdfa, #f8fafc);
       padding: 0;
       overflow: clip;
       transition: all 0.2s ease;
@@ -545,6 +545,9 @@
         <section id="hero" aria-labelledby="hero-title">
           <div class="hero">
             <h1 id="hero-title" style="font-size: clamp(22px, 3.5vw, 28px); margin: 0;">Clear, reliable guidance for every tooth.</h1>
+            <div style="margin-top: var(--s4);">
+              <a class="btn primary" href="#protocol" style="font-size: 16px; padding: 14px 20px;">Select a tooth →</a>
+            </div>
           </div>
         </section>
       {{ end }}
@@ -557,8 +560,8 @@
 
           <div class="container">
             <aside class="sidebar" aria-label="Tooth selector">
-              <div class="sidebar-inner card card-pad">
-                <h2>Choose tooth</h2>
+              <div class="sidebar-inner card card-pad" style="background: linear-gradient(135deg, #ffffff, #f0f9ff, #e0f2fe); border: 2px solid var(--brand);">
+                <h2 style="color: var(--brand);">🦷 Choose tooth</h2>
                 <p class="small muted" style="margin-top: 0">1) Arch  2) Tooth</p>
 
                 <div class="seg" role="group" aria-label="Arch selector">
@@ -687,30 +690,12 @@
         </section>
       {{ end }}
 
-      {{ if eq $sid "community" }}
-        <section id="community" aria-labelledby="community-title">
-          <h2 id="community-title">Community</h2>
-          <div class="card card-pad">
-            <p class="muted">If something is unclear or unsafe, report it. If you have a practical tip, suggest it.</p>
-            <div class="pill-row">
-              <a class="btn" href="{{ $page.Site.Params.community.report_issue_href }}">{{ $page.Site.Params.community.report_issue_label }}</a>
-              <a class="btn" href="{{ $page.Site.Params.community.suggest_tip_href }}">{{ $page.Site.Params.community.suggest_tip_label }}</a>
-            </div>
-          </div>
-        </section>
-      {{ end }}
 
       {{ if eq $sid "contact" }}
         <section id="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">{{ $page.Site.Params.contact.section_title }}</h2>
+          <h2 id="contact-title">Contact</h2>
           <div class="card card-pad">
-            <p class="muted">{{ $page.Site.Params.contact.intro }}</p>
-            <div class="pill-row">
-              <a class="btn primary" href="{{ $page.Site.Params.contact.email_href }}">{{ $page.Site.Params.contact.email_label }}</a>
-              <a class="btn" href="{{ $page.Site.Params.contact.whatsapp_href }}" rel="noopener" target="_blank">{{ $page.Site.Params.contact.whatsapp_label }}</a>
-            </div>
-            <div class="divider"></div>
-            <p class="small muted" style="margin: 0">{{ $page.Site.Params.monetization.cta_note }}</p>
+            <p class="muted">Professional dental protocols built for clinical excellence.</p>
           </div>
         </section>
       {{ end }}
@@ -719,9 +704,6 @@
     <footer>
       <p class="small" style="margin-bottom: 10px">{{ $page.Site.Params.footer.line_1 }}</p>
       <p class="small" style="margin-top: 0">{{ $page.Site.Params.footer.line_2 }}</p>
-      <p class="small" style="margin-top: var(--s4)">
-        <a href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
-      </p>
     </footer>
   </main>
 

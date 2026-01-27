@@ -28,27 +28,6 @@ accent = "#8b5cf6"
 teal = "#14b8a6"
 orange = "#fb923c"
 
-[params.community]
-report_issue_label = "Report an Issue"
-report_issue_href = "mailto:editor@yourdomain.com?subject=Protocol%20Issue%20Report&body=Procedure:%20%0ASection:%20%0AWhat%20seems%20incorrect:%20%0ASupporting%20reference%20(optional):%20"
-suggest_tip_label = "Suggest a Tip"
-suggest_tip_href = "mailto:editor@yourdomain.com?subject=Clinical%20Tip%20Suggestion&body=Procedure:%20%0ATip:%20%0AWhen%20it%20applies:%20%0A(Optional)%20Evidence:%20"
-
-[params.monetization]
-cta_label = "Need a similar professional website for your clinic?"
-cta_target_section = "contact"
-cta_note = "This platform was built using a specialized dental website system."
-
-[params.contact]
-section_title = "Contact"
-intro = "If you want a similar high-trust clinical website for your practice or education project, reach out."
-
-email_label = "Email"
-email_href = "mailto:hello@yourdomain.com"
-
-whatsapp_label = "WhatsApp"
-whatsapp_href = "https://wa.me/000000000000"
-
 [params.footer]
 line_1 = "Educational reference — not a substitute for clinical judgment."
 line_2 = "Content is intended for licensed dental professionals and trainees."
@@ -57,10 +36,6 @@ line_2 = "Content is intended for licensed dental professionals and trainees."
 [[params.page_sections]]
 id = "protocol"
 label = "Protocols"
-
-[[params.page_sections]]
-id = "community"
-label = "Community"
 
 [[params.page_sections]]
 id = "contact"
