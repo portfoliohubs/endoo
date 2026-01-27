@@ -438,7 +438,7 @@ specialty_id = "endodontics"
 arch = "maxillary"
 name = "Upper Lateral Incisor"
 abbr = "U2"
-status = "coming_soon"
+status = "active"
 last_updated = "2026-01-27"
 version = "v0.1"
 
