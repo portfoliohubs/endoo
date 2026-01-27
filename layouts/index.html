@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="{{ .Site.Params.site_language | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ .Site.Params.site_description }}">
+  <title>{{ .Site.Title }}</title>
+
+  {{ hugo.Generator }}
+
+  <style>
+    /* Architecture note:
+       - Single-file Hugo layout renders ALL content from config.toml.
+       - CSS + JS are embedded to keep the repository constrained to 3 files.
+       - UI is deliberately quiet (no distracting animations) to minimize cognitive load.
+    */
+
+    :root {
+      --bg: {{ .Site.Params.theme.bg }};
+      --surface: {{ .Site.Params.theme.surface }};
+      --text: {{ .Site.Params.theme.text }};
+      --muted: {{ .Site.Params.theme.muted_text }};
+      --border: {{ .Site.Params.theme.border }};
+      --brand: {{ .Site.Params.theme.brand }};
+      --brand2: {{ .Site.Params.theme.brand_2 }};
+      --warning: {{ .Site.Params.theme.warning }};
+      --danger: {{ .Site.Params.theme.danger }};
+
+      --maxw: {{ .Site.Params.theme.max_width_ch | default 72 }}ch;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 24px;
+      --space-5: 36px;
+      --space-6: 52px;
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: var(--space-4);
+      top: var(--space-4);
+      width: auto;
+      height: auto;
+      padding: var(--space-2) var(--space-3);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(120%) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: calc(var(--maxw) + 44ch);
+      margin: 0 auto;
+      padding: var(--space-3) var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .brand strong {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--text);
+      border: 1px solid transparent;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a[aria-current="true"] {
+      border-color: var(--border);
+      background: var(--surface);
+    }
+
+    main {
+      max-width: calc(var(--maxw) + 44ch);
+      margin: 0 auto;
+      padding: var(--space-6) var(--space-4);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+
+    @media (min-width: 980px) {
+      .container {
+        grid-template-columns: minmax(280px, 34ch) minmax(0, var(--maxw));
+        align-items: start;
+      }
+    }
+
+    section {
+      scroll-margin-top: 96px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-pad {
+      padding: var(--space-4);
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 var(--space-2) 0;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+
+    h1 { font-size: clamp(26px, 4vw, 36px); }
+    h2 { font-size: 22px; margin-top: var(--space-5); }
+    h3 { font-size: 16px; margin-top: var(--space-4); }
+
+    p { margin: 0 0 var(--space-3) 0; max-width: var(--maxw); }
+
+    .muted { color: var(--muted); }
+
+    .hero {
+      padding: var(--space-5) var(--space-4);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(30,90,168,0.08), rgba(15,118,110,0.04));
+      border: 1px solid var(--border);
+    }
+
+    .hero p { font-size: 16px; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: var(--space-3);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
+    }
+
+    .btn.secondary {
+      background: rgba(15,118,110,0.08);
+      border-color: rgba(15,118,110,0.22);
+      color: var(--text);
+    }
+
+    .btn:focus {
+      outline: 3px solid rgba(30,90,168,0.22);
+      outline-offset: 2px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: var(--space-5) 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+
+    @media (min-width: 720px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+
+    .specialty-card {
+      padding: var(--space-4);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .specialty-card[aria-pressed="true"] {
+      border-color: rgba(30,90,168,0.35);
+      box-shadow: 0 0 0 3px rgba(30,90,168,0.10);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      background: #fff;
+    }
+
+    .badge.active { color: var(--brand2); border-color: rgba(15,118,110,0.35); }
+    .badge.soon { color: var(--warning); border-color: rgba(180,83,9,0.35); }
+
+    .sidebar {
+      position: relative;
+    }
+
+    @media (min-width: 980px) {
+      .sidebar-inner {
+        position: sticky;
+        top: 92px;
+      }
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .proc-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .proc-item button {
+      width: 100%;
+      text-align: left;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .proc-item button[aria-pressed="true"] {
+      border-color: rgba(30,90,168,0.35);
+      box-shadow: 0 0 0 3px rgba(30,90,168,0.10);
+    }
+
+    .proc-item .meta {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .procedure {
+      display: none;
+    }
+
+    .procedure[data-active="true"] {
+      display: block;
+    }
+
+    .procedure header {
+      position: static;
+      background: transparent;
+      border: 0;
+      backdrop-filter: none;
+    }
+
+    .proc-head {
+      display: grid;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+
+    .proc-head .summary {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .meta-row code {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: var(--space-3) 0 var(--space-4) 0;
+    }
+
+    .jump a {
+      display: inline-flex;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .jump a[data-active="true"] {
+      border-color: rgba(30,90,168,0.35);
+      box-shadow: 0 0 0 3px rgba(30,90,168,0.10);
+    }
+
+    .content-block {
+      padding: var(--space-4);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    ul, ol {
+      margin: 0 0 var(--space-3) 1.2em;
+      padding: 0;
+      max-width: var(--maxw);
+    }
+
+    li { margin: 0 0 8px 0; }
+
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    footer {
+      margin-top: var(--space-6);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .small { font-size: 13px; }
+
+    .notice {
+      border-left: 4px solid rgba(30,90,168,0.45);
+      padding: 12px 12px;
+      background: rgba(30,90,168,0.06);
+      border-radius: 12px;
+      color: var(--text);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": {{ .Site.Title | jsonify }},
+      "description": {{ .Site.Params.site_description | jsonify }},
+      "url": {{ .Site.BaseURL | jsonify }},
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Dental professionals and trainees"
+      },
+      "about": {
+        "@type": "MedicalSpecialty",
+        "name": "Endodontics"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <strong>{{ .Site.Params.site_name }}</strong>
+        <small class="muted">{{ .Site.Params.brand_short }}</small>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          {{ range $page.Site.Params.page_sections }}
+            <li><a class="navlink" href="#{{ .id }}">{{ .label }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ $page := . }}
+    {{/* Render sections in config-defined order */}}
+    {{ range $page.Site.Params.page_sections }}
+      {{ $sid := .id }}
+
+      {{ if eq $sid "hero" }}
+        <section id="hero" aria-labelledby="hero-title">
+          <div class="hero">
+            <div class="kicker">Clinical reference platform</div>
+            <h1 id="hero-title">{{ $page.Site.Params.site_tagline }}</h1>
+            <p class="muted">{{ $page.Site.Params.site_description }}</p>
+            <div class="pill-row">
+              <a class="btn primary" href="#protocol">Open protocols</a>
+              <a class="btn secondary" href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "specialties" }}
+        <section id="specialties" aria-labelledby="specialties-title">
+          <h2 id="specialties-title">Specialties</h2>
+          <p class="muted">Choose a specialty. Only active specialties show protocols.</p>
+
+          <div class="grid-2" role="group" aria-label="Specialty selector">
+            {{ range $page.Site.Params.specialties }}
+              {{ $status := .status | default "coming_soon" }}
+              <button
+                class="specialty-card"
+                type="button"
+                data-specialty-id="{{ .id }}"
+                aria-pressed="false"
+                {{ if ne $status "active" }}disabled{{ end }}
+                aria-disabled="{{ if ne $status "active" }}true{{ else }}false{{ end }}"
+              >
+                <div class="meta-row">
+                  <span class="badge {{ if eq $status "active" }}active{{ else }}soon{{ end }}">
+                    {{ if eq $status "active" }}Active{{ else }}Coming soon{{ end }}
+                  </span>
+                  <span class="sr-only">Status: {{ $status }}</span>
+                </div>
+                <h3 style="margin-top: 12px">{{ .name }}</h3>
+                <p class="muted" style="margin: 0">{{ .description }}</p>
+              </button>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "protocol" }}
+        <section id="protocol" aria-labelledby="protocol-title">
+          <h2 id="protocol-title">Protocols</h2>
+          <p class="muted">Pick a procedure. Use the jump buttons for fast in-chair reference.</p>
+
+          <div class="container">
+            <aside class="sidebar" aria-label="Procedure list">
+              <div class="sidebar-inner card card-pad">
+                <h2>Procedures</h2>
+                <p class="small muted" style="margin-top: 0">Filtered by specialty.</p>
+
+                <ul class="proc-list">
+                  {{ range $page.Site.Params.procedures }}
+                    <li class="proc-item" data-specialty-id="{{ .specialty_id }}" data-procedure-id="{{ .id }}">
+                      <button type="button" aria-pressed="false" data-select-procedure="{{ .id }}">
+                        {{ .short | default .title }}
+                        <span class="meta">Updated {{ .last_updated }} · {{ .version }}</span>
+                      </button>
+                    </li>
+                  {{ end }}
+                </ul>
+
+                <div class="divider"></div>
+
+                <div class="notice small">
+                  <strong>Clinical note:</strong> This platform is a reference aid. Confirm diagnosis, isolation, and safety steps for every case.
+                </div>
+              </div>
+            </aside>
+
+            <div>
+              {{ range $page.Site.Params.procedures }}
+                {{ $proc := . }}
+                <article class="procedure" data-procedure-id="{{ .id }}" data-specialty-id="{{ .specialty_id }}" data-active="false" aria-labelledby="{{ .id }}-title">
+                  <div class="card card-pad">
+                    <div class="proc-head">
+                      <div class="kicker">{{ .specialty_id | title }}</div>
+                      <h2 id="{{ .id }}-title" style="margin-top: 6px">{{ .title }}</h2>
+                      <p class="summary">{{ .summary }}</p>
+
+                      <div class="meta-row" aria-label="Document metadata">
+                        <code>Last updated: {{ .last_updated }}</code>
+                        <code>Version: {{ .version }}</code>
+                        {{ if .reviewed_by }}
+                          <code>Reviewed by: {{ .reviewed_by }}</code>
+                        {{ end }}
+                      </div>
+
+                      <div class="pill-row" aria-label="Community actions">
+                        <a class="btn" href="{{ $page.Site.Params.community.report_issue_href }}">{{ $page.Site.Params.community.report_issue_label }}</a>
+                        <a class="btn" href="{{ $page.Site.Params.community.suggest_tip_href }}">{{ $page.Site.Params.community.suggest_tip_label }}</a>
+                      </div>
+
+                      <div class="jump" data-jump-for="{{ .id }}" aria-label="Jump to section">
+                        {{ range .sections }}
+                          <a href="#{{ $proc.id }}-{{ .id }}" data-jump="{{ $proc.id }}-{{ .id }}">{{ .title }}</a>
+                        {{ end }}
+                      </div>
+                    </div>
+
+                    {{ range .sections }}
+                      <section class="content-block" id="{{ $proc.id }}-{{ .id }}" data-proc-section="{{ $proc.id }}" data-section-id="{{ $proc.id }}-{{ .id }}" aria-labelledby="{{ $proc.id }}-{{ .id }}-h">
+                        <div class="meta-row" style="justify-content: space-between; gap: 12px;">
+                          <h3 id="{{ $proc.id }}-{{ .id }}-h" style="margin: 0">{{ .title }}</h3>
+                          <div class="small muted">
+                            <span>Updated {{ .last_updated }}</span>
+                            <span aria-hidden="true"> · </span>
+                            <span>{{ .version }}</span>
+                          </div>
+                        </div>
+
+                        {{ if eq .type "structured" }}
+                          <h3>Indications</h3>
+                          <ul>
+                            {{ range .content.indications }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Contraindications</h3>
+                          <ul>
+                            {{ range .content.contraindications }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Case selection</h3>
+                          <ul>
+                            {{ range .content.case_selection }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                        {{ end }}
+
+                        {{ if eq .type "diagnosis" }}
+                          <h3>Clinical tests</h3>
+                          <ul>
+                            {{ range .content.clinical_tests }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Radiographic requirements</h3>
+                          <ul>
+                            {{ range .content.radiographic_requirements }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Differential diagnosis</h3>
+                          <ul>
+                            {{ range .content.differential_diagnosis }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                        {{ end }}
+
+                        {{ if eq .type "steps" }}
+                          <ol>
+                            {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
+                          </ol>
+                          {{ if .content.execution_notes }}
+                            <h3>Execution notes</h3>
+                            <ul>
+                              {{ range .content.execution_notes }}<li>{{ . }}</li>{{ end }}
+                            </ul>
+                          {{ end }}
+                        {{ end }}
+
+                        {{ if eq .type "materials" }}
+                          <h3>Required tools</h3>
+                          <ul>
+                            {{ range .content.required_tools }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Alternatives</h3>
+                          <ul>
+                            {{ range .content.alternatives }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Budget vs premium</h3>
+                          <ul>
+                            {{ range .content.budget_vs_premium }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                        {{ end }}
+
+                        {{ if eq .type "bullets" }}
+                          <ul>
+                            {{ range .content.bullets }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                        {{ end }}
+
+                        {{ if eq .type "if_then" }}
+                          <ul>
+                            {{ range .rules }}
+                              <li><strong>IF</strong> {{ .if }} <strong>THEN</strong> {{ .then }}</li>
+                            {{ end }}
+                          </ul>
+                        {{ end }}
+
+                        {{ if eq .type "postop" }}
+                          <h3>Instructions</h3>
+                          <ul>
+                            {{ range .content.instructions }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                          <h3>Follow-up logic</h3>
+                          <ul>
+                            {{ range .content.follow_up_logic }}<li>{{ . }}</li>{{ end }}
+                          </ul>
+                        {{ end }}
+
+                        {{ if eq .type "references" }}
+                          <ul>
+                            {{ range .refs }}
+                              <li>
+                                {{ .citation }}
+                                {{ if .year }}<span class="muted">({{ .year }})</span>{{ end }}
+                                {{ if .url }} — <a href="{{ .url }}" rel="noopener" target="_blank">Source</a>{{ end }}
+                              </li>
+                            {{ end }}
+                          </ul>
+                        {{ end }}
+                      </section>
+                    {{ end }}
+                  </div>
+                </article>
+              {{ end }}
+
+              <noscript>
+                <div class="card card-pad" style="margin-top: var(--space-4)">
+                  <strong>Note:</strong> JavaScript is disabled. You can still scroll and read, but specialty/procedure switching will be limited.
+                </div>
+              </noscript>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "community" }}
+        <section id="community" aria-labelledby="community-title">
+          <h2 id="community-title">Community & Trust</h2>
+
+          <div class="card card-pad">
+            <p class="muted">This is a living clinical reference. If you see a gap, ambiguity, or an unsafe recommendation, report it.</p>
+
+            <div class="pill-row">
+              <a class="btn" href="{{ $page.Site.Params.community.report_issue_href }}">{{ $page.Site.Params.community.report_issue_label }}</a>
+              <a class="btn" href="{{ $page.Site.Params.community.suggest_tip_href }}">{{ $page.Site.Params.community.suggest_tip_label }}</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="small muted" style="margin: 0">Every protocol section shows its own <strong>last updated</strong> date and <strong>version</strong> to support traceability.</p>
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if eq $sid "contact" }}
+        <section id="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">{{ $page.Site.Params.contact.section_title }}</h2>
+          <div class="card card-pad">
+            <p class="muted">{{ $page.Site.Params.contact.intro }}</p>
+
+            <div class="pill-row">
+              <a class="btn primary" href="{{ $page.Site.Params.contact.email_href }}">{{ $page.Site.Params.contact.email_label }}</a>
+              <a class="btn" href="{{ $page.Site.Params.contact.whatsapp_href }}" rel="noopener" target="_blank">{{ $page.Site.Params.contact.whatsapp_label }}</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="small muted" style="margin: 0">{{ $page.Site.Params.monetization.cta_note }}</p>
+          </div>
+        </section>
+      {{ end }}
+    {{ end }}
+
+    <footer>
+      <p class="small" style="margin-bottom: 10px">{{ $page.Site.Params.footer.line_1 }}</p>
+      <p class="small" style="margin-top: 0">{{ $page.Site.Params.footer.line_2 }}</p>
+      <p class="small" style="margin-top: var(--space-4)">
+        <a href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    // Architecture note:
+    // - Minimal JS: procedure filtering + scroll-spy + URL hash persistence.
+    // - No external dependencies.
+
+    (function () {
+      const qs = (sel, root = document) => root.querySelector(sel);
+      const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+      const specialtyButtons = qsa('.specialty-card[data-specialty-id]');
+      const procItems = qsa('.proc-item');
+      const procButtons = qsa('[data-select-procedure]');
+      const procedures = qsa('.procedure');
+      const navLinks = qsa('.navlink');
+
+      const activeSpecialtyFromConfig = (function () {
+        const firstActive = specialtyButtons.find(b => !b.disabled);
+        return firstActive ? firstActive.getAttribute('data-specialty-id') : null;
+      })();
+
+      function setActiveNav() {
+        const sections = navLinks
+          .map(a => ({ a, id: (a.getAttribute('href') || '').replace('#', '') }))
+          .filter(x => x.id);
+
+        const current = sections
+          .map(x => ({...x, el: document.getElementById(x.id)}))
+          .filter(x => x.el)
+          .sort((a, b) => a.el.getBoundingClientRect().top - b.el.getBoundingClientRect().top)
+          .find(x => x.el.getBoundingClientRect().top >= -120) || sections[0];
+
+        navLinks.forEach(a => a.setAttribute('aria-current', 'false'));
+        if (current && current.a) current.a.setAttribute('aria-current', 'true');
+      }
+
+      function setSpecialty(id) {
+        specialtyButtons.forEach(b => {
+          const match = b.getAttribute('data-specialty-id') === id;
+          b.setAttribute('aria-pressed', match ? 'true' : 'false');
+        });
+
+        procItems.forEach(li => {
+          const show = li.getAttribute('data-specialty-id') === id;
+          li.style.display = show ? '' : 'none';
+        });
+
+        procedures.forEach(p => {
+          const show = p.getAttribute('data-specialty-id') === id;
+          if (!show) p.setAttribute('data-active', 'false');
+        });
+      }
+
+      function setProcedure(procId, pushHash) {
+        let found = false;
+
+        procButtons.forEach(b => {
+          const match = b.getAttribute('data-select-procedure') === procId;
+          b.setAttribute('aria-pressed', match ? 'true' : 'false');
+        });
+
+        procedures.forEach(p => {
+          const match = p.getAttribute('data-procedure-id') === procId;
+          p.setAttribute('data-active', match ? 'true' : 'false');
+          if (match) found = true;
+        });
+
+        if (found && pushHash) {
+          // Persist selected procedure without breaking section anchors.
+          history.replaceState(null, '', '#protocol|proc=' + encodeURIComponent(procId));
+        }
+
+        // Refresh scroll-spy observers for the active procedure
+        setupProcedureScrollSpy(procId);
+      }
+
+      let sectionObserver = null;
+
+      function setupProcedureScrollSpy(procId) {
+        if (sectionObserver) sectionObserver.disconnect();
+
+        const jump = qs('[data-jump-for="' + CSS.escape(procId) + '"]');
+        if (!jump) return;
+
+        const jumpLinks = qsa('a[data-jump]', jump);
+        const sections = qsa('[data-proc-section="' + CSS.escape(procId) + '"]');
+
+        function markActive(sectionId) {
+          jumpLinks.forEach(a => {
+            const isActive = a.getAttribute('data-jump') === sectionId;
+            a.setAttribute('data-active', isActive ? 'true' : 'false');
+          });
+        }
+
+        sectionObserver = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter(e => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (visible && visible.target) {
+            markActive(visible.target.getAttribute('data-section-id'));
+          }
+        }, { root: null, threshold: [0.15, 0.25, 0.4], rootMargin: '-10% 0px -70% 0px' });
+
+        sections.forEach(s => sectionObserver.observe(s));
+      }
+
+      function parseHash() {
+        // Supported:
+        // - #protocol|proc=<id>
+        // - #<procId>-<sectionId> (deep link to a procedure section)
+        // Fallback: no hash -> defaults.
+        const h = (location.hash || '').replace('#', '');
+        const parts = h.split('|');
+        const procPart = parts.find(p => p.startsWith('proc='));
+        if (procPart) {
+          return { procId: decodeURIComponent(procPart.replace('proc=', '')) };
+        }
+
+        if (h) {
+          const known = procedures.map(p => p.getAttribute('data-procedure-id')).filter(Boolean);
+          const match = known.find(id => h === id || h.startsWith(id + '-'));
+          if (match) return { procId: match };
+        }
+
+        return { procId: null };
+      }
+
+      // Wire specialty buttons
+      specialtyButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-specialty-id');
+          if (!id || btn.disabled) return;
+
+          setSpecialty(id);
+          const firstVisibleProc = procItems.find(li => li.style.display !== 'none');
+          const firstProcId = firstVisibleProc ? firstVisibleProc.getAttribute('data-procedure-id') : null;
+          if (firstProcId) setProcedure(firstProcId, true);
+        });
+      });
+
+      // Wire procedure buttons
+      procButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const procId = btn.getAttribute('data-select-procedure');
+          if (!procId) return;
+          setProcedure(procId, true);
+          const activeArticle = qs('.procedure[data-procedure-id="' + CSS.escape(procId) + '"]');
+          if (activeArticle) activeArticle.scrollIntoView({ block: 'start' });
+        });
+      });
+
+      // Scroll spy for top nav
+      document.addEventListener('scroll', setActiveNav, { passive: true });
+
+      // Init state
+      const { procId } = parseHash();
+      const initialSpecialty = activeSpecialtyFromConfig;
+      if (initialSpecialty) setSpecialty(initialSpecialty);
+
+      // Choose initial procedure:
+      // - hash proc
+      // - first visible procedure
+      const firstVisibleProc = procItems.find(li => li.style.display !== 'none');
+      const fallbackProcId = firstVisibleProc ? firstVisibleProc.getAttribute('data-procedure-id') : null;
+      setProcedure(procId || fallbackProcId, true);
+
+      setActiveNav();
+    })();
+  </script>
+</body>
+</html>

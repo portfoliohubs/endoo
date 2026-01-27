@@ -1,0 +1,298 @@
+baseURL = "/"
+languageCode = "en"
+title = "Clinical Dental Protocols"
+enableRobotsTXT = true
+
+[params]
+site_name = "Clinical Dental Protocols"
+site_tagline = "Clinically accurate, step-by-step dental protocols — built by a dentist, for dentists."
+site_description = "Evidence-based, step-by-step dental protocols designed for fast clinical reference. Endodontics first, with future expansion across specialties."
+site_language = "en"
+
+brand_short = "CDP"
+
+[params.theme]
+max_width_ch = 72
+bg = "#ffffff"
+surface = "#f7f8fa"
+text = "#0f172a"
+muted_text = "#475569"
+border = "#e2e8f0"
+brand = "#1e5aa8"
+brand_2 = "#0f766e"
+warning = "#b45309"
+danger = "#b91c1c"
+
+[params.community]
+report_issue_label = "Report an Issue"
+report_issue_href = "mailto:editor@yourdomain.com?subject=Protocol%20Issue%20Report&body=Procedure:%20%0ASection:%20%0AWhat%20seems%20incorrect:%20%0ASupporting%20reference%20(optional):%20"
+suggest_tip_label = "Suggest a Tip"
+suggest_tip_href = "mailto:editor@yourdomain.com?subject=Clinical%20Tip%20Suggestion&body=Procedure:%20%0ATip:%20%0AWhen%20it%20applies:%20%0A(Optional)%20Evidence:%20"
+
+[params.monetization]
+cta_label = "Need a similar professional website for your clinic?"
+cta_target_section = "contact"
+cta_note = "This platform was built using a specialized dental website system."
+
+[params.contact]
+section_title = "Contact"
+intro = "If you want a similar high-trust clinical website for your practice or education project, reach out."
+
+email_label = "Email"
+email_href = "mailto:hello@yourdomain.com"
+
+whatsapp_label = "WhatsApp"
+whatsapp_href = "https://wa.me/000000000000"
+
+[params.footer]
+line_1 = "Educational reference — not a substitute for clinical judgment."
+line_2 = "Content is intended for licensed dental professionals and trainees."
+
+# Page structure (order controls render order)
+[[params.page_sections]]
+id = "hero"
+label = "Home"
+
+[[params.page_sections]]
+id = "specialties"
+label = "Specialties"
+
+[[params.page_sections]]
+id = "protocol"
+label = "Protocols"
+
+[[params.page_sections]]
+id = "community"
+label = "Community"
+
+[[params.page_sections]]
+id = "contact"
+label = "Contact"
+
+# Specialties (future-proofed)
+[[params.specialties]]
+id = "endodontics"
+name = "Endodontics"
+status = "active"
+description = "Root canal diagnosis and treatment protocols optimized for speed, safety, and predictable outcomes."
+
+[[params.specialties]]
+id = "restorative"
+name = "Restorative"
+status = "coming_soon"
+description = "Coming soon."
+
+[[params.specialties]]
+id = "prosthodontics"
+name = "Prosthodontics"
+status = "coming_soon"
+description = "Coming soon."
+
+# Procedures (each MUST contain the required subsections)
+[[params.procedures]]
+id = "endo-rct-vital-molar"
+specialty_id = "endodontics"
+title = "Primary Root Canal Treatment — Vital Posterior Tooth"
+short = "RCT (vital molar)"
+summary = "A clinically focused protocol for predictable primary RCT in a vital posterior tooth using contemporary endodontic principles."
+last_updated = "2026-01-15"
+version = "v1.0"
+reviewed_by = ""
+reviewed_by_note = ""
+
+  [[params.procedures.sections]]
+  id = "clinical-overview"
+  title = "Clinical Overview"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "structured"
+
+    [params.procedures.sections.content]
+    indications = [
+      "Symptomatic or asymptomatic irreversible pulpitis",
+      "Vital pulp exposure with poor restorative prognosis for vital therapy",
+      "Elective endodontics prior to indirect restoration when indicated"
+    ]
+    contraindications = [
+      "Non-restorable tooth (subgingival caries/fracture beyond ferrule)",
+      "Unfavorable periodontal prognosis (advanced mobility with poor support)",
+      "Inability to achieve adequate isolation and asepsis"
+    ]
+    case_selection = [
+      "Start with straight, less calcified canals when early in training",
+      "Complex curvature, retreatment, resorption, and MB2 negotiation require advanced skill/time",
+      "If time or equipment is limited, refer early rather than late"
+    ]
+
+  [[params.procedures.sections]]
+  id = "diagnosis-assessment"
+  title = "Diagnosis & Assessment"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "diagnosis"
+
+    [params.procedures.sections.content]
+    clinical_tests = [
+      "Cold test (compare control tooth)",
+      "Percussion and palpation",
+      "Bite test if cracked tooth suspected",
+      "Periodontal probing (full circumference)",
+      "Evaluate occlusion and parafunction"
+    ]
+    radiographic_requirements = [
+      "Pre-op periapical radiograph with paralleling technique",
+      "At least one angled view if anatomy is unclear",
+      "Consider limited FOV CBCT when indicated (missed anatomy, resorption, fracture suspicion)"
+    ]
+    differential_diagnosis = [
+      "Reversible vs irreversible pulpitis",
+      "Cracked tooth syndrome",
+      "Occlusal trauma",
+      "Sinus-related referred pain",
+      "Periodontal abscess vs endodontic origin"
+    ]
+
+  [[params.procedures.sections]]
+  id = "step-by-step"
+  title = "Step-by-Step Clinical Protocol"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "steps"
+
+    [params.procedures.sections.content]
+    steps = [
+      "Confirm diagnosis and document baseline tests (cold, percussion, probing).",
+      "Anesthesia: profound block/infiltration; verify pulpal anesthesia before access.",
+      "Rubber dam isolation; disinfect field (e.g., chlorhexidine or iodine-based protocol per clinic policy).",
+      "Pre-endodontic build-up when needed to secure isolation and prevent coronal leakage.",
+      "Access: create straight-line entry; unroof chamber completely; locate canal orifices.",
+      "Initial patency and glide path: small hand files with lubricant; confirm reproducible glide path.",
+      "Working length: electronic apex locator + confirm with radiograph as needed.",
+      "Shaping: use a conservative taper strategy; recapitulate and maintain apical patency per your philosophy.",
+      "Irrigation: active NaOCl throughout; refresh frequently; avoid binding needle; consider activation (sonic/ultrasonic) if available.",
+      "Smear layer management: EDTA final rinse (time-controlled), followed by NaOCl final rinse (per system protocol).",
+      "Dry canals with paper points to working length.",
+      "Obturation: fit master cone(s) to WL with tug-back; verify cone fit radiographically when indicated.",
+      "Sealer placement; obturate with chosen technique; avoid overfilling.",
+      "Coronal seal immediately (bonded core / temporary with proven seal).",
+      "Post-op instructions and definitive restoration plan (cuspal coverage for posterior teeth when indicated)."
+    ]
+    execution_notes = [
+      "If you cannot maintain isolation, stop and reassess.",
+      "Do not ‘force’ a file—create a glide path before rotary shaping.",
+      "Irrigation safety is non-negotiable: slow delivery, side-vented needle, never bind."
+    ]
+
+  [[params.procedures.sections]]
+  id = "instruments-materials"
+  title = "Instruments & Materials"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "materials"
+
+    [params.procedures.sections.content]
+    required_tools = [
+      "Rubber dam kit + clamp selection",
+      "Endo access burs + safe-end bur",
+      "Hand K-files (sizes 06/08/10/15)",
+      "Apex locator",
+      "Irrigation syringes + side-vented needles",
+      "NaOCl + EDTA (per clinic protocol)",
+      "Paper points",
+      "Obturation cones + sealer",
+      "Temporary restorative material / bonded core materials"
+    ]
+    alternatives = [
+      "If no ultrasonic activation: manual dynamic agitation with master cone",
+      "If no CBCT: obtain angled PAs + careful clinical exploration"
+    ]
+    budget_vs_premium = [
+      "Budget: reliable hand files + basic rotary system + meticulous irrigation",
+      "Premium: heat-treated NiTi + activation device + microscope/loupes"
+    ]
+
+  [[params.procedures.sections]]
+  id = "mistakes"
+  title = "Common Mistakes & How to Avoid Them"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.procedures.sections.content]
+    bullets = [
+      "Under-isolation: always rubber dam; rebuild missing walls before shaping.",
+      "Incomplete unroofing: leads to missed canals and iatrogenic errors.",
+      "Skipping glide path: increases separation risk—secure glide path first.",
+      "Inadequate irrigation time/volume: shape does not disinfect—irrigation does.",
+      "Weak coronal seal: treat restoration planning as part of endodontic success."
+    ]
+
+  [[params.procedures.sections]]
+  id = "complications"
+  title = "Complications & Management"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "if_then"
+
+    [[params.procedures.sections.rules]]
+    if = "Sudden loss of working length / blocked canal"
+    then = "Stop rotary shaping; recapitulate with small hand file + irrigate; re-establish glide path before continuing."
+
+    [[params.procedures.sections.rules]]
+    if = "NaOCl accident suspected (sudden pain, swelling, bleeding)"
+    then = "Stop irrigation immediately; reassure; analgesia; cold compress initially; monitor; refer urgently if progressive swelling or airway concerns."
+
+    [[params.procedures.sections.rules]]
+    if = "Instrument separation"
+    then = "Do not blindly chase; assess location, canal anatomy, and prognosis; consider microscope and referral. Document thoroughly."
+
+  [[params.procedures.sections]]
+  id = "tips"
+  title = "Clinical Tips & Pearls"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.procedures.sections.content]
+    bullets = [
+      "Treat access as the first ‘shaping’ step: straight-line entry reduces errors downstream.",
+      "Measure irrigation success by time and replenishment, not just by syringe size.",
+      "If a canal feels ‘sticky’, pause and refine the glide path before continuing."
+    ]
+
+  [[params.procedures.sections]]
+  id = "post-op"
+  title = "Post-Operative Care"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "postop"
+
+    [params.procedures.sections.content]
+    instructions = [
+      "Mild tenderness on biting is common for 24–72 hours.",
+      "Analgesics per local guidelines; avoid unnecessary antibiotics.",
+      "Avoid chewing hard foods on the treated tooth until definitive restoration."
+    ]
+    follow_up_logic = [
+      "If swelling, fever, or increasing pain occurs: urgent clinical review.",
+      "If temporary is lost: replace promptly to maintain coronal seal.",
+      "Schedule definitive cuspal coverage when indicated (posterior teeth)."
+    ]
+
+  [[params.procedures.sections]]
+  id = "references"
+  title = "References & Evidence"
+  last_updated = "2026-01-15"
+  version = "v1.0"
+  type = "references"
+
+    [[params.procedures.sections.refs]]
+    citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+    url = "https://www.e-s-e.eu/"
+    year = 2020
+
+    [[params.procedures.sections.refs]]
+    citation = "Cohen’s Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+    url = ""
+    year = 2021
+
