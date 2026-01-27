@@ -53,13 +53,13 @@ question = "Need a similar professional website for your clinic or educational c
 action = "→ View how this system works"
 
 [params.footer.author]
-name = "Dr. [Your Name]"
+name = "Dr. Michael Nabil"
 title = "Dentist & Specialized Dental Website Developer"
 services = "Clinics • Portfolios • Educational Platforms"
 
 [params.footer.contact]
 label = "Contact via WhatsApp"
-whatsapp = ""
+whatsapp = "+201271476215"
 
 [params.footer.technical]
 features = "Static • Fast • Privacy-friendly"
