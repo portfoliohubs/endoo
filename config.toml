@@ -655,12 +655,6 @@ label = "Contact"
       citation = "Cohen's Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
       url = ""
       year = 2021
-    ]
-    student_focus = [
-      "Proper radiographic angle assessment",
-      "Conservative access preparation",
-      "Glide path management in curved canals"
-    ]
 
     [[params.teeth.topics]]
     id = "access"
