@@ -8,6 +8,10 @@ baseURL = "https://portfoliohubs.github.io/endoo/"
 languageCode = "en-us"
 title = "EndoProtocols"
 
+# Disable caching for development
+disableKinds = ["RSS", "sitemap"]
+enableRobotsTXT = false
+
 [params]
 brand_short = "EndoProtocols"
 site_name = "Evidence-Based Endodontics"
@@ -144,42 +148,38 @@ attributes = "Static • Fast • Privacy-friendly • Professional"
 # ============================================================================
 
 # ============================================================================
-# MAXILLARY TEETH (#1-16)
+# MAXILLARY TEETH (8 TEETH: U1-U8) - ORDERED FROM CENTRAL TO THIRD MOLAR
 # ============================================================================
 
 # ----------------------------------------------------------------------------
-# TOOTH #1 - MAXILLARY RIGHT THIRD MOLAR (WISDOM TOOTH)
+# TOOTH #1 - MAXILLARY RIGHT CENTRAL INCISOR (U1)
 # ----------------------------------------------------------------------------
 
 [[params.teeth]]
-id = "mx-3rd-molar-right"
+id = "mx-central-incisor-right"
 specialty_id = "endodontics"
 arch = "maxillary"
-name = "Maxillary Third Molar (Right)"
-abbr = "U8"
-number = "#1"
+name = "Upper Central Incisor"
+abbr = "U1"
+number = "#8"
 status = "active"
 last_updated = "2026-01-27"
 version = "v1.0"
 
   [params.teeth.fast]
-  access_cavity = "Highly variable; often rhomboidal/irregular due to anatomical variation. CBCT mandatory for treatment planning."
-  canals = "3-4 canals typical; highly variable (1-5 canals reported in literature)"
-  typical_difficulty = "High to Very High"
+  access_cavity = "Triangular/ovoid; keep conservative and centered."
+  canals = "Usually 1 canal"
+  typical_difficulty = "Low"
   key_risks = [
-    "MB2 canal missed (60-70% incidence)",
-    "Root perforation due to curved/fused roots",
-    "Instrument separation in severely curved canals",
-    "Complex unpredictable anatomy",
-    "Limited access due to posterior position",
-    "Furcation perforation"
+    "Labial perforation if access is too facial",
+    "Ledging if apical curvature is ignored",
+    "Irrigation safety"
   ]
   student_focus = [
-    "CBCT assessment before treatment",
-    "Anatomical variation recognition",
-    "Careful access planning with imaging",
-    "Expect fused or severely curved roots",
-    "Consider referral if complex anatomy"
+    "Conservative access design",
+    "Straight-line access concept",
+    "Working length verification",
+    "Proper irrigation technique"
   ]
 
   [[params.teeth.topics]]
@@ -191,14 +191,10 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     steps = [
-      "Mandatory CBCT evaluation to assess root number, curvature, and canal anatomy before access.",
-      "Rubber dam isolation; consider difficulty of access due to posterior position.",
-      "Initial entry through occlusal surface; outline typically rhomboidal but varies greatly with anatomy.",
-      "Locate canal orifices using magnification (loupes minimum 2.5×, microscope preferred).",
-      "Unroof chamber completely; expect variations (fused roots, extra canals, C-shaped anatomy).",
-      "Use ultrasonic tips to identify and open calcified or hidden canal orifices.",
-      "Verify straight-line access to all canals; modify conservatively to avoid perforation.",
-      "Document canal configuration with photographs/radiographs for reference."
+      "Rubber dam isolation and field disinfection.",
+      "Initial entry through palatal surface; aim for straight-line access.",
+      "Unroof chamber fully; refine to an ovoid outline without over-flaring.",
+      "Confirm canal location and patency before shaping."
     ]
 
   [[params.teeth.topics]]
@@ -210,14 +206,13 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     bullets = [
-      "Highly variable: Type II through Type VIII configurations possible (Vertucci classification).",
-      "Average length: 18-20 mm (shorter than other molars).",
-      "MB2 canal present in 60-70% of cases; search palatal to MB1 orifice.",
-      "Fused roots extremely common (30-40% of cases); may present as C-shaped anatomy (10-15%).",
-      "Severe curvature/dilaceration in 40-60% of roots; assess all planes with angled radiographs.",
-      "Apical diameter typically #25-40 depending on canal.",
-      "Canal bifurcations and complex anatomy are the rule, not the exception.",
-      "CBCT reveals anatomy that periapical radiographs miss in >50% of cases."
+      "Usually Type I (single canal), but can have Type II (2 canals) or Type III (1 canal exiting as 2).",
+      "Average length: 22-25 mm (longer than other anterior teeth).",
+      "Cross-section: ovoid mesiodistally, wider labiolingually.",
+      "Possible lateral canals in 15-20% of cases, especially in apical third.",
+      "Apical foramen often located slightly off the radiographic apex.",
+      "Canal taper: gradual widening from cervical to apical.",
+      "Root generally straight but may have slight distal curvature."
     ]
 
   [[params.teeth.topics]]
