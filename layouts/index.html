@@ -193,8 +193,9 @@
     .hero {
       padding: var(--s5) var(--s4);
       border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(0,102,204,0.08), rgba(0,168,107,0.06), rgba(139,92,246,0.04));
+      background: linear-gradient(135deg, rgba(0,102,204,0.03), rgba(0,168,107,0.02));
       border: 1px solid var(--border);
+      text-align: center;
     }
 
     .pill-row {
@@ -543,37 +544,11 @@
       {{ if eq $sid "hero" }}
         <section id="hero" aria-labelledby="hero-title">
           <div class="hero">
-            <div class="kicker">Clinical reference</div>
-            <h1 id="hero-title">{{ $page.Site.Params.site_tagline }}</h1>
-            <p class="muted">{{ $page.Site.Params.site_description }}</p>
-            <div class="pill-row">
-              <a class="btn primary" href="#protocol">Open Endodontics</a>
-              <a class="btn" href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
-            </div>
+            <h1 id="hero-title" style="font-size: clamp(22px, 3.5vw, 28px); margin: 0;">Clear, reliable guidance for every tooth.</h1>
           </div>
         </section>
       {{ end }}
 
-      {{ if eq $sid "specialties" }}
-        <section id="specialties" aria-labelledby="specialties-title">
-          <h2 id="specialties-title">Specialties</h2>
-          <p class="muted">Endodontics is active. Other specialties are prepared for later.</p>
-
-          <div class="card card-pad">
-            {{ range $page.Site.Params.specialties }}
-              {{ if eq (.status | default "coming_soon") "active" }}
-                <div style="display:grid;gap:6px;">
-                  <div class="kicker">Active</div>
-                  <h3 style="margin:0">{{ .name }}</h3>
-                  <p class="muted" style="margin:0">{{ .description }}</p>
-                </div>
-              {{ end }}
-            {{ end }}
-            <div class="divider"></div>
-            <p class="small muted" style="margin:0">Coming soon: Restorative, Prosthodontics.</p>
-          </div>
-        </section>
-      {{ end }}
 
       {{ if eq $sid "protocol" }}
         <section id="protocol" aria-labelledby="protocol-title">

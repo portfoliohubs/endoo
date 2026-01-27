@@ -55,14 +55,6 @@ line_2 = "Content is intended for licensed dental professionals and trainees."
 
 # Page structure (order controls render order)
 [[params.page_sections]]
-id = "hero"
-label = "Home"
-
-[[params.page_sections]]
-id = "specialties"
-label = "Specialties"
-
-[[params.page_sections]]
 id = "protocol"
 label = "Protocols"
 
