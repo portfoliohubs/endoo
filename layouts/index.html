@@ -9,10 +9,11 @@
   {{ hugo.Generator }}
 
   <style>
-    /* Architecture note:
-       - Single-file Hugo layout renders ALL content from config.toml.
-       - CSS + JS are embedded to keep the repository constrained to 3 files.
-       - UI is deliberately quiet (no distracting animations) to minimize cognitive load.
+    /*
+      Architecture decisions (kept minimal):
+      - Single Hugo template file to satisfy the 3-file repository constraint.
+      - All editable content lives in config.toml (teeth, topics, fast facts, contact).
+      - Minimal JS only for selection + deep links; no heavy animations.
     */
 
     :root {
@@ -23,21 +24,20 @@
       --border: {{ .Site.Params.theme.border }};
       --brand: {{ .Site.Params.theme.brand }};
       --brand2: {{ .Site.Params.theme.brand_2 }};
-      --warning: {{ .Site.Params.theme.warning }};
-      --danger: {{ .Site.Params.theme.danger }};
 
       --maxw: {{ .Site.Params.theme.max_width_ch | default 72 }}ch;
+
       --radius: 14px;
       --shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
 
-      --space-1: 8px;
-      --space-2: 12px;
-      --space-3: 16px;
-      --space-4: 24px;
-      --space-5: 36px;
-      --space-6: 52px;
+      --s1: 8px;
+      --s2: 12px;
+      --s3: 16px;
+      --s4: 24px;
+      --s5: 36px;
+      --s6: 52px;
 
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
@@ -53,6 +53,8 @@
       text-rendering: optimizeLegibility;
     }
 
+    html { scroll-behavior: smooth; }
+
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -64,13 +66,14 @@
       height: 1px;
       overflow: hidden;
     }
+
     .skip-link:focus {
-      left: var(--space-4);
-      top: var(--space-4);
+      left: var(--s4);
+      top: var(--s4);
       width: auto;
       height: auto;
-      padding: var(--space-2) var(--space-3);
-      background: var(--surface);
+      padding: var(--s2) var(--s3);
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: 10px;
       box-shadow: var(--shadow);
@@ -89,28 +92,30 @@
     .nav {
       max-width: calc(var(--maxw) + 44ch);
       margin: 0 auto;
-      padding: var(--space-3) var(--space-4);
+      padding: var(--s3) var(--s4);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-3);
+      gap: var(--s3);
     }
 
     .brand {
       display: flex;
       align-items: baseline;
       gap: 10px;
-      white-space: nowrap;
+      min-width: 0;
     }
 
     .brand strong {
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.2px;
+      white-space: nowrap;
     }
 
     .brand small {
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     nav ul {
@@ -130,7 +135,7 @@
       border-radius: 10px;
       color: var(--text);
       border: 1px solid transparent;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
     }
 
@@ -142,25 +147,24 @@
     main {
       max-width: calc(var(--maxw) + 44ch);
       margin: 0 auto;
-      padding: var(--space-6) var(--space-4);
+      padding: var(--s6) var(--s4);
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-5);
+    section { scroll-margin-top: 96px; }
+
+    h1, h2, h3 {
+      margin: 0 0 var(--s2) 0;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
     }
 
-    @media (min-width: 980px) {
-      .container {
-        grid-template-columns: minmax(280px, 34ch) minmax(0, var(--maxw));
-        align-items: start;
-      }
-    }
+    h1 { font-size: clamp(26px, 4vw, 36px); }
+    h2 { font-size: 22px; margin-top: var(--s5); }
+    h3 { font-size: 16px; margin-top: var(--s3); }
 
-    section {
-      scroll-margin-top: 96px;
-    }
+    p { margin: 0 0 var(--s3) 0; max-width: var(--maxw); }
+
+    .muted { color: var(--muted); }
 
     .card {
       background: var(--surface);
@@ -169,53 +173,43 @@
       box-shadow: var(--shadow);
     }
 
-    .card-pad {
-      padding: var(--space-4);
+    .card-pad { padding: var(--s4); }
+
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 900;
     }
-
-    h1, h2, h3 {
-      margin: 0 0 var(--space-2) 0;
-      line-height: 1.2;
-      letter-spacing: -0.2px;
-    }
-
-    h1 { font-size: clamp(26px, 4vw, 36px); }
-    h2 { font-size: 22px; margin-top: var(--space-5); }
-    h3 { font-size: 16px; margin-top: var(--space-4); }
-
-    p { margin: 0 0 var(--space-3) 0; max-width: var(--maxw); }
-
-    .muted { color: var(--muted); }
 
     .hero {
-      padding: var(--space-5) var(--space-4);
+      padding: var(--s5) var(--s4);
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(30,90,168,0.08), rgba(15,118,110,0.04));
       border: 1px solid var(--border);
     }
 
-    .hero p { font-size: 16px; }
-
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: var(--space-3);
+      margin-top: var(--s3);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: #fff;
       color: var(--text);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 14px;
       cursor: pointer;
+      max-width: 100%;
     }
 
     .btn.primary {
@@ -224,70 +218,18 @@
       color: #fff;
     }
 
-    .btn.secondary {
-      background: rgba(15,118,110,0.08);
-      border-color: rgba(15,118,110,0.22);
-      color: var(--text);
-    }
+    .divider { height: 1px; background: var(--border); margin: var(--s5) 0; }
 
-    .btn:focus {
-      outline: 3px solid rgba(30,90,168,0.22);
-      outline-offset: 2px;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: var(--space-5) 0;
-    }
-
-    .grid-2 {
+    .container {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--space-3);
-    }
-
-    @media (min-width: 720px) {
-      .grid-2 { grid-template-columns: 1fr 1fr; }
-    }
-
-    .specialty-card {
-      padding: var(--space-4);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: #fff;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .specialty-card[aria-pressed="true"] {
-      border-color: rgba(30,90,168,0.35);
-      box-shadow: 0 0 0 3px rgba(30,90,168,0.10);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--muted);
-      background: #fff;
-    }
-
-    .badge.active { color: var(--brand2); border-color: rgba(15,118,110,0.35); }
-    .badge.soon { color: var(--warning); border-color: rgba(180,83,9,0.35); }
-
-    .sidebar {
-      position: relative;
+      gap: var(--s5);
     }
 
     @media (min-width: 980px) {
-      .sidebar-inner {
-        position: sticky;
-        top: 92px;
+      .container {
+        grid-template-columns: minmax(280px, 36ch) minmax(0, var(--maxw));
+        align-items: start;
       }
     }
 
@@ -297,7 +239,36 @@
       letter-spacing: 0;
     }
 
-    .proc-list {
+    @media (min-width: 980px) {
+      .sidebar-inner {
+        position: sticky;
+        top: 92px;
+      }
+    }
+
+    .seg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: var(--s3);
+    }
+
+    .seg button {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .seg button[aria-pressed="true"] {
+      border-color: rgba(30,90,168,0.35);
+      box-shadow: 0 0 0 3px rgba(30,90,168,0.10);
+    }
+
+    .tooth-list {
       margin: 0;
       padding: 0;
       list-style: none;
@@ -305,7 +276,7 @@
       gap: 10px;
     }
 
-    .proc-item button {
+    .tooth-item button {
       width: 100%;
       text-align: left;
       padding: 12px 12px;
@@ -313,46 +284,40 @@
       border: 1px solid var(--border);
       background: #fff;
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 900;
       font-size: 14px;
+      min-width: 0;
     }
 
-    .proc-item button[aria-pressed="true"] {
+    .tooth-item button .meta {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .tooth-item button[aria-pressed="true"] {
       border-color: rgba(30,90,168,0.35);
       box-shadow: 0 0 0 3px rgba(30,90,168,0.10);
     }
 
-    .proc-item .meta {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-weight: 600;
+    .tooth-item button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .tooth { display: none; }
+    .tooth[data-active="true"] { display: block; }
+
+    code {
+      font-family: var(--mono);
+      font-weight: 800;
       font-size: 12px;
-    }
-
-    .procedure {
-      display: none;
-    }
-
-    .procedure[data-active="true"] {
-      display: block;
-    }
-
-    .procedure header {
-      position: static;
-      background: transparent;
-      border: 0;
-      backdrop-filter: none;
-    }
-
-    .proc-head {
-      display: grid;
-      gap: var(--space-2);
-      margin-bottom: var(--space-3);
-    }
-
-    .proc-head .summary {
-      margin: 0;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
       color: var(--muted);
     }
 
@@ -363,22 +328,11 @@
       align-items: center;
     }
 
-    .meta-row code {
-      font-family: var(--mono);
-      font-weight: 700;
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #fff;
-      color: var(--muted);
-    }
-
     .jump {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: var(--space-3) 0 var(--space-4) 0;
+      margin: var(--s3) 0 var(--s4) 0;
     }
 
     .jump a {
@@ -388,8 +342,12 @@
       border: 1px solid var(--border);
       background: #fff;
       color: var(--text);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 13px;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .jump a[data-active="true"] {
@@ -398,31 +356,80 @@
     }
 
     .content-block {
-      padding: var(--space-4);
+      padding: var(--s4);
       background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
     }
 
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: var(--s3);
+    }
+
+    @media (min-width: 720px) {
+      .facts { grid-template-columns: 1fr 1fr; }
+    }
+
+    .fact {
+      padding: 12px 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 12px;
+      min-width: 0;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
     ul, ol {
-      margin: 0 0 var(--space-3) 1.2em;
+      margin: 0 0 var(--s3) 1.2em;
       padding: 0;
       max-width: var(--maxw);
+      overflow-wrap: anywhere;
     }
 
     li { margin: 0 0 8px 0; }
 
-    .kicker {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 800;
+    details.topic {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      padding: 0;
+      overflow: clip;
     }
 
+    details.topic + details.topic { margin-top: 12px; }
+
+    details.topic summary {
+      cursor: pointer;
+      padding: 14px 14px;
+      font-weight: 900;
+      list-style: none;
+      overflow-wrap: anywhere;
+    }
+
+    details.topic summary::-webkit-details-marker { display: none; }
+
+    details.topic[open] summary {
+      border-bottom: 1px solid var(--border);
+      background: rgba(30,90,168,0.04);
+    }
+
+    .topic-body { padding: 14px 14px; }
+
     footer {
-      margin-top: var(--space-6);
-      padding-top: var(--space-5);
+      margin-top: var(--s6);
+      padding-top: var(--s5);
       border-top: 1px solid var(--border);
       color: var(--muted);
     }
@@ -437,23 +444,9 @@
       color: var(--text);
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
     }
-
-    html { scroll-behavior: smooth; }
   </style>
 
   <script type="application/ld+json">
@@ -481,8 +474,8 @@
   <header>
     <div class="nav">
       <div class="brand">
-        <strong>{{ .Site.Params.site_name }}</strong>
-        <small class="muted">{{ .Site.Params.brand_short }}</small>
+        <strong>{{ $page.Site.Params.site_name }}</strong>
+        <small class="muted">{{ $page.Site.Params.brand_short }}</small>
       </div>
 
       <nav aria-label="Primary">
@@ -496,19 +489,18 @@
   </header>
 
   <main id="main">
-    {{/* Render sections in config-defined order */}}
     {{ range $page.Site.Params.page_sections }}
       {{ $sid := .id }}
 
       {{ if eq $sid "hero" }}
         <section id="hero" aria-labelledby="hero-title">
           <div class="hero">
-            <div class="kicker">Clinical reference platform</div>
+            <div class="kicker">Clinical reference</div>
             <h1 id="hero-title">{{ $page.Site.Params.site_tagline }}</h1>
             <p class="muted">{{ $page.Site.Params.site_description }}</p>
             <div class="pill-row">
-              <a class="btn primary" href="#protocol">Open protocols</a>
-              <a class="btn secondary" href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
+              <a class="btn primary" href="#protocol">Open Endodontics</a>
+              <a class="btn" href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
             </div>
           </div>
         </section>
@@ -517,206 +509,173 @@
       {{ if eq $sid "specialties" }}
         <section id="specialties" aria-labelledby="specialties-title">
           <h2 id="specialties-title">Specialties</h2>
-          <p class="muted">Choose a specialty. Only active specialties show protocols.</p>
+          <p class="muted">Endodontics is active. Other specialties are prepared for later.</p>
 
-          <div class="grid-2" role="group" aria-label="Specialty selector">
+          <div class="card card-pad">
             {{ range $page.Site.Params.specialties }}
-              {{ $status := .status | default "coming_soon" }}
-              <button
-                class="specialty-card"
-                type="button"
-                data-specialty-id="{{ .id }}"
-                aria-pressed="false"
-                {{ if ne $status "active" }}disabled{{ end }}
-                aria-disabled="{{ if ne $status "active" }}true{{ else }}false{{ end }}"
-              >
-                <div class="meta-row">
-                  <span class="badge {{ if eq $status "active" }}active{{ else }}soon{{ end }}">
-                    {{ if eq $status "active" }}Active{{ else }}Coming soon{{ end }}
-                  </span>
-                  <span class="sr-only">Status: {{ $status }}</span>
+              {{ if eq (.status | default "coming_soon") "active" }}
+                <div style="display:grid;gap:6px;">
+                  <div class="kicker">Active</div>
+                  <h3 style="margin:0">{{ .name }}</h3>
+                  <p class="muted" style="margin:0">{{ .description }}</p>
                 </div>
-                <h3 style="margin-top: 12px">{{ .name }}</h3>
-                <p class="muted" style="margin: 0">{{ .description }}</p>
-              </button>
+              {{ end }}
             {{ end }}
+            <div class="divider"></div>
+            <p class="small muted" style="margin:0">Coming soon: Restorative, Prosthodontics.</p>
           </div>
         </section>
       {{ end }}
 
       {{ if eq $sid "protocol" }}
         <section id="protocol" aria-labelledby="protocol-title">
-          <h2 id="protocol-title">Protocols</h2>
-          <p class="muted">Pick a procedure. Use the jump buttons for fast in-chair reference.</p>
+          <h2 id="protocol-title">Endodontics — Tooth Protocols</h2>
+          <p class="muted">{{ $page.Site.Params.protocols.intro | default "Select a tooth, then open only the topic you need." }}</p>
 
           <div class="container">
-            <aside class="sidebar" aria-label="Procedure list">
+            <aside class="sidebar" aria-label="Tooth selector">
               <div class="sidebar-inner card card-pad">
-                <h2>Procedures</h2>
-                <p class="small muted" style="margin-top: 0">Filtered by specialty.</p>
+                <h2>Choose tooth</h2>
+                <p class="small muted" style="margin-top: 0">1) Arch  2) Tooth</p>
 
-                <ul class="proc-list">
-                  {{ range $page.Site.Params.procedures }}
-                    <li class="proc-item" data-specialty-id="{{ .specialty_id }}" data-procedure-id="{{ .id }}">
-                      <button type="button" aria-pressed="false" data-select-procedure="{{ .id }}">
-                        {{ .short | default .title }}
-                        <span class="meta">Updated {{ .last_updated }} · {{ .version }}</span>
-                      </button>
-                    </li>
+                <div class="seg" role="group" aria-label="Arch selector">
+                  <button type="button" data-arch="maxillary" aria-pressed="false">Maxillary</button>
+                  <button type="button" data-arch="mandibular" aria-pressed="false">Mandibular</button>
+                </div>
+
+                <ul class="tooth-list" aria-label="Tooth list">
+                  {{ range $page.Site.Params.teeth }}
+                    {{ if eq .specialty_id "endodontics" }}
+                      {{ $tstatus := .status | default "coming_soon" }}
+                      <li class="tooth-item" data-arch="{{ .arch }}" data-tooth-id="{{ .id }}">
+                        <button type="button" aria-pressed="false" data-select-tooth="{{ .id }}" {{ if ne $tstatus "active" }}disabled{{ end }} aria-disabled="{{ if ne $tstatus "active" }}true{{ else }}false{{ end }}">
+                          {{ .name }}
+                          <span class="meta">{{ .abbr }} · {{ if eq $tstatus "active" }}Ready{{ else }}Coming soon{{ end }}</span>
+                        </button>
+                      </li>
+                    {{ end }}
                   {{ end }}
                 </ul>
 
                 <div class="divider"></div>
 
                 <div class="notice small">
-                  <strong>Clinical note:</strong> This platform is a reference aid. Confirm diagnosis, isolation, and safety steps for every case.
+                  <strong>Tip:</strong> Tap a topic (Access, WL, Prep, Obturation…) to open details.
                 </div>
               </div>
             </aside>
 
             <div>
-              {{ range $page.Site.Params.procedures }}
-                {{ $proc := . }}
-                <article class="procedure" data-procedure-id="{{ .id }}" data-specialty-id="{{ .specialty_id }}" data-active="false" aria-labelledby="{{ .id }}-title">
-                  <div class="card card-pad">
-                    <div class="proc-head">
-                      <div class="kicker">{{ .specialty_id | title }}</div>
-                      <h2 id="{{ .id }}-title" style="margin-top: 6px">{{ .title }}</h2>
-                      <p class="summary">{{ .summary }}</p>
+              {{ range $page.Site.Params.teeth }}
+                {{ if eq .specialty_id "endodontics" }}
+                  {{ $tooth := . }}
+                  <article class="tooth" data-tooth-id="{{ .id }}" data-arch="{{ .arch }}" data-active="false" aria-labelledby="{{ .id }}-title">
+                    <div class="card card-pad">
+                      <div style="display:grid;gap:10px;">
+                        <div class="kicker">{{ .arch | title }}</div>
+                        <h2 id="{{ .id }}-title" style="margin-top: 0">{{ .name }}</h2>
 
-                      <div class="meta-row" aria-label="Document metadata">
-                        <code>Last updated: {{ .last_updated }}</code>
-                        <code>Version: {{ .version }}</code>
-                        {{ if .reviewed_by }}
-                          <code>Reviewed by: {{ .reviewed_by }}</code>
-                        {{ end }}
+                        <div class="meta-row" aria-label="Document metadata">
+                          <code>{{ .abbr }}</code>
+                          <code>Updated {{ .last_updated }}</code>
+                          <code>{{ .version }}</code>
+                        </div>
+
+                        <div class="pill-row" aria-label="Community actions">
+                          <a class="btn" href="{{ $page.Site.Params.community.report_issue_href }}">{{ $page.Site.Params.community.report_issue_label }}</a>
+                          <a class="btn" href="{{ $page.Site.Params.community.suggest_tip_href }}">{{ $page.Site.Params.community.suggest_tip_label }}</a>
+                        </div>
+
+                        <div class="jump" data-jump-for="{{ .id }}" aria-label="Jump to topic">
+                          {{ range .topics }}
+                            <a href="#{{ $tooth.id }}-{{ .id }}" data-jump="{{ $tooth.id }}-{{ .id }}">{{ .title }}</a>
+                          {{ end }}
+                        </div>
                       </div>
 
-                      <div class="pill-row" aria-label="Community actions">
-                        <a class="btn" href="{{ $page.Site.Params.community.report_issue_href }}">{{ $page.Site.Params.community.report_issue_label }}</a>
-                        <a class="btn" href="{{ $page.Site.Params.community.suggest_tip_href }}">{{ $page.Site.Params.community.suggest_tip_label }}</a>
-                      </div>
-
-                      <div class="jump" data-jump-for="{{ .id }}" aria-label="Jump to section">
-                        {{ range .sections }}
-                          <a href="#{{ $proc.id }}-{{ .id }}" data-jump="{{ $proc.id }}-{{ .id }}">{{ .title }}</a>
-                        {{ end }}
-                      </div>
-                    </div>
-
-                    {{ range .sections }}
-                      <section class="content-block" id="{{ $proc.id }}-{{ .id }}" data-proc-section="{{ $proc.id }}" data-section-id="{{ $proc.id }}-{{ .id }}" aria-labelledby="{{ $proc.id }}-{{ .id }}-h">
-                        <div class="meta-row" style="justify-content: space-between; gap: 12px;">
-                          <h3 id="{{ $proc.id }}-{{ .id }}-h" style="margin: 0">{{ .title }}</h3>
-                          <div class="small muted">
-                            <span>Updated {{ .last_updated }}</span>
-                            <span aria-hidden="true"> · </span>
-                            <span>{{ .version }}</span>
+                      <div class="content-block" style="margin-top: var(--s3);">
+                        <div class="kicker">Fast data</div>
+                        <div class="facts" aria-label="Fast facts">
+                          <div class="fact">
+                            <span class="label">Access cavity</span>
+                            <div>{{ .fast.access_cavity }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Canals</span>
+                            <div>{{ .fast.canals }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Difficulty</span>
+                            <div>{{ .fast.typical_difficulty }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Student focus</span>
+                            <ul style="margin-bottom:0;">
+                              {{ range .fast.student_focus }}<li>{{ . }}</li>{{ end }}
+                            </ul>
                           </div>
                         </div>
 
-                        {{ if eq .type "structured" }}
-                          <h3>Indications</h3>
-                          <ul>
-                            {{ range .content.indications }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Contraindications</h3>
-                          <ul>
-                            {{ range .content.contraindications }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Case selection</h3>
-                          <ul>
-                            {{ range .content.case_selection }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                        {{ end }}
-
-                        {{ if eq .type "diagnosis" }}
-                          <h3>Clinical tests</h3>
-                          <ul>
-                            {{ range .content.clinical_tests }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Radiographic requirements</h3>
-                          <ul>
-                            {{ range .content.radiographic_requirements }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Differential diagnosis</h3>
-                          <ul>
-                            {{ range .content.differential_diagnosis }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                        {{ end }}
-
-                        {{ if eq .type "steps" }}
-                          <ol>
-                            {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
-                          </ol>
-                          {{ if .content.execution_notes }}
-                            <h3>Execution notes</h3>
-                            <ul>
-                              {{ range .content.execution_notes }}<li>{{ . }}</li>{{ end }}
+                        {{ if .fast.key_risks }}
+                          <div style="margin-top:12px;">
+                            <span class="label">Key risks</span>
+                            <ul style="margin-bottom:0;">
+                              {{ range .fast.key_risks }}<li>{{ . }}</li>{{ end }}
                             </ul>
-                          {{ end }}
+                          </div>
                         {{ end }}
+                      </div>
 
-                        {{ if eq .type "materials" }}
-                          <h3>Required tools</h3>
-                          <ul>
-                            {{ range .content.required_tools }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Alternatives</h3>
-                          <ul>
-                            {{ range .content.alternatives }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Budget vs premium</h3>
-                          <ul>
-                            {{ range .content.budget_vs_premium }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                        {{ end }}
+                      <div style="margin-top: var(--s4);" aria-label="Topics">
+                        {{ range .topics }}
+                          <details class="topic" id="{{ $tooth.id }}-{{ .id }}" data-tooth-topic="{{ $tooth.id }}" data-section-id="{{ $tooth.id }}-{{ .id }}" aria-labelledby="{{ $tooth.id }}-{{ .id }}-h">
+                            <summary id="{{ $tooth.id }}-{{ .id }}-h">{{ .title }}</summary>
+                            <div class="topic-body">
+                              <div class="small muted" style="margin-bottom: 10px">Updated {{ .last_updated }} · {{ .version }}</div>
 
-                        {{ if eq .type "bullets" }}
-                          <ul>
-                            {{ range .content.bullets }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                        {{ end }}
+                              {{ if eq .type "steps" }}
+                                <ol>
+                                  {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
+                                </ol>
+                              {{ end }}
 
-                        {{ if eq .type "if_then" }}
-                          <ul>
-                            {{ range .rules }}
-                              <li><strong>IF</strong> {{ .if }} <strong>THEN</strong> {{ .then }}</li>
-                            {{ end }}
-                          </ul>
-                        {{ end }}
+                              {{ if eq .type "bullets" }}
+                                <ul>
+                                  {{ range .content.bullets }}<li>{{ . }}</li>{{ end }}
+                                </ul>
+                              {{ end }}
 
-                        {{ if eq .type "postop" }}
-                          <h3>Instructions</h3>
-                          <ul>
-                            {{ range .content.instructions }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                          <h3>Follow-up logic</h3>
-                          <ul>
-                            {{ range .content.follow_up_logic }}<li>{{ . }}</li>{{ end }}
-                          </ul>
-                        {{ end }}
+                              {{ if eq .type "if_then" }}
+                                <ul>
+                                  {{ range .rules }}
+                                    <li><strong>IF</strong> {{ .if }} <strong>THEN</strong> {{ .then }}</li>
+                                  {{ end }}
+                                </ul>
+                              {{ end }}
 
-                        {{ if eq .type "references" }}
-                          <ul>
-                            {{ range .refs }}
-                              <li>
-                                {{ .citation }}
-                                {{ if .year }}<span class="muted">({{ .year }})</span>{{ end }}
-                                {{ if .url }} — <a href="{{ .url }}" rel="noopener" target="_blank">Source</a>{{ end }}
-                              </li>
-                            {{ end }}
-                          </ul>
+                              {{ if eq .type "references" }}
+                                <ul>
+                                  {{ range .refs }}
+                                    <li>
+                                      {{ .citation }}
+                                      {{ if .year }}<span class="muted">({{ .year }})</span>{{ end }}
+                                      {{ if .url }} — <a href="{{ .url }}" rel="noopener" target="_blank">Source</a>{{ end }}
+                                    </li>
+                                  {{ end }}
+                                </ul>
+                              {{ end }}
+                            </div>
+                          </details>
                         {{ end }}
-                      </section>
-                    {{ end }}
-                  </div>
-                </article>
+                      </div>
+                    </div>
+                  </article>
+                {{ end }}
               {{ end }}
 
               <noscript>
-                <div class="card card-pad" style="margin-top: var(--space-4)">
-                  <strong>Note:</strong> JavaScript is disabled. You can still scroll and read, but specialty/procedure switching will be limited.
+                <div class="card card-pad" style="margin-top: var(--s4)">
+                  <strong>Note:</strong> JavaScript is disabled. You can still read content, but tooth switching will be limited.
                 </div>
               </noscript>
             </div>
@@ -726,19 +685,13 @@
 
       {{ if eq $sid "community" }}
         <section id="community" aria-labelledby="community-title">
-          <h2 id="community-title">Community & Trust</h2>
-
+          <h2 id="community-title">Community</h2>
           <div class="card card-pad">
-            <p class="muted">This is a living clinical reference. If you see a gap, ambiguity, or an unsafe recommendation, report it.</p>
-
+            <p class="muted">If something is unclear or unsafe, report it. If you have a practical tip, suggest it.</p>
             <div class="pill-row">
               <a class="btn" href="{{ $page.Site.Params.community.report_issue_href }}">{{ $page.Site.Params.community.report_issue_label }}</a>
               <a class="btn" href="{{ $page.Site.Params.community.suggest_tip_href }}">{{ $page.Site.Params.community.suggest_tip_label }}</a>
             </div>
-
-            <div class="divider"></div>
-
-            <p class="small muted" style="margin: 0">Every protocol section shows its own <strong>last updated</strong> date and <strong>version</strong> to support traceability.</p>
           </div>
         </section>
       {{ end }}
@@ -748,14 +701,11 @@
           <h2 id="contact-title">{{ $page.Site.Params.contact.section_title }}</h2>
           <div class="card card-pad">
             <p class="muted">{{ $page.Site.Params.contact.intro }}</p>
-
             <div class="pill-row">
               <a class="btn primary" href="{{ $page.Site.Params.contact.email_href }}">{{ $page.Site.Params.contact.email_label }}</a>
               <a class="btn" href="{{ $page.Site.Params.contact.whatsapp_href }}" rel="noopener" target="_blank">{{ $page.Site.Params.contact.whatsapp_label }}</a>
             </div>
-
             <div class="divider"></div>
-
             <p class="small muted" style="margin: 0">{{ $page.Site.Params.monetization.cta_note }}</p>
           </div>
         </section>
@@ -765,31 +715,24 @@
     <footer>
       <p class="small" style="margin-bottom: 10px">{{ $page.Site.Params.footer.line_1 }}</p>
       <p class="small" style="margin-top: 0">{{ $page.Site.Params.footer.line_2 }}</p>
-      <p class="small" style="margin-top: var(--space-4)">
+      <p class="small" style="margin-top: var(--s4)">
         <a href="#{{ $page.Site.Params.monetization.cta_target_section }}">{{ $page.Site.Params.monetization.cta_label }}</a>
       </p>
     </footer>
   </main>
 
   <script>
-    // Architecture note:
-    // - Minimal JS: procedure filtering + scroll-spy + URL hash persistence.
-    // - No external dependencies.
-
+    // Minimal JS: tooth selection + deep links + light scroll highlighting.
     (function () {
       const qs = (sel, root = document) => root.querySelector(sel);
       const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-      const specialtyButtons = qsa('.specialty-card[data-specialty-id]');
-      const procItems = qsa('.proc-item');
-      const procButtons = qsa('[data-select-procedure]');
-      const procedures = qsa('.procedure');
       const navLinks = qsa('.navlink');
 
-      const activeSpecialtyFromConfig = (function () {
-        const firstActive = specialtyButtons.find(b => !b.disabled);
-        return firstActive ? firstActive.getAttribute('data-specialty-id') : null;
-      })();
+      const archButtons = qsa('[data-arch]');
+      const toothItems = qsa('.tooth-item');
+      const toothButtons = qsa('[data-select-tooth]');
+      const teeth = qsa('.tooth');
 
       function setActiveNav() {
         const sections = navLinks
@@ -806,65 +749,62 @@
         if (current && current.a) current.a.setAttribute('aria-current', 'true');
       }
 
-      function setSpecialty(id) {
-        specialtyButtons.forEach(b => {
-          const match = b.getAttribute('data-specialty-id') === id;
-          b.setAttribute('aria-pressed', match ? 'true' : 'false');
+      function parseHash() {
+        // Supported:
+        // - #protocol|tooth=<id>
+        // - #<toothId>-<topicId>
+        const h = (location.hash || '').replace('#', '');
+        const parts = h.split('|');
+        const toothPart = parts.find(p => p.startsWith('tooth='));
+        if (toothPart) return { toothId: decodeURIComponent(toothPart.replace('tooth=', '')), topicId: null };
+
+        if (h) {
+          const ids = teeth.map(t => t.getAttribute('data-tooth-id')).filter(Boolean);
+          const match = ids.find(id => h === id || h.startsWith(id + '-'));
+          if (match) {
+            const topicId = (h.startsWith(match + '-') ? h.replace(match + '-', '') : null);
+            return { toothId: match, topicId };
+          }
+        }
+
+        return { toothId: null, topicId: null };
+      }
+
+      function setArch(arch) {
+        archButtons.forEach(b => {
+          const isMatch = b.getAttribute('data-arch') === arch;
+          b.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
         });
 
-        procItems.forEach(li => {
-          const show = li.getAttribute('data-specialty-id') === id;
+        toothItems.forEach(li => {
+          const show = li.getAttribute('data-arch') === arch;
           li.style.display = show ? '' : 'none';
         });
 
-        procedures.forEach(p => {
-          const show = p.getAttribute('data-specialty-id') === id;
-          if (!show) p.setAttribute('data-active', 'false');
+        teeth.forEach(t => {
+          const show = t.getAttribute('data-arch') === arch;
+          if (!show) t.setAttribute('data-active', 'false');
         });
       }
 
-      function setProcedure(procId, pushHash) {
-        let found = false;
+      let jumpObserver = null;
 
-        procButtons.forEach(b => {
-          const match = b.getAttribute('data-select-procedure') === procId;
-          b.setAttribute('aria-pressed', match ? 'true' : 'false');
-        });
-
-        procedures.forEach(p => {
-          const match = p.getAttribute('data-procedure-id') === procId;
-          p.setAttribute('data-active', match ? 'true' : 'false');
-          if (match) found = true;
-        });
-
-        if (found && pushHash) {
-          // Persist selected procedure without breaking section anchors.
-          history.replaceState(null, '', '#protocol|proc=' + encodeURIComponent(procId));
-        }
-
-        // Refresh scroll-spy observers for the active procedure
-        setupProcedureScrollSpy(procId);
-      }
-
-      let sectionObserver = null;
-
-      function setupProcedureScrollSpy(procId) {
-        if (sectionObserver) sectionObserver.disconnect();
-
-        const jump = qs('[data-jump-for="' + CSS.escape(procId) + '"]');
+      function setupJumpSpy(toothId) {
+        if (jumpObserver) jumpObserver.disconnect();
+        const jump = qs('[data-jump-for="' + CSS.escape(toothId) + '"]');
         if (!jump) return;
 
-        const jumpLinks = qsa('a[data-jump]', jump);
-        const sections = qsa('[data-proc-section="' + CSS.escape(procId) + '"]');
+        const links = qsa('a[data-jump]', jump);
+        const topics = qsa('[data-tooth-topic="' + CSS.escape(toothId) + '"]');
 
         function markActive(sectionId) {
-          jumpLinks.forEach(a => {
+          links.forEach(a => {
             const isActive = a.getAttribute('data-jump') === sectionId;
             a.setAttribute('data-active', isActive ? 'true' : 'false');
           });
         }
 
-        sectionObserver = new IntersectionObserver((entries) => {
+        jumpObserver = new IntersectionObserver((entries) => {
           const visible = entries
             .filter(e => e.isIntersecting)
             .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -874,69 +814,79 @@
           }
         }, { root: null, threshold: [0.15, 0.25, 0.4], rootMargin: '-10% 0px -70% 0px' });
 
-        sections.forEach(s => sectionObserver.observe(s));
+        topics.forEach(t => jumpObserver.observe(t));
       }
 
-      function parseHash() {
-        // Supported:
-        // - #protocol|proc=<id>
-        // - #<procId>-<sectionId> (deep link to a procedure section)
-        // Fallback: no hash -> defaults.
-        const h = (location.hash || '').replace('#', '');
-        const parts = h.split('|');
-        const procPart = parts.find(p => p.startsWith('proc='));
-        if (procPart) {
-          return { procId: decodeURIComponent(procPart.replace('proc=', '')) };
+      function openTopic(toothId, topicId) {
+        if (!topicId) return;
+        const el = document.getElementById(toothId + '-' + topicId);
+        if (!el) return;
+        if (el.tagName && el.tagName.toLowerCase() === 'details') {
+          el.open = true;
         }
-
-        if (h) {
-          const known = procedures.map(p => p.getAttribute('data-procedure-id')).filter(Boolean);
-          const match = known.find(id => h === id || h.startsWith(id + '-'));
-          if (match) return { procId: match };
-        }
-
-        return { procId: null };
+        el.scrollIntoView({ block: 'start' });
       }
 
-      // Wire specialty buttons
-      specialtyButtons.forEach(btn => {
+      function setTooth(toothId, pushHash, topicIdToOpen) {
+        if (!toothId) return;
+
+        let found = false;
+        toothButtons.forEach(b => {
+          const match = b.getAttribute('data-select-tooth') === toothId;
+          b.setAttribute('aria-pressed', match ? 'true' : 'false');
+        });
+
+        teeth.forEach(t => {
+          const match = t.getAttribute('data-tooth-id') === toothId;
+          t.setAttribute('data-active', match ? 'true' : 'false');
+          if (match) found = true;
+        });
+
+        if (found && pushHash) {
+          history.replaceState(null, '', '#protocol|tooth=' + encodeURIComponent(toothId));
+        }
+
+        setupJumpSpy(toothId);
+        if (topicIdToOpen) openTopic(toothId, topicIdToOpen);
+      }
+
+      archButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-          const id = btn.getAttribute('data-specialty-id');
-          if (!id || btn.disabled) return;
-
-          setSpecialty(id);
-          const firstVisibleProc = procItems.find(li => li.style.display !== 'none');
-          const firstProcId = firstVisibleProc ? firstVisibleProc.getAttribute('data-procedure-id') : null;
-          if (firstProcId) setProcedure(firstProcId, true);
+          const arch = btn.getAttribute('data-arch');
+          if (!arch) return;
+          setArch(arch);
+          const firstVisible = toothItems.find(li => li.style.display !== 'none' && (qs('button', li) && !qs('button', li).disabled));
+          const toothId = firstVisible ? firstVisible.getAttribute('data-tooth-id') : null;
+          if (toothId) setTooth(toothId, true);
         });
       });
 
-      // Wire procedure buttons
-      procButtons.forEach(btn => {
+      toothButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-          const procId = btn.getAttribute('data-select-procedure');
-          if (!procId) return;
-          setProcedure(procId, true);
-          const activeArticle = qs('.procedure[data-procedure-id="' + CSS.escape(procId) + '"]');
-          if (activeArticle) activeArticle.scrollIntoView({ block: 'start' });
+          const toothId = btn.getAttribute('data-select-tooth');
+          if (!toothId) return;
+          setTooth(toothId, true);
+          const active = qs('.tooth[data-tooth-id="' + CSS.escape(toothId) + '"]');
+          if (active) active.scrollIntoView({ block: 'start' });
         });
       });
 
-      // Scroll spy for top nav
       document.addEventListener('scroll', setActiveNav, { passive: true });
 
-      // Init state
-      const { procId } = parseHash();
-      const initialSpecialty = activeSpecialtyFromConfig;
-      if (initialSpecialty) setSpecialty(initialSpecialty);
+      // Init
+      const { toothId, topicId } = parseHash();
+      const activeButtons = toothItems.filter(li => {
+        const b = qs('button', li);
+        return b && !b.disabled;
+      });
 
-      // Choose initial procedure:
-      // - hash proc
-      // - first visible procedure
-      const firstVisibleProc = procItems.find(li => li.style.display !== 'none');
-      const fallbackProcId = firstVisibleProc ? firstVisibleProc.getAttribute('data-procedure-id') : null;
-      setProcedure(procId || fallbackProcId, true);
+      const defaultArch = (activeButtons[0] ? activeButtons[0].getAttribute('data-arch') : 'maxillary') || 'maxillary';
+      setArch(defaultArch);
 
+      const firstVisible = toothItems.find(li => li.style.display !== 'none' && (qs('button', li) && !qs('button', li).disabled));
+      const fallbackTooth = firstVisible ? firstVisible.getAttribute('data-tooth-id') : null;
+
+      setTooth(toothId || fallbackTooth, true, topicId);
       setActiveNav();
     })();
   </script>
