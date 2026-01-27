@@ -296,3 +296,388 @@ reviewed_by_note = ""
     url = ""
     year = 2021
 
+[params.protocols]
+intro = "Select a tooth, review the fast anatomy/access summary, then open only the topic you need."
+
+[[params.teeth]]
+id = "mx-central-incisor"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper Central Incisor"
+abbr = "U1"
+status = "active"
+last_updated = "2026-01-27"
+version = "v1.0"
+
+  [params.teeth.fast]
+  access_cavity = "Triangular/ovoid; keep conservative and centered."
+  canals = "Usually 1 canal"
+  typical_difficulty = "Low"
+  key_risks = [
+    "Labial perforation if access is too facial",
+    "Ledging if apical curvature is ignored"
+  ]
+  student_focus = [
+    "Straight-line access",
+    "Working length accuracy",
+    "Irrigation safety"
+  ]
+
+  [[params.teeth.topics]]
+  id = "access"
+  title = "Access cavity"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Rubber dam isolation and field disinfection.",
+      "Initial entry through palatal surface; aim for straight-line access.",
+      "Unroof chamber fully; refine to an ovoid outline without over-flaring.",
+      "Confirm canal location and patency before shaping."
+    ]
+
+  [[params.teeth.topics]]
+  id = "canal-anatomy"
+  title = "Canal anatomy (fast)"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Usually 1 canal; watch for apical curvature.",
+      "Confirm with angled PA if anatomy is unclear.",
+      "Avoid transportation by respecting the original canal path."
+    ]
+
+  [[params.teeth.topics]]
+  id = "working-length"
+  title = "Working length"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Create a reproducible glide path.",
+      "Use apex locator to establish WL.",
+      "Confirm with a WL radiograph if needed.",
+      "Re-check WL after coronal flaring and before obturation."
+    ]
+
+  [[params.teeth.topics]]
+  id = "mechanical-prep"
+  title = "Mechanical preparation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Do not shape before glide path is secure.",
+      "Use a conservative taper strategy.",
+      "Recapitulate frequently and irrigate between instruments."
+    ]
+
+  [[params.teeth.topics]]
+  id = "obturation"
+  title = "Obturation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Dry to WL with paper points.",
+      "Fit master cone to WL (tug-back) and verify as needed.",
+      "Sealer placement and obturation with chosen technique.",
+      "Immediate coronal seal."
+    ]
+
+  [[params.teeth.topics]]
+  id = "broken-file"
+  title = "Broken file / instrument separation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "if_then"
+
+    [[params.teeth.topics.rules]]
+    if = "Instrument separates in the coronal third"
+    then = "Stop; take a radiograph; consider ultrasonic/microscope retrieval if trained, otherwise refer."
+
+    [[params.teeth.topics.rules]]
+    if = "Instrument separates in the apical third"
+    then = "Assess canal disinfection and prognosis; bypass may be safer than removal; document and consider referral."
+
+    [[params.teeth.topics.rules]]
+    if = "You cannot maintain WL or canal patency after separation"
+    then = "Stop and refer early rather than risking perforation/transportation."
+
+  [[params.teeth.topics]]
+  id = "medications"
+  title = "Medications (fast)"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Analgesics per local guidelines (avoid unnecessary antibiotics).",
+      "Antibiotics are for systemic involvement/spreading infection per guidelines.",
+      "Document allergies and medical history."
+    ]
+
+  [[params.teeth.topics]]
+  id = "tips"
+  title = "Tips & tricks"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Prioritize access and irrigation; shaping is secondary to disinfection.",
+      "If it feels tight, refine the glide path before continuing.",
+      "Good coronal seal prevents reinfection."
+    ]
+
+  [[params.teeth.topics]]
+  id = "references"
+  title = "References"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "references"
+
+    [[params.teeth.topics.refs]]
+    citation = "European Society of Endodontology (ESE) quality guidelines for endodontic treatment."
+    url = "https://www.e-s-e.eu/"
+    year = 2020
+
+    [[params.teeth.topics.refs]]
+    citation = "Cohen’s Pathways of the Pulp (latest edition) — core endodontic principles and protocols."
+    url = ""
+    year = 2021
+
+[[params.teeth]]
+id = "mx-lateral-incisor"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper Lateral Incisor"
+abbr = "U2"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "mx-canine"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper Canine"
+abbr = "U3"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "mx-first-premolar"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper First Premolar"
+abbr = "U4"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "mx-second-premolar"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper Second Premolar"
+abbr = "U5"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "mx-first-molar"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper First Molar"
+abbr = "U6"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "mx-second-molar"
+specialty_id = "endodontics"
+arch = "maxillary"
+name = "Upper Second Molar"
+abbr = "U7"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-central-incisor"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Central Incisor"
+abbr = "L1"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-lateral-incisor"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Lateral Incisor"
+abbr = "L2"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-canine"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Canine"
+abbr = "L3"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-first-premolar"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower First Premolar"
+abbr = "L4"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-second-premolar"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Second Premolar"
+abbr = "L5"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-first-molar"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower First Molar"
+abbr = "L6"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
+[[params.teeth]]
+id = "md-second-molar"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Second Molar"
+abbr = "L7"
+status = "coming_soon"
+last_updated = "2026-01-27"
+version = "v0.1"
+
+  [params.teeth.fast]
+  access_cavity = "Coming soon."
+  canals = ""
+  typical_difficulty = ""
+  key_risks = []
+  student_focus = []
+
