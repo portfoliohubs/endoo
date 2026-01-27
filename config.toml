@@ -152,11 +152,11 @@ attributes = "Static • Fast • Privacy-friendly • Professional"
 # ============================================================================
 
 # ----------------------------------------------------------------------------
-# TOOTH #1 - MAXILLARY RIGHT CENTRAL INCISOR (U1)
+# TOOTH #1 - MAXILLARY CENTRAL INCISOR (U1)
 # ----------------------------------------------------------------------------
 
 [[params.teeth]]
-id = "mx-central-incisor-right"
+id = "mx-central-incisor"
 specialty_id = "endodontics"
 arch = "maxillary"
 name = "Upper Central Incisor"
