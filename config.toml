@@ -100,6 +100,185 @@ student_focus = [
 "Common tooth for RCT—build confidence here"
 ]
 
+[[params.teeth.topics]]
+id = "access"
+title = "Access cavity"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "steps"
+
+[params.teeth.topics.content]
+steps = [
+"Rubber dam isolation (use #9 or #2 clamp; ensure stable isolation for moisture control).",
+"Pre-operative radiograph: Assess pulp chamber size, canal length, periapical status, proximity to nasopalatine canal.",
+"Shade selection: Record pre-operative tooth shade (important for post-RCT esthetic management).",
+"Anesthesia: Anterior superior alveolar nerve block OR infiltration (supraperiosteal injection); nasopalatine block if needed.",
+"Initial entry: Lingual surface at cingulum level using round bur (#2 or #4).",
+"Access outline: Triangular shape—base at cingulum, apex toward incisal edge (follows pulp chamber anatomy).",
+"Penetrate to chamber: Remove lingual dentin until chamber floor visualized; expect small chamber in anterior teeth.",
+"Locate canal orifice: Usually centered in chamber floor; use explorer and magnification.",
+"Unroof chamber completely: Remove all lingual dentin to expose full canal orifice and ensure straight-line access.",
+"Refine access: Smooth walls, remove unsupported enamel rods, ensure no ledges or undercuts."
+]
+
+[[params.teeth.topics]]
+id = "working-length"
+title = "Working length"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "steps"
+
+[params.teeth.topics.content]
+steps = [
+"Establish initial glide path with #10 K-file to estimated working length (typically 22-24 mm for upper central incisor).",
+"Use electronic apex locator (5th/6th generation multi-frequency) for accurate measurement.",
+"Dry canal with paper points before EAL measurement (moisture affects accuracy).",
+"Advance file slowly until 'APEX' reading (0.0), then retract 0.5-1.0 mm for final working length.",
+"Take working length radiograph with file in place to confirm (mandatory for documentation).",
+"Verify no overextension into nasopalatine canal (check radiograph for file beyond apex).",
+"Recheck working length after coronal flaring (canal preparation can affect initial measurements).",
+"Document final working length in patient record with radiographic confirmation.",
+"Consider CBCT if anatomy unclear or if perforation suspected."
+]
+
+[[params.teeth.topics]]
+id = "mechanical-prep"
+title = "Mechanical preparation"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "options"
+
+[[params.teeth.topics.options]]
+name = "Hand instrumentation (Crown-Down) - Recommended for learning"
+steps = [
+"Coronal flaring: Gates-Glidden #2, #3 at orifice level only (2-3 mm depth).",
+"Pre-flare middle third with K-files #25 → #20 → #15 in 2 mm increments.",
+"Establish working length with #10 K-file; negotiate to apex with watch-winding motion.",
+"Apical preparation: #15 → #20 → #25 at working length using balanced force technique.",
+"Master apical file (MAF): Typically #30-40 for central incisor (large canal diameter).",
+"Recapitulate with #10 or #15 file after each larger instrument to maintain patency.",
+"Use step-back technique: Files progressively shorter by 1 mm to create taper.",
+"Final irrigation after each instrument to remove debris.",
+"Verify smooth, tapered preparation with no ledges or transportation."
+]
+
+[[params.teeth.topics.options]]
+name = "Rotary NiTi - Efficient for experienced clinicians"
+steps = [
+"Mandatory glide path: #10 and #15 K-files to working length before any rotary file.",
+"Use flexible NiTi system (ProTaper Universal, WaveOne, Reciproc, etc.).",
+"For single-file systems: WaveOne Primary or Reciproc R25 in reciprocating motion.",
+"For multi-file systems: S1 → S2 → F1 → F2 (or equivalent) to working length.",
+"Speed: 250-300 RPM, torque: 2.0-4.0 Ncm (higher torque for large canals).",
+"Technique: 3 gentle pecking motions inward, withdraw, clean flutes, irrigate, repeat.",
+"Never force instruments; if resistance, remove and re-establish glide path.",
+"Watch for instrument unwinding/deformation; discard immediately if detected.",
+"Irrigate with 2-3 mL NaOCl between every instrument."
+]
+
+[[params.teeth.topics]]
+id = "irrigation"
+title = "Irrigation protocol"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "steps"
+
+[params.teeth.topics.content]
+steps = [
+"Solution: 2.5-5.25% sodium hypochlorite (NaOCl); minimum 20-30 mL total per canal.",
+"Delivery: 30-gauge side-vented needle (NaviTip) inserted 2-3 mm short of working length.",
+"Gentle pressure with backflow; never bind needle in canal (risk of apical extrusion).",
+"Irrigate after every single instrument; frequency more important than volume per irrigation.",
+"Final irrigation: 17% EDTA (1 mL) for 1 minute to remove smear layer.",
+"Final rinse: 2.5% NaOCl (5 mL) to remove EDTA residue.",
+"Optional: 2% chlorhexidine (CHX) as final irrigant (avoid after NaOCl - precipitate formation).",
+"Use ultrasonic activation for enhanced cleaning (optional but recommended).",
+"Dry canal completely with absorbent paper points before obturation."
+]
+
+[[params.teeth.topics]]
+id = "obturation"
+title = "Obturation"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "steps"
+
+[params.teeth.topics.content]
+steps = [
+"Dry canal completely: Multiple absorbent paper points until dry at working length.",
+"Select master cone: Size matched to MAF (#30-40 typically) with .04 or .06 taper.",
+"Fit master cone: Should have slight 'tug-back' resistance at working length.",
+"Take master cone radiograph: Verify cone is 0.5-1.0 mm short of radiographic apex.",
+"Apply sealer: AH Plus (resin-based) or bioceramic sealer (EndoSequence BC).",
+"Sealer application: Lentulo spiral at slow speed, or coat master cone with thin layer.",
+"Insert master cone to working length with firm apical pressure.",
+"Obturation technique: Lateral compaction with accessory cones and spreader (recommended for anterior teeth).",
+"Lateral compaction: Use spreader size B/C, insert 1-2 mm short of WL, add accessory cones until dense.",
+"Sear off excess gutta-percha 2 mm below orifice level with heated plugger.",
+"Vertical compaction at orifice level to seal chamber floor.",
+"Take final radiograph: Verify homogeneous fill, no voids, proper length.",
+"Place immediate coronal seal: Cavit or IRM minimum 3-4 mm thickness.",
+"Document obturation date and refer for permanent restoration within 2 weeks."
+]
+
+[[params.teeth.topics]]
+id = "medications"
+title = "Medications (fast)"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "bullets"
+
+[params.teeth.topics.content]
+bullets = [
+"Analgesics: Ibuprofen 600 mg + Acetaminophen 1000 mg (superior to opioids per AAE 2020 guidelines).",
+"Pre-emptive analgesia: Give NSAID 1 hour before treatment to reduce post-op pain by 40%.",
+"Antibiotics ONLY for systemic signs: fever, facial swelling, lymphadenopathy, cellulitis.",
+"Antibiotic choice (if indicated): Amoxicillin 500 mg TID × 7 days; if penicillin allergy: Azithromycin 500 mg day 1, then 250 mg days 2-5.",
+"Local infection without systemic involvement: Endodontic treatment alone is sufficient; antibiotics NOT indicated.",
+"Intracanal medicament (if multi-visit): Calcium hydroxide paste, change after 7-14 days if needed.",
+"Document all allergies, medical history, and contraindications before prescribing.",
+"Avoid NSAIDs if patient has renal disease, GI ulcers, or anticoagulation (consult physician)."
+]
+
+[[params.teeth.topics]]
+id = "tips"
+title = "Tips & tricks"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "bullets"
+
+[params.teeth.topics.content]
+bullets = [
+"Use magnification (dental microscope preferred; loupes minimum 2.5×) for precise access.",
+"Conservative access preserves dentin and reduces fracture risk in anterior teeth.",
+"Always check for second canal (<1% incidence but possible in upper central incisors).",
+"Esthetic considerations: Internal bleaching may be needed post-treatment for discoloration.",
+"Immediate coronal seal prevents reinfection—critical for long-term success.",
+"Consider post and core if significant tooth structure lost (consult restorative dentist).",
+"Patient communication: Explain potential for temporary discoloration and esthetic options.",
+"Documentation: Take pre-op, intra-op, and post-op photographs for medico-legal protection.",
+"Follow-up: Radiographic evaluation at 6 months and 12 months to confirm healing."
+]
+
+[[params.teeth.topics]]
+id = "references"
+title = "References"
+last_updated = "2026-01-27"
+version = "v1.0"
+type = "references"
+
+[[params.teeth.topics.refs]]
+citation = "European Society of Endodontology. Quality guidelines for endodontic treatment: consensus report. International Endodontic Journal. 2006;39(12):921-930."
+url = "https://www.e-s-e.eu/"
+
+[[params.teeth.topics.refs]]
+citation = "American Association of Endodontists. Guide to Clinical Endodontics. 5th edition. 2021."
+url = "https://www.aae.org/"
+
+[[params.teeth.topics.refs]]
+citation = "Cohen S, Hargreaves KM, Berman LH. Cohen's Pathways of the Pulp. 12th edition. Elsevier; 2021."
+url = ""
+
 # Tooth #7 - Upper Lateral Incisor
 [[params.teeth]]
 id = "mx-lateral-incisor-right"
