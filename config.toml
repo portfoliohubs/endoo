@@ -1,9 +1,3 @@
-# ============================================================================
-# COMPREHENSIVE ENDODONTIC PROTOCOLS - ALL 16 TEETH
-# Evidence-Based Clinical Guidelines
-# Sources: ESE Guidelines, AAE Standards, Cohen's Pathways, Peer-Reviewed Research
-# ============================================================================
-
 baseURL = "https://portfoliohubs.github.io/endoo/"
 languageCode = "en-us"
 title = "EndoProtocols"
@@ -398,9 +392,6 @@ version = "v1.0"
     url = "https://www.aae.org/"
     year = 2017
 
-# ============================================================================
-# END OF ALL 16 TEETH PROTOCOLS
-# ============================================================================
 # ----------------------------------------------------------------------------
 # TOOTH #2 - MAXILLARY LATERAL INCISOR (U2)
 # ----------------------------------------------------------------------------
@@ -492,7 +483,7 @@ version = "v1.0"
     steps = [
       "Establish glide path to working length.",
       "Coronal flaring with Gates-Glidden #2.",
-      "Apical preparation: #15 ? #20 ? #25 at working length.",
+      "Apical preparation: #15 â†’ #20 â†’ #25 at working length.",
       "Master apical file: #25-30 depending on canal size.",
       "If two canals: prepare both to same size.",
       "Recapitulate frequently to maintain patency.",
@@ -608,7 +599,7 @@ version = "v1.0"
     steps = [
       "Establish glide path to working length.",
       "Coronal flaring with Gates-Glidden #2.",
-      "Apical preparation: #15 ? #20 ? #25 ? #30 at working length.",
+      "Apical preparation: #15 â†’ #20 â†’ #25 â†’ #30 at working length.",
       "Master apical file: #30-35 (large for anterior tooth).",
       "Use pre-curved files for apical curvature.",
       "Recapitulate frequently to maintain patency.",
@@ -635,8 +626,7 @@ version = "v1.0"
 
 # ============================================================================
 # END OF ALL 16 TEETH PROTOCOLS
-# ============================================================================
-# ----------------------------------------------------------------------------
+# ============================================================================# ----------------------------------------------------------------------------
 # TOOTH #4 - MAXILLARY FIRST PREMOLAR (U4)
 # ----------------------------------------------------------------------------
 
@@ -870,6 +860,9 @@ version = "v1.0"
       "Place immediate coronal seal."
     ]
 
+# ============================================================================
+# END OF ALL 16 TEETH PROTOCOLS
+# ============================================================================
 # ----------------------------------------------------------------------------
 # TOOTH #6 - MAXILLARY FIRST MOLAR (U6)
 # ----------------------------------------------------------------------------
@@ -1143,212 +1136,36 @@ version = "v1.0"
 # ============================================================================
 # END OF ALL 16 TEETH PROTOCOLS
 # ============================================================================
-      "Typical lengths: Mesial canals 19-20 mm; Distal canal 19-20 mm (similar but verify individually).",
-      "MM canal (if present): Often 0.5-1.0 mm shorter than MB/ML due to anatomy.",
-      "C-shaped canals: Establish WL in multiple locations (buccal, central, lingual aspects of C-configuration).",
-      "Recheck WL after coronal flaring and mid-preparation (dentin removal may alter readings).",
-      "Document WL for each canal clearly; mesial anatomy complexity requires precise documentation."
-    ]
-
-  [[params.teeth.topics]]
-  id = "mechanical-prep"
-  title = "Mechanical preparation"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "options"
-
-    [[params.teeth.topics.options]]
-    name = "Hand instrumentation (Crown-Down) - Reliable for mesial anatomy"
-    steps = [
-      "Coronal flaring: Gates-Glidden #3, #2 at each mesial orifice (2-3 mm depth ONLY).",
-      "Pre-flare middle third: K-files #35 ? #30 ? #25 in 2 mm increments.",
-      "Working length: #10 K-file to WL in all canals; confirm patency.",
-      "Apical enlargement mesial: #15 ? #20 ? #25 at WL using balanced force technique.",
-      "MAF mesial: Typically #20-25 (narrow canals), accept #15-20 if canals very narrow.",
-      "MAF distal: Typically #30-35 (larger canal than mesial canals).",
-      "Anticurvature filing mesial: File AWAY from furcation (toward distal) to preserve thin lingual wall.",
-      "Recapitulation: After EVERY larger file, return to MAF in each canal separately.",
-      "Step-back: Progressive taper with files 1 mm shorter than MAF to create taper."
-    ]
-
-    [[params.teeth.topics.options]]
-    name = "Rotary NiTi system (ProTaper, WaveOne) - Use with caution"
-    steps = [
-      "CAUTION: Rotary NiTi suitable ONLY if: (1) Relatively straight canals, (2) Separate (not C-shaped), (3) Good access.",
-      "Mandatory glide path: #10 and #15 K-files to WL in EACH canal before rotary.",
-      "For WaveOne: Primary file (#25/.07) in reciprocating mode for all canals.",
-      "For ProTaper: S1 (coronal) ? S2 (middle) ? F1 or F2 (apical) to WL.",
-      "Typical finishing: F1 (#20/.07) or F2 (#25/.08) typical for mesial canals; F3 (#30/.09) for distal canal.",
-      "Speed: 300 RPM for ProTaper; reciprocating mode for WaveOne per manufacturer specs.",
-      "Torque: 2.0-3.0 Ncm for mesial; 3.0-4.0 Ncm for distal (larger canal).",
-      "Technique: VERY gentle pecking; withdraw every 2-3 pecks; clean flutes; irrigate, repeat.",
-      "DO NOT force rotary files in MB2—if resistance, remove and hand-file with #15-20 K-files first.",
-      "Irrigate 2 mL NaOCl after EVERY file change in EACH canal.",
-      "Monitor for complications: Ledge, zip, perforation, separation, perforation."
-    ]
-
-    [[params.teeth.topics.options]]
-    name = "C-shaped canal protocol (if present—10-15% incidence)"
-    steps = [
-      "C-shaped configuration requires COMPLETELY DIFFERENT approach—cannot use standard technique.",
-      "Confirm C-shaped: CBCT or intraoperative assessment (single ribbon orifice, figure-8 pattern).",
-      "Hand instrumentation PREFERRED: Use small files (#15-25) with circumferential filing along entire C-configuration.",
-      "Negotiate ALL aspects of C: Buccal, central, lingual zones; use files to explore entire C-space.",
-      "AVOID rotary in C-shaped canals: High risk of strip perforation in thin isthmus areas.",
-      "Irrigation + ultrasonic activation ESSENTIAL for C-shaped canals.",
-      "Final rinse: 5 mL EDTA 17% per canal (2 minutes) ? 5 mL NaOCl final flush per canal.",
-      "Dry each canal separately: Multiple paper points until completely dry (may be challenging in C-shaped canals).",
-      "Obturation: Warm vertical compaction ONLY for C-shaped canals; lateral compaction inadequate.",
-      "Bioceramic sealer expansion fills voids and irregularities in C-shaped anatomy.",
-      "Success rate with C-shaped fragment: 60-70% (dependent on quality of disinfection and seal)."
-    ]
-
-  [[params.teeth.topics]]
-  id = "obturation"
-  title = "Obturation"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "steps"
-
-    [params.teeth.topics.content]
-    steps = [
-      "Verify ALL canals/areas dry to working length using paper points.",
-      "Master cone selection: Matched to MAF for each canal.",
-      "  • Mesial canals: Typically #20-25 cones.",
-      "  • Distal canal: Typically #25-30 cone.",
-      "If C-shaped canal: Master cone selection CHALLENGING—may need custom-fit or multiple cones.",
-      "Fit master cones: Insert each to respective WL; assess tug-back (may be poor in C-shaped).",
-      "Master cone radiograph: Verify position of ALL cones; 0.5-1.0 mm short of apex.",
-      "If C-shaped: Place cones at mesial and distal ends; radiograph to verify coverage.",
-      "Sealer: Bioceramic sealer STRONGLY RECOMMENDED for C-shaped canals (fills voids better than AH Plus).",
-      "Apply sealer: Coat master cones OR use lentulo (GENTLE—furcation perforation risk).",
-      "Insert master cones to WL: Sequential insertion; seat each fully.",
-      "Obturation technique for separate canals - Lateral compaction:",
-      "  • Finger spreader size B or C; 1 mm short of WL in each canal.",
-      "  • Add accessory cones (#15-25); continue until dense in each canal.",
-      "Obturation technique for C-SHAPED canals - DIFFERENT APPROACH NEEDED:",
-      "  • Option 1: Warm vertical compaction PREFERRED for C-shaped canals.",
-      "    - System B or heat carrier; downpack along entire C-configuration.",
-      "    - Backfill with injectable warm GP (Obtura, Calamus).",
-      "  • Option 2: Continuous wave technique adapted for C-shape.",
-      "  • Option 3: Lateral compaction with MULTIPLE accessory cones along C; challenging but possible.",
-      "  • Option 4: Single-cone + bioceramic sealer (acceptable if C-shaped canal prepared circumferentially).",
-      "Bioceramic advantage in C-shaped: Sealer expansion fills isthmuses, fins, and irregularities.",
-      "Sear excess GP: Heated plugger 2-3 mm below chamber floor.",
-      "Vertical compaction: At furcation level; ensure coronal seal.",
-      "Post-obturation radiograph: Verify ALL canals filled to WL (0-2 mm short acceptable); if C-shaped, verify entire configuration filled.",
-      "Angled radiographs: May need multiple angles to see all areas of obturation.",
-      "Coronal seal: Cavit or IRM 3-4 mm minimum.",
-      "Definitive restoration: Crown MANDATORY within 2-4 weeks (posterior molar—high occlusal forces).",
-      "If C-shaped canal: Explain to patient that obturation may not be perfect due to complex anatomy."
-    ]
-
-  [[params.teeth.topeth]]
-  id = "medications"
-  title = "Medications (fast)"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "bullets"
-
-    [params.teeth.topics.content]
-    bullets = [
-      "Analgesics: Ibuprofen 600 mg + Acetaminophen 1000 mg Q6H PRN.",
-      "Pre-emptive NSAID: Ibuprofen 600 mg 1 hour pre-treatment + 600 mg immediately post-treatment (reduces post-op pain 30-40%).",
-      "Post-operative pain: Expected MODERATE to SEVERE (third molars = highest post-op pain of all teeth).",
-      "Prescribe analgesics proactively: Don't wait for pain—give prescription in advance.",
-      "Antibiotics: Consider prophylactic antibiotics due to complex anatomy and difficulty achieving complete disinfection.",
-      "If antibiotics used: Amoxicillin 500 mg TID × 7 days starting day before or day of treatment.",
-      "Penicillin allergy: Clindamycin 300 mg QID × 7 days (QID for third molars—more aggressive due to higher infection risk).",
-      "Intracanal medicament (multi-visit): Calcium hydroxide for 1-2 weeks between visits.",
-      "Remove Ca(OH)2 completely before obturation: Copious NaOCl + ultrasonic activation.",
-      "Document: All allergies, medical contraindications, and contraindications before prescribing."
-    ]
-
-  [[params.teeth.topics]]
-  id = "tips"
-  title = "Tips & tricks"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "bullets"
-
-    [params.teeth.topics.content]
-    bullets = [
-      "C-SHAPED CANAL DETECTION: Look for (1) Single ribbon-shaped orifice, (2) Figure-8 pattern connecting mesial-distal, (3) Single irregular orifice.",
-      "C-shaped management: Circumferential filing along entire C-configuration; fan motion along entire C-configuration.",
-      "Lingual perforation DANGER: THIN lingual wall only 0.7-1.0 mm at furcation—HIGHEST perforation risk.",
-      "Anticurvature filing ESSENTIAL in mesial canals: File AWAY from furcation (toward distal) to preserve thin lingual dentin.",
-      "Oval distal canal: Use circumferential filing (rotate handle 90° and file B, L, M, D walls).",
-      "Isthmuses between mesial canals: Present in 60-80%—requires ultrasonic activation ONLY way to reach fins and anastomoses.",
-      "Warm NaOCl + ultrasonic activation PRIMARY treatment method (5-6 cycles minimum).",
-      "Second molar success rate: 88-92% (LOWER than first molar due to: anatomy complexity).",
-      "Retreatment failure: 50-60% (higher than other teeth due to complexity).",
-      "Monitor at 3, 6, 12 months post-treatment; third molars have higher failure rate—watch closely.",
-      "Consider extraction vs RCT: If strategic value is low, extraction may be better option."
-    ]
-
-  [[params.teeth.topics]]
-  id = "references"
-  title = "References"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "references"
-
-    [[params.teeth.topics.refs]]
-    citation = "Vertucci FJ. Root canal anatomy of the human permanent teeth. Oral Surgery, Oral Medicine, Oral Pathology. 1984;58(5):589-599."
-    url = ""
-    year = 1984
-
-    [[params.teeth.topics.refs]]
-    citation = "Gulabivala K, Opasanon A, Ng YL, Alavi A. Root and canal morphology of Thai mandibular molars. International Endodontic Journal. 2002;35(1):56-62."
-    url = ""
-    year = 2002
-
-    [[params.teeth.topics.refs]]
-    citation = "Ahmed HA, Abu-bakr NH, Yahia NA, Ibrahim YE. Root and canal morphology of permanent mandibular molars in a Sudanese population. International Endodontic Journal. 2007;40(10):766-771."
-    url = ""
-    year = 2007
-
-    [[params.teeth.topics.refs]]
-    citation = "Hargreaves KM, Berman LH, editors. Cohen's Pathways of the Pulp. 12th ed. Elsevier; 2020."
-    url = ""
-    year = 2020
-
-    [[params.teeth.topics.refs]]
-    citation = "European Society of Endodontology. Quality guidelines for endodontic treatment: consensus report of the European Society of Endodontology. International Endodontic Journal. 2006;39(12):921-930."
-    url = "https://www.e-s-e.eu/"
-    year = 2006
-
 # ----------------------------------------------------------------------------
-# TOOTH #15 - MANDIBULAR SECOND MOLAR (L7)
+# TOOTH #7 - MAXILLARY SECOND MOLAR (U7)
 # ----------------------------------------------------------------------------
 
 [[params.teeth]]
-id = "md-second-molar"
+id = "mx-second-molar"
 specialty_id = "endodontics"
-arch = "mandibular"
-name = "Lower Second Molar"
-abbr = "L7"
-number = "#18"
+arch = "maxillary"
+name = "Upper Second Molar"
+abbr = "U7"
+number = "#2"
 status = "active"
 last_updated = "2026-01-27"
 version = "v1.0"
 
   [params.teeth.fast]
-  access_cavity = "Rectangular/triangular; assess for C-shaped configuration (5-10% in some populations)."
-  canals = "Usually 3 canals typical; C-shaped in 5-10% of cases"
+  access_cavity = "Trapezoidal; MB2 less common than first molar (40-50%)."
+  canals = "3-4 canals (MB, MB2, DB, P); more root fusion than first molar"
   typical_difficulty = "Moderate to High"
   key_risks = [
-    "C-shaped canal configuration missed (5-10% incidence—requires different protocol)",
-    "Lingual perforation (thin lingual wall, especially at furcation)",
-    "Mesial root perforation (strip perforation in narrow mesial canals)",
-    "Middle mesial (MM) canal missed (10-15% incidence)",
-    "Distal canal may be large and oval—inadequate cleaning if treated as round canal"
+    "Root fusion complicating anatomy",
+    "Missed MB2 canal (40-50% incidence)",
+    "Furcation perforation",
+    "Instrument separation in curved canals"
   ]
   student_focus = [
-    "C-shaped canal detection and management (5-10% incidence)",
-    "Middle mesial (MM) canal location (between MB and ML)",
-    "Managing large oval distal canal (requires special instrumentation)",
-    "Lingual wall protection during access and instrumentation"
+    "Assess root fusion on radiographs",
+    "Systematic search for MB2",
+    "Conservative access refinement",
+    "Careful working length determination"
   ]
 
   [[params.teeth.topics]]
@@ -1360,20 +1177,15 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     steps = [
-      "Rubber dam isolation; assess occlusal anatomy and potential for C-shaped configuration.",
-      "CBCT evaluation recommended (not mandatory but helpful).",
-      "Initial entry: Occlusal surface at central groove/fossa with round bur.",
-      "Outline: RECTANGULAR shape—mesial width accommodates 2-3 mesial canals, distal accommodates 1-2 distal canals.",
-      "Alternative: TRIANGULAR outline with base toward mesial (MB, ML, MM) and apex toward distal.",
-      "Assess for C-shaped: Look for single ribbon-shaped orifice or figure-8 pattern connecting canals.",
-      "If C-shaped: Modify access to OVAL or FIGURE-8 outline connecting all spaces.",
-      "Traditional anatomy: Locate MB, ML, and D orifices using explorer with magnification.",
-      "Search for MM canal: Located between MB and ML, slightly toward center of tooth; present in 10-15%.",
-      "Use ultrasonic tips and staining (methylene blue) to identify MM if present.",
-      "Distal canal assessment: Often large and oval (buccolingual dimension)—extend access lingually to expose fully.",
-      "Unroof chamber completely; walls divergent toward occlusal.",
-      "CRITICAL: Avoid over-extension LINGUALLY at furcation level—lingual wall only 0.7-1.0 mm thick (danger zone).",
-      "Verify straight-line access with small files; remove overhanging dentin and pulp horns."
+      "Rubber dam isolation; assess occlusal anatomy and potential for fusion.",
+      "Initial entry through occlusal surface; trapezoidal outline.",
+      "Assess chamber size (may be smaller due to calcification).",
+      "Locate canal orifices; expect possible root fusion.",
+      "Search for MB2 canal (less common than first molar).",
+      "Use magnification to visualize MB2 if present.",
+      "Unroof chamber completely; remove all overhanging dentin and pulp horns.",
+      "Verify straight-line access to all canals."
+      "DO NOT over-extend access CERVICALLY—risk furcation perforation."
     ]
 
   [[params.teeth.topics]]
@@ -1385,18 +1197,13 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     bullets = [
-      "Configuration: Type IV (2 mesial-1 distal): 60%; Type II (2-1 joining): 20%; C-shaped: 10-15%.",
-      "C-SHAPED CANAL: Present in 5-10% of mandibular second molars (HIGHEST frequency of all teeth).",
-      "C-shaped types: C1 (continuous C-shape), C2 (semicolon), C3 (2-3 separate canals), per Fan classification.",
-      "Average length: 19.8 mm (range 18-22 mm).",
-      "Mesial canals: MB and ML typically present; MM (middle mesial) in additional 10-15% (often missed).",
-      "MM canal location: Between MB and ML, slightly toward center of tooth; smaller orifice than MB/ML.",
-      "Distal canal: Single canal in 70%; Type IV (2 canals, DB and DL) in 25-30% of cases; oval cross-section common.",
-      "Curvature: Mesial canals have moderate distal curvature (30-40°); distal canal usually straighter.",
-      "Apical diameter: Mesial canals #20-30; Distal canal #30-45 (larger and wider).",
-      "Radix entomolaris: Extra distolingual root present in 3-5% (Asian populations: 5-30%).",
-      "Isthmuses: Connections between mesial canals in 60-80%; requires ultrasonic instrumentation for complete debridement.",
-      "Lingual wall thickness: THIN (0.7-1.0 mm at furcation)—high perforation risk."
+      "MB2 canal present in 40-50% of cases (less than first molar).",
+      "Root fusion common (30-40% of cases)",
+      "Average length: 19-21 mm (shorter than first molar).",
+      "Canals may be smaller due to calcification.",
+      "Curvature more common in fused roots.",
+      "Calcification: MB2 most commonly calcified (40-50% in older patients).",
+      "CBCT often reveals missed anatomy not visible on 2D radiographs."
     ]
 
   [[params.teeth.topics]]
@@ -1408,17 +1215,12 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     steps = [
-      "Establish glide path in ALL canals: #10 and #15 K-files to estimated WL.",
-      "Pre-curve files for mesial canals: 25-40° distal curvature typical; pre-bend apical 2-3 mm of each file.",
-      "Electronic apex locator: Measure EACH canal separately (MB, ML, MM if present, D).",
-      "Dry canals with paper points before EAL measurement (critical for accuracy).",
-      "Advance file slowly to 'APEX' reading (0.0), then retract 0.5-1.0 mm for final WL.",
-      "Take WL radiograph: Files in ALL identified canals; use different sizes for identification (e.g., #10 MB, #15 ML, #20 D).",
-      "Typical lengths: Mesial canals 19-20 mm; Distal canal 19-20 mm (similar but verify individually).",
-      "MM canal (if present): Often 0.5-1.0 mm shorter than MB/ML due to anatomy.",
-      "C-shaped canals: Establish WL in multiple locations (buccal, central, lingual aspects of C-configuration).",
-      "Recheck WL after coronal flaring and mid-preparation (dentin removal may alter readings).",
-      "Document WL for each canal clearly; mesial anatomy complexity requires precise documentation."
+      "Establish glide path in all canals with #10 and #15 files.",
+      "Use electronic apex locator for each canal.",
+      "Take working length radiograph with files in place.",
+      "Average working length: 19-21 mm.",
+      "Use CBCT measurements as reference.",
+      "Recheck after coronal flaring."
     ]
 
   [[params.teeth.topics]]
@@ -1426,52 +1228,18 @@ version = "v1.0"
   title = "Mechanical preparation"
   last_updated = "2026-01-27"
   version = "v1.0"
-  type = "options"
+  type = "steps"
 
-    [[params.teeth.topics.options]]
-    name = "Hand instrumentation (Crown-Down) - Reliable for mesial anatomy"
+    [params.teeth.topics.content]
     steps = [
-      "Coronal flaring: Gates-Glidden #3, #2 at each mesial orifice (2-3 mm depth ONLY).",
-      "Pre-flare middle third: K-files #35 ? #30 ? #25 in 2 mm increments.",
-      "Working length: #10 K-file to WL in all canals; confirm patency.",
-      "Apical enlargement mesial: #15 ? #20 ? #25 at WL using balanced force technique.",
-      "MAF mesial: Typically #20-25 (narrow canals), accept #15-20 if canals very narrow.",
-      "MAF distal: Typically #30-35 (larger canal than mesial canals).",
-      "Anticurvature filing mesial: File AWAY from furcation (toward distal) to preserve thin lingual wall.",
-      "Recapitulation: After EVERY larger file, return to MAF in each canal separately.",
-      "Step-back: Progressive taper with files 1 mm shorter than MAF to create taper."
-    ]
-
-    [[params.teeth.topics.options]]
-    name = "Rotary NiTi system (ProTaper, WaveOne) - Use with caution"
-    steps = [
-      "CAUTION: Rotary NiTi suitable ONLY if: (1) Relatively straight canals, (2) Separate (not C-shaped), (3) Good access.",
-      "Mandatory glide path: #10 and #15 K-files to WL in EACH canal before rotary.",
-      "For WaveOne: Primary file (#25/.07) in reciprocating mode for all canals.",
-      "For ProTaper: S1 (coronal) ? S2 (middle) ? F1 or F2 (apical) to WL.",
-      "Typical finishing: F1 (#20/.07) or F2 (#25/.08) typical for mesial canals; F3 (#30/.09) for distal canal.",
-      "Speed: 300 RPM for ProTaper; reciprocating mode for WaveOne per manufacturer specs.",
-      "Torque: 2.0-3.0 Ncm for mesial; 3.0-4.0 Ncm for distal (larger canal).",
-      "Technique: VERY gentle pecking; withdraw every 2-3 pecks; clean flutes; irrigate, repeat.",
-      "DO NOT force rotary files in MB2—if resistance, remove and hand-file with #15-20 K-files first.",
-      "Irrigate 2 mL NaOCl after EVERY file change in EACH canal.",
-      "Monitor for complications: Ledge, zip, perforation, separation, perforation."
-    ]
-
-    [[params.teeth.topics.options]]
-    name = "C-shaped canal protocol (if present—5-10% incidence)"
-    steps = [
-      "C-shaped configuration requires COMPLETELY DIFFERENT approach—cannot use standard technique.",
-      "Confirm C-shaped: CBCT or intraoperative assessment (single ribbon orifice, figure-8 pattern).",
-      "Hand instrumentation PREFERRED: Use small files (#15-25) with circumferential filing along entire C-configuration.",
-      "Negotiate ALL aspects of C: Buccal, central, lingual zones; use files to explore entire C-space.",
-      "AVOID rotary in C-shaped canals: High risk of strip perforation in thin isthmus areas.",
-      "Irrigation + ultrasonic activation ESSENTIAL for C-shaped canals.",
-      "Final rinse: 5 mL EDTA 17% per canal (2 minutes) ? 5 mL NaOCl final flush per canal.",
-      "Dry each canal separately: Multiple paper points until completely dry (may be challenging in C-shaped canals).",
-      "Obturation: Warm vertical compaction ONLY for C-shaped canals; lateral compaction inadequate.",
-      "Bioceramic sealer expansion fills voids and irregularities in C-shaped anatomy.",
-      "Success rate with C-shaped fragment: 60-70% (dependent on quality of disinfection and seal)."
+      "Establish glide path in all canals to working length.",
+      "Coronal flaring with Gates-Glidden #2-3.",
+      "Apical preparation: #15 ? #20 ? #25 at working length.",
+      "Master apical file: #25-30 depending on canal size.",
+      "Be conservative due to possible calcification.",
+      "Use pre-curved files for curved canals.",
+      "Recapitulate each canal frequently.",
+      "Consider referral if anatomy too complex."
     ]
 
   [[params.teeth.topics]]
@@ -1483,130 +1251,34 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     steps = [
-      "Verify ALL canals/areas dry to working length using paper points.",
-      "Master cone selection: Matched to MAF for each canal.",
-      "  • Mesial canals: Typically #20-25 cones.",
-      "  • Distal canal: Typically #25-30 cone.",
-      "If C-shaped canal: Master cone selection CHALLENGING—may need custom-fit or multiple cones.",
-      "Fit master cones: Insert each to respective WL; assess tug-back (may be poor in C-shaped).",
-      "Master cone radiograph: Verify position of ALL cones; 0.5-1.0 mm short of apex.",
-      "If C-shaped: Place cones at mesial and distal ends; radiograph to verify coverage.",
-      "Sealer: Bioceramic sealer STRONGLY RECOMMENDED for C-shaped canals (fills voids better than AH Plus).",
-      "Apply sealer: Coat master cones OR use lentulo (GENTLE—furcation perforation risk).",
-      "Insert master cones to WL: Sequential insertion; seat each fully.",
-      "Obturation technique for separate canals - Lateral compaction:",
-      "  • Finger spreader size B or C; 1 mm short of WL in each canal.",
-      "  • Add accessory cones (#15-25); continue until dense in each canal.",
-      "Obturation technique for C-SHAPED canals - DIFFERENT APPROACH NEEDED:",
-      "  • Option 1: Warm vertical compaction PREFERRED for C-shaped canals.",
-      "    - System B or heat carrier; downpack along entire C-configuration.",
-      "    - Backfill with injectable warm GP (Obtura, Calamus).",
-      "  • Option 2: Continuous wave technique adapted for C-shape.",
-      "  • Option 3: Lateral compaction with MULTIPLE accessory cones along C; challenging but possible.",
-      "  • Option 4: Single-cone + bioceramic sealer (acceptable if C-shaped canal prepared circumferentially).",
-      "Bioceramic advantage in C-shaped: Sealer expansion fills isthmuses, fins, and irregularities.",
-      "Sear excess GP: Heated plugger 2-3 mm below chamber floor.",
-      "Vertical compaction: At furcation level; ensure coronal seal.",
-      "Post-obturation radiograph: Verify ALL canals filled to WL (0-2 mm short acceptable); if C-shaped, verify entire configuration filled.",
-      "Angled radiographs: May need multiple angles to see all areas of obturation.",
-      "Coronal seal: Cavit or IRM 3-4 mm minimum.",
-      "Definitive restoration: Crown MANDATORY within 2-4 weeks (posterior molar—high occlusal forces).",
-      "If C-shaped canal: Explain to patient that obturation may not be perfect due to complex anatomy."
+      "Dry all canals completely with paper points.",
+      "Select master cones: #25-30 with appropriate tapers.",
+      "Fit master cones to working length with tug-back.",
+      "Apply sealer and insert master cones.",
+      "Lateral compaction with accessory cones.",
+      "Warm vertical compaction for complex anatomy.",
+      "Verify complete fill on radiograph.",
+      "Place immediate coronal seal."
     ]
-
-  [[params.teeth.topics]]
-  id = "medications"
-  title = "Medications (fast)"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "bullets"
-
-    [params.teeth.topics.content]
-    bullets = [
-      "Analgesics: Ibuprofen 600 mg + Acetaminophen 1000 mg Q6H PRN.",
-      "Pre-emptive NSAID: Ibuprofen 600 mg 1 hour pre-treatment + 600 mg immediately post-treatment (reduces post-op pain 30-40%).",
-      "Post-operative pain: Expected MODERATE to SEVERE (third molars = highest post-op pain of all teeth).",
-      "Prescribe analgesics proactively: Don't wait for pain—give prescription in advance.",
-      "Antibiotics: Consider prophylactic antibiotics due to complex anatomy and difficulty achieving complete disinfection.",
-      "If antibiotics used: Amoxicillin 500 mg TID × 7 days starting day before or day of treatment.",
-      "Penicillin allergy: Clindamycin 300 mg QID × 7 days (QID for third molars—more aggressive due to higher infection risk).",
-      "Intracanal medicament (multi-visit): Calcium hydroxide for 1-2 weeks between visits.",
-      "Remove Ca(OH)2 completely before obturation: Copious NaOCl + ultrasonic activation.",
-      "Document: All allergies, medical contraindications, and contraindications before prescribing."
-    ]
-
-  [[params.teeth.topics]]
-  id = "tips"
-  title = "Tips & tricks"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "bullets"
-
-    [params.teeth.topics.content]
-    bullets = [
-      "C-SHAPED CANAL DETECTION: Look for (1) Single ribbon-shaped orifice, (2) Figure-8 pattern connecting mesial-distal, (3) Single irregular orifice.",
-      "C-shaped management: Circumferential filing along entire C-configuration; fan motion along entire C-configuration.",
-      "Lingual perforation DANGER: THIN lingual wall only 0.7-1.0 mm at furcation—HIGHEST perforation risk.",
-      "Anticurvature filing ESSENTIAL in mesial canals: File AWAY from furcation (toward distal) to preserve thin lingual dentin.",
-      "Oval distal canal: Use circumferential filing (rotate handle 90° and file B, L, M, D walls).",
-      "Isthmuses between mesial canals: Present in 60-80%—requires ultrasonic activation ONLY way to reach fins and anastomoses.",
-      "Warm NaOCl + ultrasonic activation PRIMARY treatment method (5-6 cycles minimum).",
-      "Second molar success rate: 88-92% (LOWER than first molar due to: anatomy complexity).",
-      "Retreatment failure: 50-60% (higher than other teeth due to complexity).",
-      "Monitor at 3, 6, 12 months post-treatment; third molars have higher failure rate—watch closely.",
-      "Consider extraction vs RCT: If strategic value is low, extraction may be better option."
-    ]
-
-  [[params.teeth.topics]]
-  id = "references"
-  title = "References"
-  last_updated = "2026-01-27"
-  version = "v1.0"
-  type = "references"
-
-    [[params.teeth.topics.refs]]
-    citation = "Vertucci FJ. Root canal anatomy of the human permanent teeth. Oral Surgery, Oral Medicine, Oral Pathology. 1984;58(5):589-599."
-    url = ""
-    year = 1984
-
-    [[params.teeth.topics.refs]]
-    citation = "Gulabivala K, Opasanon A, Ng YL, Alavi A. Root and canal morphology of Thai mandibular molars. International Endodontic Journal. 2002;35(1):56-62."
-    url = ""
-    year = 2002
-
-    [[params.teeth.topics.refs]]
-    citation = "Ahmed HA, Abu-bakr NH, Yahia NA, Ibrahim YE. Root and canal morphology of permanent mandibular molars in a Sudanese population. International Endodontic Journal. 2007;40(10):766-771."
-    url = ""
-    year = 2007
-
-    [[params.teeth.topics.refs]]
-    citation = "Hargreaves KM, Berman LH, editors. Cohen's Pathways of the Pulp. 12th ed. Elsevier; 2020."
-    url = ""
-    year = 2020
-
-    [[params.teeth.topics.refs]]
-    citation = "European Society of Endodontology. Quality guidelines for endodontic treatment: consensus report of the European Society of Endodontology. International Endodontic Journal. 2006;39(12):921-930."
-    url = "https://www.e-s-e.eu/"
-    year = 2006
 
 # ----------------------------------------------------------------------------
-# TOOTH #16 - MANDIBULAR THIRD MOLAR (L8)
+# TOOTH #8 - MAXILLARY THIRD MOLAR (U8)
 # ----------------------------------------------------------------------------
 
 [[params.teeth]]
-id = "md-third-molar"
+id = "mx-third-molar"
 specialty_id = "endodontics"
-arch = "mandibular"
-name = "Lower Third Molar"
-abbr = "L8"
-number = "#32"
+arch = "maxillary"
+name = "Upper Third Molar"
+abbr = "U8"
+number = "#1"
 status = "active"
 last_updated = "2026-01-27"
 version = "v1.0"
 
   [params.teeth.fast]
   access_cavity = "Highly variable; often rhomboidal/irregular due to anatomical variation."
-  canals = "2-3 canals typical; highly variable (1-5 canals reported)"
+  canals = "3-4 canals typical; highly variable (1-5 canals reported)"
   typical_difficulty = "High to Very High"
   key_risks = [
     "Unpredictable anatomy",
@@ -1707,6 +1379,957 @@ version = "v1.0"
       "Warm vertical compaction recommended for complex anatomy.",
       "Verify complete fill on radiograph.",
       "Place immediate coronal seal."
+    ]
+
+# ============================================================================
+# MANDIBULAR TEETH (8 TEETH: L1-L8) - ORDERED FROM CENTRAL TO THIRD MOLAR
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# TOOTH #9 - MANDIBULAR CENTRAL INCISOR (L1)
+# ----------------------------------------------------------------------------
+
+[[params.teeth]]
+id = "md-central-incisor"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Central Incisor"
+abbr = "L1"
+number = "#24"
+status = "active"
+last_updated = "2026-01-27"
+version = "v1.0"
+
+  [params.teeth.fast]
+  access_cavity = "Triangular/ovoid; smallest access of all teeth."
+  canals = "Usually 1 canal (smallest canal of all teeth)"
+  typical_difficulty = "Low"
+  key_risks = [
+    "Ledging due to small canal size",
+    "Perforation if access too large",
+    "Instrument separation in tiny canals"
+  ]
+  student_focus = [
+    "Conservative access design",
+    "Small file sizes (#06-10) often needed",
+    "Gentle instrumentation techniques",
+    "Proper irrigation in small canals"
+  ]
+
+  [[params.teeth.topics]]
+  id = "access"
+  title = "Access cavity"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Rubber dam isolation and field disinfection.",
+      "Initial entry through lingual surface; smallest access.",
+      "Unroof chamber fully; refine to triangular outline.",
+      "Locate tiny canal orifice with magnification.",
+      "Confirm canal patency before shaping."
+    ]
+
+  [[params.teeth.topics]]
+  id = "canal-anatomy"
+  title = "Canal anatomy (fast)"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Usually Type I (single canal): 95%+ of cases",
+      "Average length: 20-22 mm",
+      "Smallest canal diameter of all teeth",
+      "Cross-section: very small, round to ovoid",
+      "Possible lateral canals in apical third",
+      "Root generally straight"
+    ]
+
+  [[params.teeth.topics]]
+  id = "working-length"
+  title = "Working length"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path with #06-10 K-files (may need very small files).",
+      "Use electronic apex locator with care (small canal).",
+      "Take working length radiograph with fine files.",
+      "Average working length: 20-22 mm.",
+      "Recheck after minimal coronal flaring."
+    ]
+
+  [[params.teeth.topics]]
+  id = "mechanical-prep"
+  title = "Mechanical preparation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path with #06-10 files to working length.",
+      "Minimal coronal flaring (preserve tooth structure).",
+      "Apical preparation: #10 ? #15 ? #20 at working length.",
+      "Master apical file: #20-25 (small for this tooth).",
+      "Use gentle instrumentation to avoid ledging.",
+      "Recapitulate frequently with small files.",
+      "Avoid rotary files in most cases."
+    ]
+
+  [[params.teeth.topics]]
+  id = "obturation"
+  title = "Obturation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Dry canal completely with fine paper points.",
+      "Select master cone: #20-25 with .02 taper.",
+      "Fit master cone to working length with gentle tug-back.",
+      "Apply sealer and insert master cone carefully.",
+      "Lateral compaction with fine accessory cones.",
+      "Verify complete fill on radiograph.",
+      "Place immediate coronal seal."
+    ]
+
+# ============================================================================
+# END OF ALL 16 TEETH PROTOCOLS
+# ============================================================================
+# ----------------------------------------------------------------------------
+# TOOTH #10 - MANDIBULAR LATERAL INCISOR (L2)
+# ----------------------------------------------------------------------------
+
+[[params.teeth]]
+id = "md-lateral-incisor"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Lateral Incisor"
+abbr = "L2"
+number = "#23"
+status = "active"
+last_updated = "2026-01-27"
+version = "v1.0"
+
+  [params.teeth.fast]
+  access_cavity = "Triangular/ovoid; slightly larger than central incisor."
+  canals = "Usually 1 canal, but 2 canals possible (5-10%)"
+  typical_difficulty = "Low"
+  key_risks = [
+    "Missed second canal",
+    "Root perforation during access",
+    "Ledging in curved canals"
+  ]
+  student_focus = [
+    "Always explore for second canal",
+    "Conservative access design",
+    "Proper working length determination",
+    "Maintain patency"
+  ]
+
+  [[params.teeth.topics]]
+  id = "access"
+  title = "Access cavity"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Rubber dam isolation and field disinfection.",
+      "Initial entry through lingual surface; triangular outline.",
+      "Unroof chamber fully; locate main canal orifice.",
+      "Explore carefully for second canal.",
+      "Refine access for straight-line access."
+    ]
+
+  [[params.teeth.topics]]
+  id = "canal-anatomy"
+  title = "Canal anatomy (fast)"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Type I (single canal): 90-95% of cases",
+      "Type II (2 canals): 5-10% of cases",
+      "Average length: 21-23 mm",
+      "Slightly larger than central incisor",
+      "Cross-section: small, round to ovoid",
+      "Root generally straight"
+    ]
+
+  [[params.teeth.topics]]
+  id = "working-length"
+  title = "Working length"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path with #08-15 K-files.",
+      "Use electronic apex locator for each canal.",
+      "Take working length radiograph with files in place.",
+      "Average working length: 21-23 mm.",
+      "If two canals: establish separate working lengths.",
+      "Recheck after coronal flaring."
+    ]
+
+  [[params.teeth.topics]]
+  id = "mechanical-prep"
+  title = "Mechanical preparation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path to working length.",
+      "Coronal flaring with Gates-Glidden #2.",
+      "Apical preparation: #10 ? #15 ? #20 ? #25 at working length.",
+      "Master apical file: #25-30 (slightly larger than central).",
+      "If two canals: prepare both to same size.",
+      "Recapitulate frequently to maintain patency.",
+      "Maintain conservative preparation."
+    ]
+
+  [[params.teeth.topics]]
+  id = "obturation"
+  title = "Obturation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Dry all canals completely with paper points.",
+      "Select master cones: #25-30 with appropriate taper.",
+      "Fit master cones to working length with tug-back.",
+      "Apply sealer and insert master cones.",
+      "Lateral compaction with accessory cones.",
+      "Verify complete fill on radiograph.",
+      "Place immediate coronal seal."
+    ]
+
+# ----------------------------------------------------------------------------
+# TOOTH #11 - MANDIBULAR CANINE (L3)
+# ----------------------------------------------------------------------------
+
+[[params.teeth]]
+id = "md-canine"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower Canine"
+abbr = "L3"
+number = "#22"
+status = "active"
+last_updated = "2026-01-27"
+version = "v1.0"
+
+  [params.teeth.fast]
+  access_cavity = "Ovoid; largest access of mandibular anterior teeth."
+  canals = "Usually 1 canal (largest single canal of mandibular anterior teeth)"
+  typical_difficulty = "Low to Moderate"
+  key_risks = [
+    "Apical curvature common (20-30% of cases)",
+    "Ledging due to long canal",
+    "Instrument separation in apical third"
+  ]
+  student_focus = [
+    "Check for apical curvature on multiple angles",
+    "Use pre-curved files for curved canals",
+    "Maintain patency throughout preparation"
+  ]
+
+  [[params.teeth.topics]]
+  id = "access"
+  title = "Access cavity"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Rubber dam isolation and field disinfection.",
+      "Initial entry through lingual surface; ovoid outline.",
+      "Unroof chamber fully; locate large canal orifice.",
+      "Confirm straight-line access to canal.",
+      "Check for apical curvature radiographically."
+    ]
+
+  [[params.teeth.topics]]
+  id = "canal-anatomy"
+  title = "Canal anatomy (fast)"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Usually Type I (single canal): 95%+ of cases",
+      "Average length: 22-25 mm (longest mandibular anterior).",
+      "Apical curvature in 20-30% of cases (distal direction).",
+      "Cross-section: large, round to ovoid",
+      "Largest single canal of mandibular anterior teeth",
+      "Possible lateral canals in apical third"
+    ]
+
+  [[params.teeth.topics]]
+  id = "working-length"
+  title = "Working length"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path with #10 and #15 K-files.",
+      "Use electronic apex locator (long canal requires care).",
+      "Take working length radiograph with multiple angles.",
+      "Average working length: 22-25 mm.",
+      "Check for apical curvature before final WL.",
+      "Recheck after coronal flaring."
+    ]
+
+  [[params.teeth.topics]]
+  id = "mechanical-prep"
+  title = "Mechanical preparation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path to working length.",
+      "Coronal flaring with Gates-Glidden #2.",
+      "Apical preparation: #15 ? #20 ? #25 ? #30 at working length.",
+      "Master apical file: #30-35 (large for anterior tooth).",
+      "Use pre-curved files for apical curvature.",
+      "Recapitulate frequently to maintain patency.",
+      "Consider rotary NiTi for straight canals."
+    ]
+
+  [[params.teeth.topics]]
+  id = "obturation"
+  title = "Obturation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Dry canal completely with paper points.",
+      "Select master cone: #30-35 with .04 taper.",
+      "Fit master cone to working length with good tug-back.",
+      "Apply sealer and insert master cone with firm pressure.",
+      "Lateral compaction with accessory cones.",
+      "Warm vertical compaction optional.",
+      "Place immediate coronal seal."
+    ]
+
+# ----------------------------------------------------------------------------
+# TOOTH #12 - MANDIBULAR FIRST PREMOLAR (L4)
+# ----------------------------------------------------------------------------
+
+[[params.teeth]]
+id = "md-first-premolar"
+specialty_id = "endodontics"
+arch = "mandibular"
+name = "Lower First Premolar"
+abbr = "L4"
+number = "#21"
+status = "active"
+last_updated = "2026-01-27"
+version = "v1.0"
+
+  [params.teeth.fast]
+  access_cavity = "Ovoid; usually single canal but check for second."
+  canals = "Usually 1 canal, but 2 canals possible (25-30%)"
+  typical_difficulty = "Low to Moderate"
+  key_risks = [
+    "Missed second canal",
+    "Root perforation during access",
+    "Ledging in curved canals"
+  ]
+  student_focus = [
+    "Always explore for second canal",
+    "Conservative access design",
+    "Proper working length determination",
+    "Maintain patency"
+  ]
+
+  [[params.teeth.topics]]
+  id = "access"
+  title = "Access cavity"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Rubber dam isolation and field disinfection.",
+      "Initial entry through occlusal surface; ovoid outline.",
+      "Unroof chamber fully; locate main canal orifice.",
+      "Explore carefully for second canal.",
+      "Refine access for straight-line access."
+    ]
+
+  [[params.teeth.topics]]
+  id = "canal-anatomy"
+  title = "Canal anatomy (fast)"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "bullets"
+
+    [params.teeth.topics.content]
+    bullets = [
+      "Type I (single canal): 70-75% of cases",
+      "Type IV (2 separate canals): 25-30% of cases",
+      "Average length: 20-22 mm",
+      "Root generally straight but may have slight curvature",
+      "Cross-section: ovoid buccolingually",
+      "Larger canal than maxillary premolars"
+    ]
+
+  [[params.teeth.topics]]
+  id = "working-length"
+  title = "Working length"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path with #10 and #15 K-files.",
+      "Use electronic apex locator for each canal.",
+      "Take working length radiograph with files in place.",
+      "Average working length: 20-22 mm.",
+      "If two canals: establish separate working lengths.",
+      "Recheck after coronal flaring."
+    ]
+
+  [[params.teeth.topics]]
+  id = "mechanical-prep"
+  title = "Mechanical preparation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Establish glide path to working length.",
+      "Coronal flaring with Gates-Glidden #2.",
+      "Apical preparation: #15 ? #20 ? #25 at working length.",
+      "Master apical file: #25-30 depending on canal size.",
+      "If two canals: prepare both to same taper.",
+      "Recapitulate each canal separately.",
+      "Be careful of root curvature in buccal canal."
+    ]
+
+  [[params.teeth.topics]]
+  id = "obturation"
+  title = "Obturation"
+  last_updated = "2026-01-27"
+  version = "v1.0"
+  type = "steps"
+
+    [params.teeth.topics.content]
+    steps = [
+      "Dry both canals completely with paper points.",
+      "Select master cones: #25-35 with appropriate tapers.",
+      "Fit master cones to working length in each canal.",
+      "Apply sealer and insert master cones.",
+      "Lateral compaction with accessory cones.",
+      "Warm vertical compaction recommended for complex anatomy.",
+      "Verify both canals filled properly on radiograph.",
+      "Place immediate coronal seal."
+  # ----------------------------------------------------------------------------
+  # TOOTH #13 - MANDIBULAR SECOND PREMOLAR (L5)
+  # ----------------------------------------------------------------------------
+  
+  [[params.teeth]]
+  id = "md-second-premolar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Second Premolar"
+  abbr = "L5"
+  number = "#20"
+  status = "active"
+  last_updated = "2026-01-28"
+  version = "v1.0"
+  
+    [params.teeth.fast]
+    access_cavity = "Ovoid; usually single canal with straight-line access."
+    canals = "Usually 1 canal (95%+), but 2 canals possible (5%)"
+    typical_difficulty = "Low"
+    key_risks = [
+      "Missed second canal (rare but possible)",
+      "Root perforation during access",
+      "Ledging in curved canals"
+    ]
+    student_focus = [
+      "Conservative access design",
+      "Proper working length determination",
+      "Maintain patency",
+      "Check for second canal if difficulty locating"
+    ]
+  
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through occlusal surface; ovoid outline.",
+        "Unroof chamber fully; locate main canal orifice.",
+        "Explore carefully for possible second canal.",
+        "Refine access for straight-line access."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "bullets"
+  
+      [params.teeth.topics.content]
+      bullets = [
+        "Type I (single canal): 95%+ of cases",
+        "Type IV (2 separate canals): 5% of cases",
+        "Average length: 21-23 mm",
+        "Root generally straight with minimal curvature",
+        "Cross-section: round to slightly ovoid",
+        "Most predictable of all premolars"
+      ]
+  
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path with #10 and #15 K-files.",
+        "Use electronic apex locator for accurate measurement.",
+        "Take working length radiograph with file in place.",
+        "Average working length: 21-23 mm.",
+        "Recheck after coronal flaring.",
+        "Verify with multiple angles if curvature suspected."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path to working length.",
+        "Coronal flaring with Gates-Glidden #2.",
+        "Apical preparation: #15 ? #20 ? #25 at working length.",
+        "Master apical file: #25-30 depending on canal size.",
+        "Maintain canal patency throughout preparation.",
+        "Recapitulate frequently.",
+        "Use rotary NiTi for efficient preparation."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Dry canal completely with paper points.",
+        "Select master cone: #25-30 with .04 taper.",
+        "Fit master cone to working length with good tug-back.",
+        "Apply sealer and insert master cone with firm pressure.",
+        "Lateral compaction with accessory cones.",
+        "Warm vertical compaction optional.",
+        "Verify complete fill on radiograph.",
+        "Place immediate coronal seal."
+      ]
+  # ----------------------------------------------------------------------------
+  # TOOTH #14 - MANDIBULAR FIRST MOLAR (L6)
+  # ----------------------------------------------------------------------------
+  
+  [[params.teeth]]
+  id = "md-first-molar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower First Molar"
+  abbr = "L6"
+  number = "#19"
+  status = "active"
+  last_updated = "2026-01-28"
+  version = "v1.0"
+  
+    [params.teeth.fast]
+    access_cavity = "Rectangular/trapezoidal; locate mesial canals (MB and ML) and distal canal."
+    canals = "Usually 3 canals (MB, ML, D); 4th canal (DL) possible (5-10%)"
+    typical_difficulty = "Moderate to High"
+    key_risks = [
+      "Missed mesial second canal (ML canal often missed)",
+      "Furcation perforation (thin dentin in furcation area)",
+      "Instrument separation in curved mesial canals",
+      "C-shaped configuration in rare cases"
+    ]
+    student_focus = [
+      "Always search for ML canal (2mm lingual to MB)",
+      "Conservative access to avoid furcation perforation",
+      "Separate working lengths for each canal",
+      "Thorough irrigation of complex anatomy"
+    ]
+  
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through occlusal surface; rectangular outline.",
+        "Unroof chamber fully; locate mesial and distal canal orifices.",
+        "Explore carefully for ML canal (2mm lingual to MB).",
+        "Check for possible DL canal.",
+        "Refine access for straight-line access to all canals."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "bullets"
+  
+      [params.teeth.topics.content]
+      bullets = [
+        "Type I (3 separate canals): 85-90% of cases",
+        "Type IV (4 canals): 5-10% of cases",
+        "Average length: 20-22 mm",
+        "Mesial canals often curved and complex",
+        "Distal canal usually straight and larger",
+        "ML canal most commonly missed canal in dentistry"
+      ]
+  
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all canals with #10 and #15 K-files.",
+        "Use electronic apex locator for each canal separately.",
+        "Take working length radiograph with files in all canals.",
+        "Average working length: 20-22 mm.",
+        "Mesial canals often shorter than distal canal.",
+        "Recheck after coronal flaring."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path to working length in all canals.",
+        "Coronal flaring with Gates-Glidden #2-3.",
+        "Apical preparation: #15 ? #20 ? #25 at working length.",
+        "Master apical file: #25-30 depending on canal size.",
+        "Mesial canals: prepare to #25-30 with .04 taper.",
+        "Distal canal: prepare to #30-35 with .04 taper.",
+        "Recapitulate each canal separately.",
+        "Use rotary NiTi with caution in curved canals."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals completely with paper points.",
+        "Select master cones: #25-35 with appropriate tapers.",
+        "Fit master cones to working length in each canal.",
+        "Apply sealer and insert master cones.",
+        "Lateral compaction with accessory cones.",
+        "Warm vertical compaction recommended for complex anatomy.",
+        "Verify all canals filled properly on radiograph.",
+        "Place immediate coronal seal."
+      ]
+  # ----------------------------------------------------------------------------
+  # TOOTH #15 - MANDIBULAR SECOND MOLAR (L7)
+  # ----------------------------------------------------------------------------
+  
+  [[params.teeth]]
+  id = "md-second-molar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Second Molar"
+  abbr = "L7"
+  number = "#18"
+  status = "active"
+  last_updated = "2026-01-28"
+  version = "v1.0"
+  
+    [params.teeth.fast]
+    access_cavity = "Rectangular; similar to first molar but watch for root fusion."
+    canals = "Usually 3-4 canals; C-shaped possible (5-10% in some populations)"
+    typical_difficulty = "Moderate to High"
+    key_risks = [
+      "Root fusion complicating canal anatomy",
+      "C-shaped configuration (difficult to clean and fill)",
+      "Missed canals due to fusion",
+      "Instrument separation in complex anatomy"
+    ]
+    student_focus = [
+      "Always check for C-shaped configuration",
+      "Use CBCT if available for complex cases",
+      "Thorough exploration of chamber floor",
+      "Modified obturation techniques for C-shaped"
+    ]
+  
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through occlusal surface; rectangular outline.",
+        "Unroof chamber fully; locate all canal orifices.",
+        "Explore carefully for C-shaped configuration.",
+        "Check for root fusion patterns.",
+        "Refine access for straight-line access."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "bullets"
+  
+      [params.teeth.topics.content]
+      bullets = [
+        "Type I (3 separate canals): 60-70% of cases",
+        "Type IV (4 canals): 20-30% of cases",
+        "C-shaped: 5-10% (higher in Asian populations)",
+        "Root fusion common (30-40% of cases)",
+        "Average length: 19-21 mm",
+        "More variable than first molar"
+      ]
+  
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all canals with #10 and #15 K-files.",
+        "Use electronic apex locator for each canal.",
+        "Take working length radiograph with files in place.",
+        "Average working length: 19-21 mm.",
+        "C-shaped: may need multiple working lengths.",
+        "Recheck after coronal flaring."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path to working length in all canals.",
+        "Coronal flaring with Gates-Glidden #2-3.",
+        "Apical preparation: #15 ? #20 ? #25 at working length.",
+        "Master apical file: #25-30 depending on canal size.",
+        "C-shaped: use modified preparation techniques.",
+        "Enhanced irrigation for complex anatomy.",
+        "Recapitulate each canal separately.",
+        "Use rotary NiTi with caution."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals completely with paper points.",
+        "Select master cones: #25-35 with appropriate tapers.",
+        "Fit master cones to working length in each canal.",
+        "Apply sealer and insert master cones.",
+        "C-shaped: use warm vertical compaction.",
+        "Lateral compaction for standard anatomy.",
+        "Verify complete fill on radiograph.",
+        "Place immediate coronal seal."
+      ]
+  # ----------------------------------------------------------------------------
+  # TOOTH #16 - MANDIBULAR THIRD MOLAR (L8)
+  # ----------------------------------------------------------------------------
+  
+  [[params.teeth]]
+  id = "md-third-molar"
+  specialty_id = "endodontics"
+  arch = "mandibular"
+  name = "Lower Third Molar"
+  abbr = "L8"
+  number = "#17"
+  status = "active"
+  last_updated = "2026-01-28"
+  version = "v1.0"
+  
+    [params.teeth.fast]
+    access_cavity = "Highly variable; often irregular due to unpredictable anatomy."
+    canals = "2-5 canals possible; highly variable and unpredictable"
+    typical_difficulty = "High to Very High"
+    key_risks = [
+      "Unpredictable canal anatomy",
+      "Severe root curvature and fusion",
+      "Limited access due to posterior position",
+      "Instrument separation in severely curved canals"
+    ]
+    student_focus = [
+      "Consider referral for complex cases",
+      "CBCT recommended for treatment planning",
+      "Enhanced magnification and illumination",
+      "Conservative approach to avoid complications"
+    ]
+  
+    [[params.teeth.topics]]
+    id = "access"
+    title = "Access cavity"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Rubber dam isolation and field disinfection.",
+        "Initial entry through occlusal surface; conservative outline.",
+        "Unroof chamber fully; locate all canal orifices.",
+        "Explore thoroughly for additional canals.",
+        "Check for severe root curvature and fusion.",
+        "Refine access for best possible straight-line access."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "canal-anatomy"
+    title = "Canal anatomy (fast)"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "bullets"
+  
+      [params.teeth.topics.content]
+      bullets = [
+        "Highly variable: 2-5 canals reported",
+        "Root fusion common (40-50% of cases)",
+        "Severe curvature frequent",
+        "Average length: 18-20 mm (often shorter)",
+        "C-shaped possible but rare",
+        "Most unpredictable of all teeth"
+      ]
+  
+    [[params.teeth.topics]]
+    id = "working-length"
+    title = "Working length"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path in all located canals.",
+        "Use electronic apex locator for each canal.",
+        "Take multiple working length radiographs.",
+        "Average working length: 18-20 mm.",
+        "May need multiple angles due to curvature.",
+        "Recheck after coronal flaring."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "mechanical-prep"
+    title = "Mechanical preparation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Establish glide path to working length.",
+        "Very conservative coronal flaring.",
+        "Apical preparation: #10 ? #15 ? #20 at working length.",
+        "Master apical file: #20-25 (conservative).",
+        "Hand files preferred for severe curvature.",
+        "Enhanced irrigation throughout.",
+        "Frequent recapitulation essential.",
+        "Consider referral for complex anatomy."
+      ]
+  
+    [[params.teeth.topics]]
+    id = "obturation"
+    title = "Obturation"
+    last_updated = "2026-01-28"
+    version = "v1.0"
+    type = "steps"
+  
+      [params.teeth.topics.content]
+      steps = [
+        "Dry all canals completely with paper points.",
+        "Select master cones: #20-25 with appropriate tapers.",
+        "Fit master cones to working length in each canal.",
+        "Apply sealer and insert master cones.",
+        "Warm vertical compaction recommended.",
+        "Consider carrier-based techniques for complex cases.",
+        "Verify fill on multiple radiograph angles.",
+        "Place immediate coronal seal."
+      ]
     ]
 
 # ============================================================================
