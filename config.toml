@@ -4,10 +4,9 @@
 # ============================================================================
 
 # Basic Hugo Configuration
-baseURL = "https://mickys-username.github.io/third-model/"
+baseURL = "https://portfoliohubs.github.io/endoo/"
 languageCode = "en-us"
 title = "Dental Endodontic Protocols"
-theme = ""
 
 # Site Parameters
 [params]
