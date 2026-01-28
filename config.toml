@@ -64,15 +64,15 @@ radius = "14px"
 # Footer configuration
 [params.footer]
 tagline = "Evidence-based protocols for clinical excellence"
-attributes = "Static â€¢ Fast â€¢ Privacy-friendly â€¢ Professional"
+attributes = "Static Ã¢â‚¬Â¢ Fast Ã¢â‚¬Â¢ Privacy-friendly Ã¢â‚¬Â¢ Professional"
 
   [params.footer.platform]
   title = "This platform was built using a specialized system for dental educational websites"
-  description = "â€” designed for clarity, speed, and clinical accuracy."
+  description = "Ã¢â‚¬â€ designed for clarity, speed, and clinical accuracy."
 
   [params.footer.cta]
   question = "Need a similar professional website for your clinic or educational content?"
-  action = "â†’ View how this system works"
+  action = "Ã¢â€ â€™ View how this system works"
 
   [params.footer.author]
   name = "Dr. Michael Nabil"
@@ -240,9 +240,9 @@ version = "v1.0"
     name = "Hand instrumentation (Crown-Down) - Recommended for severe curvature"
     steps = [
       "Coronal flaring: Gates-Glidden #3, #2 at orifice level only (2-3 mm depth).",
-      "Pre-flare middle third with K-files #35 â†’ #30 â†’ #25 in 2 mm increments.",
+      "Pre-flare middle third with K-files #35 Ã¢â€ â€™ #30 Ã¢â€ â€™ #25 in 2 mm increments.",
       "Establish working length with #10 K-file; negotiate curvature with gentle watch-winding motion.",
-      "Apical preparation: #15 â†’ #20 â†’ #25 at working length using balanced force technique.",
+      "Apical preparation: #15 Ã¢â€ â€™ #20 Ã¢â€ â€™ #25 at working length using balanced force technique.",
       "Master apical file (MAF): #25-30 for mesial canals, #30-35 for palatal (assess individual canal size).",
       "Recapitulate with #10 or #15 file after each larger instrument to maintain patency.",
       "Use pre-curved files for severely curved canals (curve apical 2-3 mm to match anatomy).",
@@ -257,7 +257,7 @@ version = "v1.0"
       "Use only flexible NiTi systems designed for curved canals (avoid stiff .06+ taper files).",
       "For single-file systems: WaveOne Gold Small/Primary or Reciproc R25 in reciprocating motion.",
       "Technique: 3 gentle pecking motions inward, withdraw, clean flutes, irrigate, repeat.",
-      "For multi-file systems: S1 (coronal) â†’ S2 (middle) â†’ F1 or F2 (apical) to working length.",
+      "For multi-file systems: S1 (coronal) Ã¢â€ â€™ S2 (middle) Ã¢â€ â€™ F1 or F2 (apical) to working length.",
       "Speed: 250-300 RPM, torque: 1.5-3.0 Ncm (lower than straight canals to prevent binding).",
       "Never force instruments; if resistance, remove and re-establish glide path.",
       "Watch for instrument unwinding/deformation; discard immediately if detected.",
@@ -271,9 +271,9 @@ version = "v1.0"
       "Delivery: 30-gauge side-vented needle (NaviTip) inserted 2-3 mm short of working length.",
       "Gentle pressure with backflow; never bind needle in canal (risk of apical extrusion).",
       "Irrigate after every single instrument; frequency more important than volume per irrigation.",
-      "Warm NaOCl to 45-60Â°C doubles tissue-dissolving capacity (use warming device).",
+      "Warm NaOCl to 45-60Ã‚Â°C doubles tissue-dissolving capacity (use warming device).",
       "Ultrasonic or sonic activation: 3 cycles of 20 seconds each for enhanced cleaning.",
-      "Final rinse sequence: 5 mL EDTA 17% (1 minute contact time) â†’ 5 mL NaOCl final flush.",
+      "Final rinse sequence: 5 mL EDTA 17% (1 minute contact time) Ã¢â€ â€™ 5 mL NaOCl final flush.",
       "Dry thoroughly with multiple paper points until last point is completely dry."
     ]
 
@@ -323,7 +323,7 @@ version = "v1.0"
 
     [[params.teeth.topics.rules]]
     if = "Prevention is critical"
-    then = "Use rotary files maximum 3-4 times then discard (single-use ideal). Inspect all files before use for unwinding/deformation. Create adequate glide path (#15 minimum) before rotary instruments. Use torque-limited motor (2.0-3.0 Ncm for molars). Never force instrumentsâ€”if binding occurs, remove and improve glide path. Pre-curve hand files for curved canals. Respect manufacturer guidelines for RPM and technique."
+    then = "Use rotary files maximum 3-4 times then discard (single-use ideal). Inspect all files before use for unwinding/deformation. Create adequate glide path (#15 minimum) before rotary instruments. Use torque-limited motor (2.0-3.0 Ncm for molars). Never force instrumentsÃ¢â‚¬â€if binding occurs, remove and improve glide path. Pre-curve hand files for curved canals. Respect manufacturer guidelines for RPM and technique."
 
   [[params.teeth.topics]]
   id = "medications"
@@ -337,7 +337,7 @@ version = "v1.0"
       "Analgesics: Ibuprofen 600 mg + Acetaminophen 1000 mg (superior to opioids per AAE 2020 guidelines).",
       "Pre-emptive analgesia: Give NSAID 1 hour before treatment to reduce post-op pain by 40%.",
       "Antibiotics ONLY for systemic signs: fever, facial swelling, lymphadenopathy, trismus, cellulitis.",
-      "Antibiotic choice (if indicated): Amoxicillin 500 mg TID Ã— 7 days; if penicillin allergy: Azithromycin 500 mg day 1, then 250 mg days 2-5.",
+      "Antibiotic choice (if indicated): Amoxicillin 500 mg TID Ãƒâ€” 7 days; if penicillin allergy: Azithromycin 500 mg day 1, then 250 mg days 2-5.",
       "Local infection without systemic involvement: Endodontic treatment alone is sufficient; antibiotics NOT indicated.",
       "Intracanal medicament (if multi-visit): Calcium hydroxide paste, change after 7-14 days if needed.",
       "Document all allergies, medical history, and contraindications before prescribing.",
@@ -353,15 +353,15 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     bullets = [
-      "CBCT is not optional for third molarsâ€”anatomy is too variable to treat blindly.",
-      "Use magnification (microscope or loupes minimum 2.5Ã—) to locate MB2 and assess chamber floor.",
+      "CBCT is not optional for third molarsÃ¢â‚¬â€anatomy is too variable to treat blindly.",
+      "Use magnification (microscope or loupes minimum 2.5Ãƒâ€”) to locate MB2 and assess chamber floor.",
       "Staining with 1% methylene blue on chamber floor can reveal hidden canal orifices.",
       "For calcified canals: Use small files (#06, #08 C-files), EDTA gel (Glyde), and ultrasonic activation.",
       "Transillumination with fiber-optic light can identify root cracks before treatment (contraindicates RCT).",
-      "If anatomy is too complex or access is impossible, consider extractionâ€”not all teeth are salvageable.",
+      "If anatomy is too complex or access is impossible, consider extractionÃ¢â‚¬â€not all teeth are salvageable.",
       "Warm vertical compaction gives superior 3D fill in complex anatomy but requires training.",
       "Single-visit treatment is acceptable if canal is dry and asymptomatic (no exudate).",
-      "Good coronal seal prevents reinfectionâ€”failure of coronal restoration is #1 cause of RCT failure.",
+      "Good coronal seal prevents reinfectionÃ¢â‚¬â€failure of coronal restoration is #1 cause of RCT failure.",
       "Monitor radiographically at 6 months and 12 months post-treatment for healing."
     ]
 
@@ -483,7 +483,7 @@ version = "v1.0"
     steps = [
       "Establish glide path to working length.",
       "Coronal flaring with Gates-Glidden #2.",
-      "Apical preparation: #15 â†’ #20 â†’ #25 at working length.",
+      "Apical preparation: #15 Ã¢â€ â€™ #20 Ã¢â€ â€™ #25 at working length.",
       "Master apical file: #25-30 depending on canal size.",
       "If two canals: prepare both to same size.",
       "Recapitulate frequently to maintain patency.",
@@ -599,7 +599,7 @@ version = "v1.0"
     steps = [
       "Establish glide path to working length.",
       "Coronal flaring with Gates-Glidden #2.",
-      "Apical preparation: #15 â†’ #20 â†’ #25 â†’ #30 at working length.",
+      "Apical preparation: #15 Ã¢â€ â€™ #20 Ã¢â€ â€™ #25 Ã¢â€ â€™ #30 at working length.",
       "Master apical file: #30-35 (large for anterior tooth).",
       "Use pre-curved files for apical curvature.",
       "Recapitulate frequently to maintain patency.",
@@ -883,7 +883,7 @@ version = "v1.0"
   canals = "3-4 canals (MB, MB2, DB, P); MB2 common but often missed"
   typical_difficulty = "Moderate to High"
   key_risks = [
-    "MB2 canal missed (60-70% incidence—critical error)",
+    "MB2 canal missed (60-70% incidenceâ€”critical error)",
     "Mesial root perforation (thin dentin on furcal side)",
     "Instrument separation in curved MB canals",
     "Furcation perforation during access"
@@ -908,11 +908,11 @@ version = "v1.0"
       "Initial entry through occlusal surface; trapezoidal outline.",
       "Unroof chamber fully; locate MB, DB, and P canal orifices.",
       "Systematic search for MB2 canal (palatal to MB1, along developmental groove).",
-      "Use magnification to visualize MB2—success rate increases 40-50%.",
+      "Use magnification to visualize MB2â€”success rate increases 40-50%.",
       "Use ultrasonic tips and staining to identify calcified MB2 orifice.",
       "Unroof entire chamber; remove all overhanging dentin and pulp horns.",
       "Verify straight-line access to all 4 canals.",
-      "DO NOT over-extend access CERVICALLY—risk furcation perforation."
+      "DO NOT over-extend access CERVICALLYâ€”risk furcation perforation."
     ]
 
   [[params.teeth.topics]]
@@ -950,7 +950,7 @@ version = "v1.0"
       "Dry all canals with paper points before EAL use (critical for accuracy).",
       "Advance file slowly until 'APEX' reading (0.0); retract 0.5-1.0 mm for working length.",
       "Take WL radiograph with files in all 4 canals; use different file sizes for identification.",
-      "Typical measurements: MB 20-21 mm, DB 20-21 mm, P 21-23 mm (but individual variation ±2-3 mm).",
+      "Typical measurements: MB 20-21 mm, DB 20-21 mm, P 21-23 mm (but individual variation Â±2-3 mm).",
       "MB2 working length often 0.5-1.5 mm shorter than MB1 if they join apically (Type II).",
       "Recheck WL after coronal flaring (Gates-Glidden) and mid-preparation (dentin removal changes perception).",
       "Document WL for each canal with reference point (e.g., MB cusp tip); record in patient chart."
@@ -967,13 +967,13 @@ version = "v1.0"
     name = "Hand instrumentation (Crown-Down) - Excellent for learning anatomy"
     steps = [
       "Coronal flaring: Gates-Glidden #3, #2 at each orifice (2-3 mm depth) for MB1, DB, P.",
-      "MB2 orifice: Often narrow—use GG #2 or #1 only, or omit GG and use hand files only.",
+      "MB2 orifice: Often narrowâ€”use GG #2 or #1 only, or omit GG and use hand files only.",
       "Pre-flare middle third: K-files #35 ? #30 ? #25 in 2 mm increments.",
       "Establish WL: #10 K-file to WL in all 4 canals; confirm patency.",
       "Apical enlargement mesial: #15 ? #20 ? #25 ? #30 at WL using balanced force technique.",
       "MAF selection by canal: MB1 #25-30, MB2 #20-25 (often narrow), DB #25-30, P #30-40.",
       "Recapitulation: After EVERY larger file, return with #10 or #15 to WL to maintain patency and remove debris.",
-      "Anticurvature filing: MB canals—file AWAY from furcation (toward palatal side) to avoid strip perforation.",
+      "Anticurvature filing: MB canalsâ€”file AWAY from furcation (toward palatal side) to avoid strip perforation.",
       "Step-back technique: Files progressively shorter by 1 mm to create taper."
     ]
 
@@ -983,13 +983,13 @@ version = "v1.0"
       "Glide path MANDATORY: #10 and #15 K-files to working length in ALL FOUR canals before any rotary file.",
       "For ProTaper system: SX (orifice opener, 3-4 mm depth) ? S1 (coronal 2/3) ? S2 (middle third) ? F1 or F2 (apical) to WL.",
       "Finishing files: F1 (#20/.07) or F2 (#25/.08) as MAF for most canals.",
-      "MB2 canal: Often narrow—F1 may be sufficient; do not force F2 if binding occurs.",
+      "MB2 canal: Often narrowâ€”F1 may be sufficient; do not force F2 if binding occurs.",
       "Palatal canal: F2 or F3 (#30/.09) typically appropriate due to larger diameter.",
       "For WaveOne: Use Primary file (#25/.07) in reciprocating motion; gentle pecking technique.",
       "Speed: 300 RPM for ProTaper; reciprocating mode for WaveOne per manufacturer specs.",
       "Torque settings: 2.0-3.0 Ncm for molars (prevents file separation).",
       "Technique: 3 pecking motions inward, withdraw, clean flutes, irrigate, repeat.",
-      "NEVER force rotary files in MB2—if resistance, remove and hand-file with #15-20 K-files first.",
+      "NEVER force rotary files in MB2â€”if resistance, remove and hand-file with #15-20 K-files first.",
       "Irrigate 2 mL NaOCl between every instrument in EVERY canal."
     ]
 
@@ -1000,8 +1000,8 @@ version = "v1.0"
       "Delivery system: 30-gauge side-vented needle; insert 2-3 mm SHORT of working length.",
       "Technique: Gentle pressure, allow backflow; NEVER bind needle in canal (risk apical extrusion).",
       "Frequency: Irrigate after EVERY SINGLE INSTRUMENT in EVERY canal.",
-      "Warm NaOCl (45-60°C): Doubles tissue-dissolving capacity; use warming device (Calamus, System B).",
-      "Ultrasonic activation: 3 cycles × 20 seconds PER CANAL (significantly improves cleaning, especially MB2).",
+      "Warm NaOCl (45-60Â°C): Doubles tissue-dissolving capacity; use warming device (Calamus, System B).",
+      "Ultrasonic activation: 3 cycles Ã— 20 seconds PER CANAL (significantly improves cleaning, especially MB2).",
       "Final rinse sequence: 5 mL EDTA 17% per canal (1 minute) ? 5 mL NaOCl final flush.",
       "Dry each canal separately: Multiple paper points in each canal until dry."
     ]
@@ -1028,7 +1028,7 @@ version = "v1.0"
       "Dense packing: Continue compaction until all canals densely filled; may require 8-15 accessory cones total.",
       "Sear excess GP: Heated plugger to remove gutta-percha 2 mm below orifice level in each canal.",
       "Vertical compaction: At each orifice to seal chamber floor completely.",
-      "Post-obturation radiograph: IMMEDIATELY—verify fill quality (homogeneous, no voids, proper length 0-2 mm short).",
+      "Post-obturation radiograph: IMMEDIATELYâ€”verify fill quality (homogeneous, no voids, proper length 0-2 mm short).",
       "Coronal seal: Cavit or IRM minimum 3-4 mm thickness covering all canal orifices.",
       "Document: Date, technique used, post-op radiograph; refer for permanent restoration within 2 weeks."
     ]
@@ -1042,15 +1042,15 @@ version = "v1.0"
 
     [[params.teeth.topics.rules]]
     if = "Separation in MB1 or MB2 canal (highest risk location)"
-    then = "STOP immediately; take radiograph to assess fragment position and length. If coronal/middle third: Attempt ultrasonic retrieval—use CPR or ET18D tips at low power to expose and vibrate fragment. Success rate 50-70% in MB canals. If apical third (<4 mm from apex): Assess if canal is adequately cleaned/shaped coronal to fragment. Bypass attempt with #06 or #08 C-file (success 40-60%). If retrieval fails and canal well-disinfected: Obturate to fragment level—success rate 80-85%. ALWAYS document, inform patient, obtain consent, consider specialist referral."
+    then = "STOP immediately; take radiograph to assess fragment position and length. If coronal/middle third: Attempt ultrasonic retrievalâ€”use CPR or ET18D tips at low power to expose and vibrate fragment. Success rate 50-70% in MB canals. If apical third (<4 mm from apex): Assess if canal is adequately cleaned/shaped coronal to fragment. Bypass attempt with #06 or #08 C-file (success 40-60%). If retrieval fails and canal well-disinfected: Obturate to fragment levelâ€”success rate 80-85%. ALWAYS document, inform patient, obtain consent, consider specialist referral."
 
     [[params.teeth.topics.rules]]
     if = "Separation in DB or Palatal canal (lower risk, straighter anatomy)"
-    then = "Take radiograph immediately. If coronal/middle third: Ultrasonic retrieval success rate 70-80% due to straighter access. Use staging platform technique—remove dentin around fragment, vibrate with ultrasonics, attempt extraction with micro-forceps. If apical third: Bypass often successful (60-70%). If retrieval/bypass successful: Continue normally. If fails but canal well-disinfected: Obturate to fragment—success rate 82-88%. Document, inform patient, monitor at 6 and 12 months."
+    then = "Take radiograph immediately. If coronal/middle third: Ultrasonic retrieval success rate 70-80% due to straighter access. Use staging platform techniqueâ€”remove dentin around fragment, vibrate with ultrasonics, attempt extraction with micro-forceps. If apical third: Bypass often successful (60-70%). If retrieval/bypass successful: Continue normally. If fails but canal well-disinfected: Obturate to fragmentâ€”success rate 82-88%. Document, inform patient, monitor at 6 and 12 months."
 
     [[params.teeth.topics.rules]]
     if = "Prevention strategies (second molar specific)"
-    then = "MB2 canal location is MANDATORY (palatal to MB1, along developmental groove). Managing 4 separate canal systems simultaneously. Maintaining patency in all canals during preparation. Irrigation effectiveness in complex anatomy. Prevention: (1) Create adequate glide path (#15 minimum, #20 ideal) in EACH canal, (2) Pre-curve files 25-40° for mesial canals, (3) Use rotary files MAXIMUM 3-4 canals then discard, (4) Inspect ALL files before use—any unwinding or deformation = immediate discard, (5) Use torque-limited motor (2.0-3.0 Ncm for molars), (6) NEVER force—if binding, remove and improve glide path, (7) Consider hand instrumentation for severely curved MB2. Separation risk: 2-3% in second molars (lower than first molars but higher than anteriors)."
+    then = "MB2 canal location is MANDATORY (palatal to MB1, along developmental groove). Managing 4 separate canal systems simultaneously. Maintaining patency in all canals during preparation. Irrigation effectiveness in complex anatomy. Prevention: (1) Create adequate glide path (#15 minimum, #20 ideal) in EACH canal, (2) Pre-curve files 25-40Â° for mesial canals, (3) Use rotary files MAXIMUM 3-4 canals then discard, (4) Inspect ALL files before useâ€”any unwinding or deformation = immediate discard, (5) Use torque-limited motor (2.0-3.0 Ncm for molars), (6) NEVER forceâ€”if binding, remove and improve glide path, (7) Consider hand instrumentation for severely curved MB2. Separation risk: 2-3% in second molars (lower than first molars but higher than anteriors)."
 
   [[params.teeth.topics]]
   id = "medications"
@@ -1064,10 +1064,10 @@ version = "v1.0"
       "Analgesics: Ibuprofen 600 mg + Acetaminophen 1000 mg Q6H PRN (combination superior to opioids per AAE 2020 guidelines).",
       "Pre-emptive analgesia: Administer NSAID 1 hour BEFORE treatment (reduces post-op pain by 30-40%).",
       "Post-operative pain: Expected moderate for 24-48 hours; peaks at 12-24 hours post-treatment; molars typically more painful than anteriors.",
-      "Antibiotics: ONLY for systemic infection (fever >100.4°F, facial swelling, lymphadenopathy, trismus, cellulitis, spreading cellulitis).",
+      "Antibiotics: ONLY for systemic infection (fever >100.4Â°F, facial swelling, lymphadenopathy, trismus, cellulitis, spreading cellulitis).",
       "Localized infection: RCT + drainage sufficient; antibiotics NOT indicated per AAE 2017 guidelines.",
-      "If antibiotics indicated: Amoxicillin 500 mg TID × 7 days (first-line).",
-      "Penicillin allergy: Clindamycin 300 mg TID × 7 days (excellent anaerobic coverage for molar infections).",
+      "If antibiotics indicated: Amoxicillin 500 mg TID Ã— 7 days (first-line).",
+      "Penicillin allergy: Clindamycin 300 mg TID Ã— 7 days (excellent anaerobic coverage for molar infections).",
       "Intracanal medicament (multi-visit): Calcium hydroxide paste placed in all 4 canals; remove completely before obturation.",
       "Remove Ca(OH)2 completely before obturation: Copious NaOCl irrigation + ultrasonic activation (residue interferes with sealer).",
       "Document: All allergies, medical history, contraindications before prescribing any medication."
@@ -1082,14 +1082,14 @@ version = "v1.0"
 
     [params.teeth.topics.content]
     bullets = [
-      "MB2 SUCCESS PROTOCOL: (1) Magnification (microscope or loupes 3.5×+), (2) Ultrasonic troughing along developmental groove, (3) Methylene blue staining, (4) Champagne bubble test, (5) Patience—may take 10-20 minutes to locate calcified MB2.",
+      "MB2 SUCCESS PROTOCOL: (1) Magnification (microscope or loupes 3.5Ã—+), (2) Ultrasonic troughing along developmental groove, (3) Methylene blue staining, (4) Champagne bubble test, (5) Patienceâ€”may take 10-20 minutes to locate calcified MB2.",
       "MB2 location: Draw imaginary line from MB1 to P orifice; MB2 is 1-3 mm along this line, slightly mesial to midpoint.",
       "Magnification increases MB2 location rate from 40% (naked eye) to 90% (microscope) per multiple studies.",
-      "Transillumination: Fiber-optic light through tooth can reveal cracks (contraindicates RCT—extraction needed).",
+      "Transillumination: Fiber-optic light through tooth can reveal cracks (contraindicates RCTâ€”extraction needed).",
       "For calcified MB2: Use #06 or #08 C-file (most flexible), EDTA gel (Glyde/RC Prep), gentle watch-winding motion, ultrasonics.",
-      "Warm NaOCl (45-60°C) doubles efficacy—use System B or dedicated warmer.",
-      "Ultrasonic activation is NOT optional for MB2—narrow canal cannot be cleaned mechanically alone.",
-      "Pre-curve files by grasping apical 2-3 mm and bending 20-45° to match MB curvature seen on radiograph.",
+      "Warm NaOCl (45-60Â°C) doubles efficacyâ€”use System B or dedicated warmer.",
+      "Ultrasonic activation is NOT optional for MB2â€”narrow canal cannot be cleaned mechanically alone.",
+      "Pre-curve files by grasping apical 2-3 mm and bending 20-45Â° to match MB curvature seen on radiograph.",
       "Anticurvature filing: In MB canals, file AWAY from furcation (toward palatal/lingual) to avoid strip perforation.",
       "Good coronal seal = 50% of long-term success: Use minimum 3-4 mm Cavit/IRM; permanent restoration ASAP.",
       "Single-visit vs multi-visit: Single-visit acceptable if canal dry and no acute symptoms (success rate equivalent 93-94%).",
@@ -1185,7 +1185,7 @@ version = "v1.0"
       "Use magnification to visualize MB2 if present.",
       "Unroof chamber completely; remove all overhanging dentin and pulp horns.",
       "Verify straight-line access to all canals."
-      "DO NOT over-extend access CERVICALLY—risk furcation perforation."
+      "DO NOT over-extend access CERVICALLYâ€”risk furcation perforation."
     ]
 
   [[params.teeth.topics]]
