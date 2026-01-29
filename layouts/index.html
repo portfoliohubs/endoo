@@ -1272,7 +1272,7 @@
       document.addEventListener('scroll', setActiveNav, { passive: true });
 
       // Init
-      const { toothId, topicId } = parseHash();
+      const { toothId: hashToothId, topicId } = parseHash();
       const activeButtons = toothItems.filter(li => {
         const b = qs('button', li);
         return b && !b.disabled;
@@ -1284,7 +1284,7 @@
       const firstVisible = toothItems.find(li => li.style.display !== 'none' && (qs('button', li) && !qs('button', li).disabled));
       const fallbackTooth = firstVisible ? firstVisible.getAttribute('data-tooth-id') : null;
 
-      setTooth(toothId || fallbackTooth, true, topicId);
+      setTooth(hashToothId || fallbackTooth, true, topicId);
       setActiveNav();
     })();
   </script>
