@@ -997,18 +997,9 @@
                         {{ end }}
                       </div>
 
-                      {{ $topics := .topics }}
-                      {{ if not $topics }}
-                        {{ $mirrorId := replace .id "-left" "-right" }}
-                        {{ $mirror := where $page.Site.Params.teeth "id" $mirrorId }}
-                        {{ if gt (len $mirror) 0 }}
-                          {{ $topics = (index $mirror 0).topics }}
-                        {{ end }}
-                      {{ end }}
-
-                      {{ if $topics }}
+                      {{ if .topics }}
                       <div style="margin-top: var(--s4);" aria-label="Topics">
-                        {{ range $topics }}
+                        {{ range .topics }}
 
                           <details class="topic" id="{{ $tooth.id }}-{{ .id }}" data-tooth-topic="{{ $tooth.id }}" data-section-id="{{ $tooth.id }}-{{ .id }}" aria-labelledby="{{ $tooth.id }}-{{ .id }}-h">
                             <summary id="{{ $tooth.id }}-{{ .id }}-h">{{ .title }}</summary>
