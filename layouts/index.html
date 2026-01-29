@@ -956,6 +956,57 @@
               </div>
             </aside>
 
+            <div>
+              {{ range $page.Site.Params.teeth }}
+                {{ if eq .specialty_id "endodontics" }}
+                  {{ $tooth := . }}
+                  <article class="tooth" data-tooth-id="{{ .id }}" data-arch="{{ .arch }}" data-active="false" aria-labelledby="{{ .id }}-title">
+                    <div class="card card-pad">
+                      <div style="display:grid;gap:10px;">
+                        <h2 id="{{ .id }}-title" style="margin-top: 0">{{ .name }}</h2>
+                      </div>
+
+                      <div class="content-block" style="margin-top: var(--s3);">
+                        <div class="kicker">Fast data</div>
+                        <div class="facts" aria-label="Fast facts">
+                          <div class="fact">
+                            <span class="label">Access cavity</span>
+                            <div>{{ .fast.access_cavity }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Canals</span>
+                            <div>{{ .fast.canals }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Difficulty</span>
+                            <div>{{ .fast.typical_difficulty }}</div>
+                          </div>
+                          <div class="fact">
+                            <span class="label">Student focus</span>
+                            <ul style="margin-bottom:0;">
+                              {{ range .fast.student_focus }}<li>{{ . }}</li>{{ end }}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {{ if .fast.key_risks }}
+                          <div style="margin-top:12px;">
+                            <span class="label">Key risks</span>
+                            <ul style="margin-bottom:0;">
+                              {{ range .fast.key_risks }}<li>{{ . }}</li>{{ end }}
+                            </ul>
+                          </div>
+                        {{ end }}
+                      </div>
+
+                      {{ if .topics }}
+                      <div style="margin-top: var(--s4);" aria-label="Topics">
+                        {{ range .topics }}
+
+                          <details class="topic" id="{{ $tooth.id }}-{{ .id }}" data-tooth-topic="{{ $tooth.id }}" data-section-id="{{ $tooth.id }}-{{ .id }}" aria-labelledby="{{ $tooth.id }}-{{ .id }}-h">
+                            <summary id="{{ $tooth.id }}-{{ .id }}-h">{{ .title }}</summary>
+                            <div class="topic-body">
+
                               {{ if eq .type "steps" }}
                                 <ol>
                                   {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
