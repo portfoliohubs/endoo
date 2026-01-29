@@ -63,28 +63,31 @@ id = "protocol"
 
 # Footer Configuration
 [params.footer]
-tagline = "Evidence-based endodontic protocols for dental professionals worldwide."
-attributes = "Peer-reviewed • Clinically tested • Continuously updated"
+tagline = "Built by a Dentist. Engineered for Dentists."
+attributes = "Evidence-based • Clinically focused • Continuously updated"
 
 [params.footer.platform]
-title = "Built with Hugo"
-description = "Static site generator for fast, reliable medical content delivery"
+title = "This platform isn't a template — it's a clinically designed system created and reviewed by a practicing dentist to deliver clarity, speed, and trust where it matters most."
+description = "The same system used to build Clinical Dental Protocols is available to dentists who want a professional, high-performance website — without complexity or wasted time.
+✔️ Fast, static, SEO-ready
+✔️ Designed for real clinical workflows
+✔️ Clear content structure patients & dentists trust"
 
 [params.footer.cta]
-question = "Need personalized guidance?"
-action = "Contact Expert"
+question = "Want a website that reflects your clinical level — not just your name?"
+action = "→ See how this dental website system works"
 
 [params.footer.author]
-name = "Dr. Dental Professional"
-title = "Endodontic Specialist"
-services = "Advanced Endodontic Care & Training"
+name = "Dr. Michael Nabil"
+title = "Dentist & Specialized Dental Website Developer"
+services = "Clinics • Portfolios • Educational Platforms"
 
 [params.footer.contact]
-whatsapp = "1234567890"
-label = "WhatsApp Consultation"
+label = "💬 Contact via WhatsApp"
+whatsapp = "+201271476215"
 
 [params.footer.technical]
-features = "Hugo-powered • Responsive design • GitHub Pages deployment"
+features = "Static • Fast • Privacy-friendly"
 
 # ============================================================================
 # COMPREHENSIVE ENDODONTIC PROTOCOLS - ALL 32 TEETH
