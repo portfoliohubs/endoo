@@ -68,10 +68,10 @@ attributes = "Evidence-based • Clinically focused • Continuously updated"
 
 [params.footer.platform]
 title = "This platform isn't a template — it's a clinically designed system created and reviewed by a practicing dentist to deliver clarity, speed, and trust where it matters most."
-description = "The same system used to build Clinical Dental Protocols is available to dentists who want a professional, high-performance website — without complexity or wasted time.
+description = """The same system used to build Clinical Dental Protocols is available to dentists who want a professional, high-performance website — without complexity or wasted time.
 ✔️ Fast, static, SEO-ready
 ✔️ Designed for real clinical workflows
-✔️ Clear content structure patients & dentists trust"
+✔️ Clear content structure patients & dentists trust"""
 
 [params.footer.cta]
 question = "Want a website that reflects your clinical level — not just your name?"
