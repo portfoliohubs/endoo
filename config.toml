@@ -7,6 +7,7 @@
 baseURL = "https://portfoliohubs.github.io/endoo/"
 languageCode = "en-us"
 title = "Dental Endodontic Protocols"
+enableRobotsTXT = true
 
 # Site Parameters
 [params]
@@ -14,6 +15,24 @@ site_name = "EndoProtocols"
 site_description = "Evidence-based endodontic treatment protocols for all teeth. Comprehensive clinical guidelines for dental professionals."
 site_language = "en"
 brand_short = "🦷"
+
+ [params.seo]
+ title = "Dental Endodontic Protocols"
+ description = "Evidence-based endodontic treatment protocols for all teeth. Comprehensive clinical guidelines for dental professionals."
+ keywords = ["endodontics", "endodontic protocol", "root canal", "access cavity", "working length", "obturation", "dental protocols", "AAE", "ESE", "endodontic reference"]
+ robots = "index,follow"
+ canonical = ""
+ logo = "/images/logo.png"
+ og_image = "/images/og-image.jpg"
+ og_image_alt = "Dental Endodontic Protocols"
+ og_type = "website"
+ og_locale = "en_US"
+ twitter_card = "summary_large_image"
+ twitter_image = "/images/twitter-card.jpg"
+ twitter_site = ""
+ twitter_creator = ""
+ google_site_verification = ""
+ bing_site_verification = ""
 
 # Theme Configuration
 [params.theme]

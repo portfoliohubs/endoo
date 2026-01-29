@@ -3,8 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ .Site.Params.site_description }}">
-  <title>{{ .Site.Title }}</title>
+  {{ $seo := .Site.Params.seo }}
+  {{ $seoTitle := $seo.title | default .Site.Title }}
+  {{ $seoDesc := $seo.description | default .Site.Params.site_description }}
+  {{ $canonical := $seo.canonical | default .Permalink }}
+  {{ $ogImage := $seo.og_image | default $seo.logo }}
+  {{ $twitterImage := $seo.twitter_image | default $ogImage }}
+
+  <meta name="description" content="{{ $seoDesc }}">
+  {{ if $seo.keywords }}<meta name="keywords" content="{{ delimit $seo.keywords ", " }}">{{ end }}
+  <meta name="robots" content="{{ $seo.robots | default "index,follow" }}">
+  <link rel="canonical" href="{{ $canonical }}">
+
+  <title>{{ $seoTitle }}</title>
+
+  {{ if $seo.logo }}
+    <link rel="icon" href="{{ $seo.logo | relURL }}">
+    <link rel="apple-touch-icon" href="{{ $seo.logo | relURL }}">
+  {{ end }}
+
+  <meta property="og:title" content="{{ $seoTitle }}">
+  <meta property="og:description" content="{{ $seoDesc }}">
+  <meta property="og:type" content="{{ $seo.og_type | default "website" }}">
+  <meta property="og:locale" content="{{ $seo.og_locale | default "en_US" }}">
+  <meta property="og:url" content="{{ $canonical }}">
+  <meta property="og:site_name" content="{{ .Site.Params.site_name | default .Site.Title }}">
+  {{ if $ogImage }}<meta property="og:image" content="{{ $ogImage | absURL }}">{{ end }}
+  {{ if $seo.og_image_alt }}<meta property="og:image:alt" content="{{ $seo.og_image_alt }}">{{ end }}
+
+  <meta name="twitter:card" content="{{ $seo.twitter_card | default "summary_large_image" }}">
+  <meta name="twitter:title" content="{{ $seoTitle }}">
+  <meta name="twitter:description" content="{{ $seoDesc }}">
+  {{ if $twitterImage }}<meta name="twitter:image" content="{{ $twitterImage | absURL }}">{{ end }}
+  {{ if $seo.twitter_site }}<meta name="twitter:site" content="{{ $seo.twitter_site }}">{{ end }}
+  {{ if $seo.twitter_creator }}<meta name="twitter:creator" content="{{ $seo.twitter_creator }}">{{ end }}
 
   {{ hugo.Generator }}
 
@@ -663,9 +695,18 @@
     {
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
-      "name": {{ .Site.Title | jsonify }},
-      "description": {{ .Site.Params.site_description | jsonify }},
-      "url": {{ .Site.BaseURL | jsonify }},
+      "name": {{ $seoTitle | jsonify }},
+      "description": {{ $seoDesc | jsonify }},
+      "url": {{ $canonical | jsonify }},
+      "image": {{ with $ogImage }}{{ . | absURL | jsonify }}{{ else }}""{{ end }},
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ (.Site.Params.site_name | default .Site.Title) | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ with $seo.logo }}{{ . | absURL | jsonify }}{{ else }}""{{ end }}
+        }
+      },
       "audience": {
         "@type": "MedicalAudience",
         "audienceType": "Dental professionals and trainees"
