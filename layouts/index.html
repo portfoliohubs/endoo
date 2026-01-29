@@ -999,17 +999,6 @@
                         {{ end }}
                       </div>
 
-                      <!-- DEBUG: Check if topics exist -->
-                      <div style="background: yellow; padding: 10px; margin: 10px 0;">
-                        <strong>DEBUG:</strong> Topics count: {{ len .topics }}<br>
-                        <strong>DEBUG:</strong> Tooth ID: {{ .id }}<br>
-                        {{ if .topics }}
-                          <strong>DEBUG:</strong> Topics found! First topic: {{ (index .topics 0).title }}
-                        {{ else }}
-                          <strong>DEBUG:</strong> No topics found for this tooth
-                        {{ end }}
-                      </div>
-
                       {{ if .topics }}
                       <div style="margin-top: var(--s4);" aria-label="Topics">
                         {{ range .topics }}
