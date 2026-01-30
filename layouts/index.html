@@ -1081,11 +1081,29 @@
                                   {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
                                 </ol>
                               {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
+                              {{ end }}
 
                               {{ if eq .type "bullets" }}
                                 <ul>
                                   {{ range .content.bullets }}<li>{{ . }}</li>{{ end }}
                                 </ul>
+                              {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
                               {{ end }}
 
                               {{ if eq .type "if_then" }}
@@ -1093,7 +1111,25 @@
                                   {{ range .rules }}
                                     <li><strong>IF</strong> {{ .if }} <strong>THEN</strong> {{ .then }}</li>
                                   {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
+                              {{ end }}
                                 </ul>
+                              {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
                               {{ end }}
 
                               {{ if eq .type "references" }}
@@ -1105,7 +1141,25 @@
                                       {{ if .url }} — <a href="{{ .url }}" rel="noopener" target="_blank">Source</a>{{ end }}
                                     </li>
                                   {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
+                              {{ end }}
                                 </ul>
+                              {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
                               {{ end }}
                             </div>
                           </details>
@@ -1176,11 +1230,29 @@
                                   {{ range .content.steps }}<li>{{ . }}</li>{{ end }}
                                 </ol>
                               {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
+                              {{ end }}
 
                               {{ if eq .type "bullets" }}
                                 <ul>
                                   {{ range .content.bullets }}<li>{{ . }}</li>{{ end }}
                                 </ul>
+                              {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
                               {{ end }}
 
                               {{ if eq .type "if_then" }}
@@ -1188,7 +1260,25 @@
                                   {{ range .rules }}
                                     <li><strong>IF</strong> {{ .if }} <strong>THEN</strong> {{ .then }}</li>
                                   {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
+                              {{ end }}
                                 </ul>
+                              {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
                               {{ end }}
 
                               {{ if eq .type "references" }}
@@ -1200,7 +1290,25 @@
                                       {{ if .url }} — <a href="{{ .url }}" rel="noopener" target="_blank">Source</a>{{ end }}
                                     </li>
                                   {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
+                              {{ end }}
                                 </ul>
+                              {{ end }}
+                              
+                              {{ if eq .type "options" }}
+                                {{ range .options }}
+                                  <h4 style="margin: var(--s3) 0 var(--s2) 0; font-size: 16px; color: var(--text);">{{ .name }}</h4>
+                                  <ol>
+                                    {{ range .steps }}<li>{{ . }}</li>{{ end }}
+                                  </ol>
+                                {{ end }}
                               {{ end }}
                             </div>
                           </details>
