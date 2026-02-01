@@ -788,64 +788,7 @@
         </section>
       {{ end }}
 
-      {{ if eq $sid "featured" }}
-        <section id="featured" aria-labelledby="featured-title" style="margin: var(--s5) 0;">
-          <h2 id="featured-title" style="text-align: center; margin-bottom: var(--s4);">Most Accessed Protocols</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s4);">
-            <!-- Upper First Molar -->
-            <div class="card card-pad featured-card" style="cursor: pointer; transition: all 0.2s ease;" onclick="window.location.href='#protocol'">
-              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
-                <div class="evidence-icon" style="width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🦷</div>
-                <div>
-                  <h3 style="margin: 0; font-size: 18px; color: var(--text);">Upper First Molar</h3>
-                  <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">U6 • Most Complex</p>
-                </div>
-              </div>
-              <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
-                MB2 detection, 4-canal system, complex anatomy - the most challenging posterior tooth
-              </div>
-              <div style="margin-top: var(--s2); font-size: 13px; color: var(--brand); font-weight: 600;">
-                → View Full Protocol
-              </div>
-            </div>
-
-            <!-- Lower First Molar -->
-            <div class="card card-pad featured-card" style="cursor: pointer; transition: all 0.2s ease;" onclick="window.location.href='#protocol'">
-              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
-                <div class="evidence-icon" style="width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🦷</div>
-                <div>
-                  <h3 style="margin: 0; font-size: 18px; color: var(--text);">Lower First Molar</h3>
-                  <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">L6 • High Risk</p>
-                </div>
-              </div>
-              <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
-                2 mesial canals, distal variations, C-shaped possibilities - critical to master
-              </div>
-              <div style="margin-top: var(--s2); font-size: 13px; color: var(--brand); font-weight: 600;">
-                → View Full Protocol
-              </div>
-            </div>
-
-            <!-- Upper Central Incisor -->
-            <div class="card card-pad featured-card" style="cursor: pointer; transition: all 0.2s ease;" onclick="window.location.href='#protocol'">
-              <div style="display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);">
-                <div class="evidence-icon" style="width: 48px; height: 48px; background: rgba(20,184,166,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">🦷</div>
-                <div>
-                  <h3 style="margin: 0; font-size: 18px; color: var(--text);">Upper Central Incisor</h3>
-                  <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">U1 • Beginner Friendly</p>
-                </div>
-              </div>
-              <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.4;">
-                Single canal, predictable anatomy - perfect starting point for learning
-              </div>
-              <div style="margin-top: var(--s2); font-size: 13px; color: var(--brand); font-weight: 600;">
-                → View Full Protocol
-              </div>
-            </div>
-          </div>
-        </section>
-      {{ end }}
-
+      
       {{ if eq $sid "tips" }}
         <section id="tips" aria-labelledby="tips-title" style="margin: var(--s5) 0;">
           <h2 id="tips-title" style="text-align: center; margin-bottom: var(--s4);">Clinical Pearls & Pro Tips</h2>
