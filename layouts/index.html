@@ -729,6 +729,11 @@
       {{ if eq $sid "hero" }}
         <section id="hero" aria-labelledby="hero-title">
           <div class="hero">
+            <!-- Hero Image - First Element -->
+            <div style="text-align: center; margin-bottom: var(--s5);">
+              <img src="{{ .Site.Params.seo.og_image }}" alt="{{ .Site.Params.seo.og_image_alt }}" style="max-width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+            </div>
+            
             <h1 id="hero-title" style="font-size: clamp(26px, 4vw, 36px); margin: 0; font-weight: 900; line-height: 1.2;">
               {{ .title }}
             </h1>
